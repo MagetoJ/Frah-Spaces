@@ -1,5 +1,4 @@
 import { Button } from "@/react-app/components/ui/button";
-import { Card, CardContent } from "@/react-app/components/ui/card";
 import { ArrowRight, CheckCircle2, Sparkles, Users, Award, Building2, MessageCircle } from "lucide-react";
 import { Link } from "react-router";
 
@@ -33,7 +32,7 @@ export default function Home() {
             
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
               We provide modern, high-quality, and affordable homes through exceptional craftsmanship and innovative design. 
-              From concept to completion, we build with excellence in mind.
+              Building dreams one home at a time across Kenya.
             </p>
             
             <div className="flex flex-wrap gap-4">
@@ -66,7 +65,7 @@ export default function Home() {
                 <h2 className="text-2xl font-bold">About Us</h2>
               </div>
               <p className="text-muted-foreground mb-6 flex-grow">
-                Frah Spaces is a multi-disciplinary firm specializing in construction, real estate management, and specialized technical services across Kenya.
+                Frah Spaces is a multi-disciplinary firm specializing in construction, real estate management, and specialized technical services. With over a decade of experience, we provide modern, high-quality, and affordable homes.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-2 text-sm font-medium">
@@ -130,7 +129,7 @@ export default function Home() {
                 <h2 className="text-2xl font-bold">Engage Us</h2>
               </div>
               <div className="space-y-2 mb-6 flex-grow">
-                {['Construction & Civil Works', 'Real Estate Management', 'Landscaping', 'Electrical & Solar', 'Plumbing & Drainage', 'HVAC & Glazing', 'Renovations'].map((service) => (
+                {['Construction & Civil Works', 'Real Estate Management', 'Electrical & Solar', 'Plumbing & HVAC', 'Glazing & Welding', 'Landscaping', 'Facility Care'].map((service) => (
                   <div key={service} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <div className="w-1.5 h-1.5 rounded-full bg-indigo-600" />
                     {service}

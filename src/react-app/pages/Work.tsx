@@ -24,44 +24,44 @@ export default function Work() {
 
   const projects = [
     {
-      title: "Major Restaurant Expansion",
+      title: "Siri Africa A-Frame House",
+      category: "residential",
+      location: "Tigoni, Kiambu",
+      year: "2024",
+      description: "An innovative residential project blending contemporary architecture with the lush highlands of Kiambu County.",
+      image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80",
+      testimonial: "A masterpiece of modern design that perfectly complements its natural surroundings.",
+      client: "Siri Africa"
+    },
+    {
+      title: "Hospitality Renovation",
       category: "commercial",
       location: "Kitale, Trans Nzoia",
       year: "2023",
-      description: "Comprehensive expansion adding a new floor, grill section, and a swimming pool to an existing restaurant structure.",
+      description: "Comprehensive expansion of a prominent restaurant, including a new upper floor, grill section, and swimming pool.",
       image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
       testimonial: "The transformation was incredible. Frah Spaces delivered a world-class facility that our customers love.",
       client: "Kitale Grill & Swim"
     },
     {
-      title: "Elegant Family Home",
+      title: "Luxury Residential",
       category: "residential",
-      location: "Fourways Junction, Nairobi",
-      year: "2024",
-      description: "End-to-end construction of a high-quality modern family home featuring exceptional craftsmanship.",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-      testimonial: "Professional team that handles every detail with precision. The construction quality is top-notch.",
-      client: "Private Homeowner"
-    },
-    {
-      title: "Private Home Garden",
-      category: "landscaping",
       location: "Karen, Nairobi",
-      year: "2023",
-      description: "Professional design and upkeep of a serene outdoor environment for a private residence.",
-      image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80",
-      testimonial: "They transformed our backyard into a peaceful sanctuary. Their attention to detail is remarkable.",
-      client: "Karen Resident"
+      year: "2024",
+      description: "Design and construction of high-value homes featuring multiple bedrooms and guest wings.",
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      testimonial: "Exceptional attention to detail in every aspect of our new luxury home.",
+      client: "Private Client"
     },
     {
-      title: "Commercial Courtyard",
+      title: "Landscaping Portfolio",
       category: "landscaping",
-      location: "Westlands, Nairobi",
+      location: "Multiple Counties",
       year: "2023",
-      description: "Modern landscape design for a commercial courtyard, enhancing the aesthetic and functional value of the space.",
-      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",
-      testimonial: "A beautiful addition to our office complex. It's a favorite spot for our tenants and visitors.",
-      client: "Westlands Business Park"
+      description: "Successful transformations of gardens and courtyards across Nairobi, Kiambu, Machakos, and Trans Nzoia.",
+      image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80",
+      testimonial: "Transformed our outdoor spaces into beautiful, functional environments.",
+      client: "Various Clients"
     },
     {
       title: "Civil Works & Drainage",

@@ -15,38 +15,44 @@ export default function Engage() {
     {
       icon: Building2,
       title: "Construction & Civil Works",
-      description: "End-to-end building solutions from architectural plans to final quality control",
-      features: ["Residential & Commercial", "New Builds & Mixed-use", "Civil Works & Drainage", "Renovations & Expansions"]
+      description: "End-to-end building solutions from project concept to execution",
+      features: ["Residential & Commercial", "Mixed-use developments", "Renovations & Fit-outs", "Drainage & Infrastructure"]
     },
     {
       icon: Home,
       title: "Real Estate Management",
-      description: "Comprehensive management to protect and maximize your property value",
+      description: "Full-cycle property management to protect and maximize asset value",
       features: ["Operations & Inspections", "Preventive Maintenance", "Lease Administration", "Statutory Compliance"]
-    },
-    {
-      icon: Trees,
-      title: "Landscaping",
-      description: "Professional design and upkeep of beautiful outdoor environments",
-      features: ["Private Home Gardens", "Commercial Courtyards", "Design & Upkeep", "Water Features"]
     },
     {
       icon: Wrench,
       title: "Electrical & Solar",
-      description: "Installation and maintenance of power systems and eco-friendly solar solutions",
-      features: ["Power Distribution", "Off-grid/Hybrid Solar", "Lighting Design", "Maintenance"]
+      description: "Professional power systems and eco-friendly solar solutions",
+      features: ["Professional Wiring", "Lighting Design", "Off-grid Installations", "Hybrid Solar Systems"]
     },
     {
       icon: Wrench,
       title: "Plumbing & HVAC",
-      description: "Installation of water, waste, and climate control systems",
-      features: ["Biodigesters & Septic", "Sewer Lines", "AC & Ventilation", "Glazing & Facades"]
+      description: "Installation and maintenance of water and climate control systems",
+      features: ["Water Systems", "Biodigesters", "AC & Ventilation", "Heating Solutions"]
+    },
+    {
+      icon: Building2,
+      title: "Glazing & Welding",
+      description: "Glass panel installations and custom metal fabrication",
+      features: ["Glass Panels", "Handrails & Gates", "Metal Fixtures", "Custom Fabrication"]
+    },
+    {
+      icon: Trees,
+      title: "Landscaping",
+      description: "Functional and aesthetic outdoor environment design",
+      features: ["Private Gardens", "Commercial Courtyards", "Design & Implementation", "Outdoor Environments"]
     },
     {
       icon: Building2,
       title: "Facility Care",
-      description: "Professional maintenance, office clean-up, and furniture restoration",
-      features: ["Office Clean-up", "Furniture Restoration", "Regular Maintenance", "General Repairs"]
+      description: "Professional maintenance, office clean-up, and restoration",
+      features: ["Office Clean-up", "Regular Maintenance", "Furniture Restoration", "General Facility Care"]
     },
   ];
 
@@ -81,7 +87,7 @@ export default function Engage() {
             Choose from our comprehensive range of design and project management services
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {services.map((service, idx) => (
               <Card 
                 key={idx} 

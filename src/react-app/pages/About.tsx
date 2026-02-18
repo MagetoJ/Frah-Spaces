@@ -4,7 +4,7 @@ import { Building2, Award, Users, Target } from "lucide-react";
 
 export default function About() {
   const timeline = [
-    { year: "Founded", event: "Our Inception", description: "Frah Spaces was founded with a mission to build dreams through quality and affordable housing." },
+    { year: "Founded", event: "Our Inception", description: "Frah Spaces was founded with a mission to build dreams through luxury and affordable housing." },
     { year: "Growth", event: "National Reach", description: "Successfully expanded operations across more than 20 Kenyan counties." },
     { year: "Today", event: "70+ Projects Completed", description: "A decade of excellence in construction, renovations, and property management." },
   ];
@@ -15,10 +15,10 @@ export default function About() {
   ];
 
   const values = [
-    { icon: Award, title: "Excellence", description: "We foster excellence in the construction industry through strategic guidance." },
-    { icon: Users, title: "Collaboration", description: "Strategic collaboration for projects that positively impact the world." },
-    { icon: Building2, title: "Innovation", description: "Modern, high-quality designs and innovative construction techniques." },
-    { icon: Target, title: "Commitment", description: "Unwavering commitment to quality and affordable housing for Kenyans." },
+    { icon: Award, title: "Excellence", description: "Fostering excellence through precision and quality craftsmanship." },
+    { icon: Building2, title: "Innovation", description: "Driving innovation with modern, high-quality designs and sustainable practices." },
+    { icon: Target, title: "Precision", description: "Ensuring precision in every project to exceed our clients' expectations." },
+    { icon: Users, title: "Commitment", description: "A deep commitment to providing luxury with affordability for all Kenyans." },
   ];
 
   return (
@@ -34,7 +34,8 @@ export default function About() {
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Frah Spaces Limited is a multi-disciplinary Kenyan firm specializing in construction, 
-              real estate management, and specialized technical services.
+              real estate management, and specialized technical services. With over a decade of experience, 
+              we provide modern, high-quality, and affordable homes.
             </p>
           </div>
         </div>
@@ -47,13 +48,11 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                To build dreams by providing modern, high-quality, and affordable homes that 
-                enhance the lives of Kenyans through exceptional craftsmanship and innovative design.
+                To build dreams one home at a time by combining luxury with affordability to enhance the lives of Kenyans.
               </p>
               <h2 className="text-4xl font-bold mb-6">Our Vision</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To foster excellence in the construction industry through strategic guidance, 
-                collaboration, and a commitment to projects that positively impact the world.
+                To foster excellence through collaboration, innovation, and sustainability, ensuring every project exceeds expectations.
               </p>
             </div>
             <div 
@@ -127,7 +126,7 @@ export default function About() {
                 <div 
                   className="h-80 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-${1507003211169-0a1dd7228f2d?w=800&q=80')`
+                    backgroundImage: `url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80')`
                   }}
                 />
                 <CardContent className="p-8">
