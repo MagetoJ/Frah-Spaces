@@ -101,8 +101,8 @@ export default function Work() {
               <span className="block text-primary">For Itself</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Explore our collection of transformative projects spanning residential, commercial, 
-              and landscape design across the country.
+              Explore our collection of over 70 successful projects spanning residential, commercial, 
+              and landscape design across 20+ Kenyan counties.
             </p>
           </div>
         </div>

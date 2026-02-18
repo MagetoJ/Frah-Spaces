@@ -10,6 +10,7 @@ npm run dev
 ```
 
 ### Deployment (Render)
-To resolve dependency conflicts and build issues with Vite 7 on Render, use the following settings in your Render dashboard:
-- **Install Command**: `npm install --legacy-peer-deps`
+To deploy this project as a static site on Render, use the following settings:
 - **Build Command**: `npm run build`
+- **Install Command**: `npm install --legacy-peer-deps`
+- **Publish Directory**: `dist`
