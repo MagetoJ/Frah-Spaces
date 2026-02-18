@@ -48,7 +48,7 @@ export default function Work() {
       category: "residential",
       location: "Karen, Nairobi",
       year: "2024",
-      description: "Design and construction of high-value homes featuring multiple bedrooms and guest wings.",
+      description: "Design and construction of high-value homes, including a KES 82M luxury villa featuring multiple bedrooms and guest wings.",
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
       testimonial: "Exceptional attention to detail in every aspect of our new luxury home.",
       client: "Private Client"

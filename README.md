@@ -10,7 +10,6 @@ npm run dev
 ```
 
 ### Deployment (Render)
-To resolve dependency conflicts with Vite 7, use the following **Install Command** in your Render dashboard:
-```bash
-npm install --legacy-peer-deps
-```
+To resolve dependency conflicts and build issues with Vite 7 on Render, use the following settings in your Render dashboard:
+- **Install Command**: `npm install --legacy-peer-deps`
+- **Build Command**: `npm run build`
