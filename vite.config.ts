@@ -8,7 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
 	  plugins: [
-	    ...mochaPlugins(process.env as Record<string, string | undefined>),
+	    ...mochaPlugins(process.env as any),
 	    react(),
 	  ],
 	  server: {
