@@ -33,9 +33,9 @@ export default function About() {
               <span className="block text-primary">Across Kenya</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Frah Spaces Limited is a Kenyan firm with over 10 years of experience in construction, 
-              real estate management, and specialized technical services. We provide modern, high-quality, 
-              and affordable homes through innovative design and exceptional craftsmanship.
+              Frah Spaces Limited is a multi-disciplinary Kenyan firm specializing in construction, 
+              real estate management, and specialized technical services. Managed by seasoned professionals 
+              with over a decade of experience, we provide modern, high-quality, and affordable homes.
             </p>
           </div>
         </div>
@@ -48,8 +48,8 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                To build dreams by providing modern, high-quality, and affordable homes that 
-                enhance the lives of Kenyans through exceptional craftsmanship and innovative design.
+                To build dreams one home at a time by delivering exceptional craftsmanship and 
+                innovative design that combines luxury with affordability to enhance the lives of Kenyans.
               </p>
               <h2 className="text-4xl font-bold mb-6">Our Vision</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">

@@ -6,7 +6,7 @@ import { Textarea } from "@/react-app/components/ui/textarea";
 import { Label } from "@/react-app/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/react-app/components/ui/select";
 import { Badge } from "@/react-app/components/ui/badge";
-import { MessageCircle, Mail, Phone, MapPin, Home, Building2, Trees, Wrench, ArrowRight } from "lucide-react";
+import { MessageCircle, Mail, Phone, MapPin, Home, Building2, Wrench, ArrowRight } from "lucide-react";
 
 export default function Engage() {
   const [selectedService, setSelectedService] = useState("");
@@ -14,39 +14,27 @@ export default function Engage() {
   const services = [
     {
       icon: Building2,
-      title: "Construction & Civil Works",
-      description: "End-to-end building solutions from project concept to execution",
-      features: ["Residential & Commercial", "Mixed-use developments", "Renovations & Fit-outs", "Drainage & Infrastructure"]
+      title: "Construction",
+      description: "End-to-end building solutions from architectural plans to final quality control",
+      features: ["Residential & Commercial", "Mixed-use developments", "Renovations & fit-outs", "Statutory Compliance"]
+    },
+    {
+      icon: Wrench,
+      title: "Sustainable Energy",
+      description: "Specialized design and installation of off-grid and hybrid solar systems",
+      features: ["Solar PV Installation", "Off-grid Systems", "Hybrid Solar Solutions", "Energy Consultations"]
+    },
+    {
+      icon: Wrench,
+      title: "Technical Services",
+      description: "Expert HVAC, plumbing, biodigesters, and metal fabrication",
+      features: ["HVAC & Plumbing", "Biodigesters", "Metal Fabrication", "Welding & Glazing"]
     },
     {
       icon: Home,
       title: "Real Estate Management",
       description: "Full-cycle property management to protect and maximize asset value",
       features: ["Operations & Inspections", "Preventive Maintenance", "Lease Administration", "Statutory Compliance"]
-    },
-    {
-      icon: Wrench,
-      title: "Electrical & Solar",
-      description: "Professional power systems and eco-friendly solar solutions",
-      features: ["Professional Wiring", "Lighting Design", "Off-grid Installations", "Hybrid Solar Systems"]
-    },
-    {
-      icon: Wrench,
-      title: "Plumbing & HVAC",
-      description: "Installation and maintenance of water and climate control systems",
-      features: ["Water Systems", "Biodigesters", "AC & Ventilation", "Heating Solutions"]
-    },
-    {
-      icon: Building2,
-      title: "Glazing & Welding",
-      description: "Glass panel installations and custom metal fabrication",
-      features: ["Glass Panels", "Handrails & Gates", "Metal Fixtures", "Custom Fabrication"]
-    },
-    {
-      icon: Trees,
-      title: "Landscaping",
-      description: "Functional and aesthetic outdoor environment design",
-      features: ["Private Gardens", "Commercial Courtyards", "Design & Implementation", "Outdoor Environments"]
     },
     {
       icon: Building2,
