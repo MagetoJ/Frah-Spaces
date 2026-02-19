@@ -110,14 +110,16 @@ export default function Work() {
 
       {/* Portfolio Section */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Tabs defaultValue="all" className="mb-12">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-4">
-              <TabsTrigger value="all" onClick={() => setSelectedCategory("all")}>All</TabsTrigger>
-              <TabsTrigger value="residential" onClick={() => setSelectedCategory("residential")}>Residential</TabsTrigger>
-              <TabsTrigger value="commercial" onClick={() => setSelectedCategory("commercial")}>Commercial</TabsTrigger>
-              <TabsTrigger value="landscaping" onClick={() => setSelectedCategory("landscaping")}>Landscaping</TabsTrigger>
-            </TabsList>
+            <div className="flex justify-center">
+              <TabsList className="grid w-full max-w-lg grid-cols-2 md:grid-cols-4 h-auto">
+                <TabsTrigger value="all" onClick={() => setSelectedCategory("all")} className="py-2">All Projects</TabsTrigger>
+                <TabsTrigger value="residential" onClick={() => setSelectedCategory("residential")} className="py-2">Residential</TabsTrigger>
+                <TabsTrigger value="commercial" onClick={() => setSelectedCategory("commercial")} className="py-2">Commercial</TabsTrigger>
+                <TabsTrigger value="landscaping" onClick={() => setSelectedCategory("landscaping")} className="py-2">Landscaping</TabsTrigger>
+              </TabsList>
+            </div>
           </Tabs>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -219,13 +221,13 @@ export default function Work() {
             </Card>
             <Card>
               <CardContent className="p-6 text-center">
-                <div className="text-5xl font-bold text-accent mb-2">20+</div>
+                <div className="text-5xl font-bold text-primary mb-2">20+</div>
                 <div className="text-muted-foreground">Kenyan Counties</div>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-6 text-center">
-                <div className="text-5xl font-bold text-secondary mb-2">10+</div>
+                <div className="text-5xl font-bold text-primary mb-2">10+</div>
                 <div className="text-muted-foreground">Years Experience</div>
               </CardContent>
             </Card>

@@ -4,9 +4,9 @@ import { Building2, Award, Users, Target } from "lucide-react";
 
 export default function About() {
   const timeline = [
-    { year: "Founded", event: "Our Inception", description: "Frah Spaces was founded with a mission to build dreams through luxury and affordable housing." },
+    { year: "2020", event: "Our Inception", description: "Frah Spaces was established with a mission to build dreams through luxury and affordable housing." },
     { year: "Growth", event: "National Reach", description: "Successfully expanded operations across more than 20 Kenyan counties." },
-    { year: "Today", event: "70+ Projects Completed", description: "A decade of excellence in construction, renovations, and property management." },
+    { year: "Today", event: "70+ Projects Completed", description: "Excellence in construction, renovations, and property management delivered with precision." },
   ];
 
   const team = [
@@ -33,7 +33,7 @@ export default function About() {
               <span className="block text-primary">Across Kenya</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Frah Spaces Limited is a multi-disciplinary Kenyan firm specializing in construction, 
+              Established in 2020, Frah Spaces Limited is a multi-disciplinary Kenyan firm specializing in construction, 
               real estate management, and specialized technical services. Managed by seasoned professionals 
               with over a decade of experience, we provide modern, high-quality, and affordable homes.
             </p>

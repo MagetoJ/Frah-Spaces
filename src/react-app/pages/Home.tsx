@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center">
+      <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-center pt-20">
         <div 
           className="absolute inset-0 bg-black/40"
           style={{
@@ -18,32 +18,31 @@ export default function Home() {
           }}
         />
         
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Sparkles className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-sm font-medium mb-4 sm:mb-6">
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
               NCA Certified Construction Firm
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-white">
               Building Your
               <span className="block text-primary-foreground">Dream Spaces</span>
             </h1>
             
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              We provide modern, high-quality, and affordable homes through exceptional craftsmanship and innovative design. 
-              Building dreams one home at a time across Kenya.
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed">
+              Established in 2020, we provide modern, high-quality, and affordable homes through exceptional craftsmanship and innovative design.
             </p>
             
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link to="/work">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8">
                   View Our Work
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                 </Button>
               </Link>
               <Link to="/engage">
-                <Button size="lg" variant="outline" className="text-lg px-8 bg-white/10 hover:bg-white/20 text-white border-white/40">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 bg-white/10 hover:bg-white/20 text-white border-white/40">
                   Get Started
                 </Button>
               </Link>
@@ -65,7 +64,7 @@ export default function Home() {
                 <h2 className="text-2xl font-bold">About Us</h2>
               </div>
               <p className="text-muted-foreground mb-6 flex-grow">
-                Frah Spaces is a multi-disciplinary firm specializing in construction, real estate management, and specialized technical services. With over a decade of experience, we provide modern, high-quality, and affordable homes.
+                Established in 2020, Frah Spaces is a multi-disciplinary firm specializing in construction, real estate management, and technical services. Managed by a team with over a decade of industry experience.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-2 text-sm font-medium">
@@ -165,11 +164,11 @@ export default function Home() {
               <div className="text-muted-foreground">Projects Completed</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-accent mb-2">10+</div>
+              <div className="text-5xl font-bold text-primary mb-2">10+</div>
               <div className="text-muted-foreground">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-secondary mb-2">20+</div>
+              <div className="text-5xl font-bold text-primary mb-2">20+</div>
               <div className="text-muted-foreground">Kenyan Counties</div>
             </div>
             <div className="text-center">

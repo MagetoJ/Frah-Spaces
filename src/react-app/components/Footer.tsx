@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Building2 className="w-5 h-5 text-primary" />
-              <h3 className="font-bold">FRAH ENGINEERING</h3>
+              <h3 className="font-bold">FRAH SPACES</h3>
             </div>
             <p className="text-sm text-muted-foreground">
               Building dreams through modern design, high-quality construction, and innovative real estate management across Kenya.
@@ -41,7 +41,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="w-4 h-4" />
-                <span>admin@frahengineering.com</span>
+                <span>admin@frahspaces.com</span>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Phone className="w-4 h-4" />
@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Frah Spaces. All rights reserved.</p>
+          <p>Established 2020 | &copy; {new Date().getFullYear()} Frah Spaces. All rights reserved.</p>
         </div>
       </div>
     </footer>

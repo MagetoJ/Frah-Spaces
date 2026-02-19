@@ -94,7 +94,7 @@ export default function Engage() {
                       <p className="text-muted-foreground">{service.description}</p>
                     </div>
                   </div>
-                  <ul className="space-y-2 ml-16">
+                  <ul className="space-y-2 ml-0 sm:ml-16">
                     {service.features.map((feature, fIdx) => (
                       <li key={fIdx} className="flex items-center gap-2 text-sm text-muted-foreground">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -196,8 +196,8 @@ export default function Engage() {
                     <Mail className="w-5 h-5 text-primary mt-0.5" />
                     <div>
                       <div className="font-medium">Email</div>
-                      <a href="mailto:admin@frahengineering.com" className="text-muted-foreground hover:text-primary">
-                        admin@frahengineering.com
+                      <a href="mailto:admin@frahspaces.com" className="text-muted-foreground hover:text-primary">
+                        admin@frahspaces.com
                       </a>
                     </div>
                   </div>
