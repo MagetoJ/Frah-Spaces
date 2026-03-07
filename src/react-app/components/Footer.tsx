@@ -1,4 +1,4 @@
-import { Building2, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 
 export default function Footer() {
@@ -7,8 +7,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Building2 className="w-6 h-6 text-primary" />
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg overflow-hidden bg-white border border-border">
+                <img 
+                  src="/Frah Spaces Logo resized.jpg" 
+                  alt="Frah Spaces Logo" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <h3 className="text-lg font-bold tracking-tight">FRAH SPACES</h3>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">

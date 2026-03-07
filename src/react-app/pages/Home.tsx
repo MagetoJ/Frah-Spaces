@@ -6,15 +6,23 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-center pt-20">
+      <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-center pt-20 overflow-hidden">
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          poster="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80"
+        >
+          <source src="/team.mp4" type="video/mp4" />
+        </video>
+        
         <div 
-          className="absolute inset-0 bg-black/40"
+          className="absolute inset-0 bg-black/50 z-[1]"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
             backgroundBlendMode: 'overlay',
-            opacity: 0.8
           }}
         />
         

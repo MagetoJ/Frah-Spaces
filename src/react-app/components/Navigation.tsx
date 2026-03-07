@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
-import { Building2, Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -30,6 +30,7 @@ export default function Navigation() {
       label: "Products",
       dropdown: [
         { label: "Building Materials", path: "/products" },
+        { label: "Flooring & Tiles", path: "/products" },
         { label: "Interiors", path: "/products" },
         { label: "Outdoor & Vision", path: "/products" }
       ]
@@ -47,10 +48,10 @@ export default function Navigation() {
       path: "/designs", 
       label: "Designs",
       dropdown: [
+        { label: "Flooring", path: "/designs" },
         { label: "Kitchens", path: "/designs" },
         { label: "Living Spaces", path: "/designs" },
-        { label: "Commercial Fit-outs", path: "/designs" },
-        { label: "Flooring", path: "/designs" }
+        { label: "Commercial Fit-outs", path: "/designs" }
       ]
     },
     { path: "/work", label: "Past Work" },
@@ -63,9 +64,13 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
-            <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-              <Building2 className="w-6 h-6 text-primary" />
+          <Link to="/" className="flex items-center gap-3 group" onClick={() => setIsOpen(false)}>
+            <div className="w-12 h-12 rounded-lg overflow-hidden bg-white shadow-sm border border-border group-hover:border-primary/50 transition-all">
+              <img 
+                src="/Frah Spaces Logo resized.jpg" 
+                alt="Frah Spaces Logo" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <h1 className="text-lg sm:text-xl font-bold tracking-tight">FRAH SPACES</h1>

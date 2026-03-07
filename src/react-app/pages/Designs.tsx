@@ -36,10 +36,10 @@ export default function Designs() {
     {
       title: "Flooring",
       icon: Layers,
-      description: "Premium tiling and floor finish concepts for elegant and durable interior surfaces.",
+      description: "Creative flooring patterns and tile layouts for high-traffic and luxury spaces.",
       projects: [
-        { name: "Modern Ceramic Tiling", image: "/tiles 1.jpg", type: "Interior Design" },
-        { name: "Luxury Porcelain Layout", image: "/tiles 2.jpg", type: "3D Rendering" }
+        { name: "Luxury Porcelain Tiles", image: "/tiles 2.jpg", type: "3D Rendering" },
+        { name: "Modern Ceramic Layout", image: "/tiles 1.jpg", type: "Floor Plan" }
       ]
     }
   ];
