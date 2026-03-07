@@ -49,7 +49,8 @@ export default function Navigation() {
       dropdown: [
         { label: "Kitchens", path: "/designs" },
         { label: "Living Spaces", path: "/designs" },
-        { label: "Commercial Fit-outs", path: "/designs" }
+        { label: "Commercial Fit-outs", path: "/designs" },
+        { label: "Flooring", path: "/designs" }
       ]
     },
     { path: "/work", label: "Past Work" },

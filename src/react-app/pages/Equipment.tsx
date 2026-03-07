@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
@@ -6,8 +5,6 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { Truck, Drill, Ruler, Shield, Info, Settings, Hammer, Mail, MessageCircle, Phone } from "lucide-react";
 
 export default function Equipment() {
-  const [selectedItem, setSelectedItem] = useState<any>(null);
-
   const equipmentList = [
     {
       category: "Heavy Machinery",
@@ -156,7 +153,6 @@ export default function Equipment() {
                             <Button 
                               variant="ghost" 
                               className="w-full gap-2 text-primary hover:text-primary hover:bg-primary/5"
-                              onClick={() => setSelectedItem(item)}
                             >
                               <Info className="w-4 h-4" />
                               Technical Specifications
