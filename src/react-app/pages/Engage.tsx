@@ -207,7 +207,7 @@ export default function Engage() {
                     <div>
                       <div className="font-medium">Phone</div>
                       <a href="tel:+254711441245" className="text-muted-foreground hover:text-primary">
-                        +254 711 44 12 45
+                        254 711 441245
                       </a>
                     </div>
                   </div>
