@@ -1,56 +1,61 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/react-app/components/ui/button";
 import { ArrowRight, CheckCircle2, Sparkles, Users, Award, Building2, MessageCircle } from "lucide-react";
 import { Link } from "react-router";
+import { Badge } from "@/react-app/components/ui/badge";
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80",
+    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-center pt-20 overflow-hidden">
-        {/* Background Video */}
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline 
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          poster="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80"
-        >
-          <source src="/team.mp4" type="video/mp4" />
-        </video>
-        
-        <div 
-          className="absolute inset-0 bg-black/50 z-[1]"
-          style={{
-            backgroundBlendMode: 'overlay',
-          }}
-        />
+      <section className="relative min-h-[70vh] md:min-h-[90vh] flex items-center pt-20 overflow-hidden">
+        {/* Carousel Background */}
+        {slides.map((slide, index) => (
+          <div 
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img 
+              src={slide} 
+              alt={`Slide ${index}`}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/40" />
+          </div>
+        ))}
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-sm font-medium mb-4 sm:mb-6">
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
-              NCA Certified Construction Firm
-            </div>
-            
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-white">
-              Building Your
-              <span className="block text-primary-foreground">Dream Spaces</span>
+          <div className="max-w-4xl">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight text-white drop-shadow-sm">
+              Building Dreams from
+              <span className="block text-primary-foreground">Foundation to Finish</span>
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed">
-              Established in 2020, we provide modern, high-quality, and affordable homes through exceptional craftsmanship and innovative design.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/work">
-                <Button size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8">
+                <Button size="lg" className="w-full sm:w-auto text-lg px-10 h-14 rounded-full">
                   View Our Work
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+                  <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link to="/engage">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 bg-white/10 hover:bg-white/20 text-white border-white/40">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-10 h-14 rounded-full bg-white/10 hover:bg-white/20 text-white border-white/40 backdrop-blur-sm">
                   Get Started
                 </Button>
               </Link>
@@ -182,6 +187,42 @@ export default function Home() {
             <div className="text-center">
               <div className="text-5xl font-bold text-primary mb-2">100%</div>
               <div className="text-muted-foreground">Quality Commitment</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Professional Trust & Philosophy - Inspired by Triad */}
+      <section className="py-24 bg-white border-y border-border">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <Badge variant="outline" className="mb-4 text-primary border-primary">Our Professional Standards</Badge>
+            <h2 className="text-4xl font-bold mb-6 text-foreground">Innovative Solutions in the Built Environment</h2>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Guided by excellence and ethical professionalism, Frah Spaces delivers 
+              integrated solutions from concept design to construction management. 
+              We aim to create inspired destinations that combine international standards 
+              with local flair.
+            </p>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <h4 className="font-bold text-foreground">Project Management</h4>
+                <p className="text-sm text-muted-foreground text-pretty">Meticulous planning, budget management, and quality benchmarks for every build stage.</p>
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-bold text-foreground">Design Excellence</h4>
+                <p className="text-sm text-muted-foreground text-pretty">Utilizing advanced 3D modeling and sustainable practices to bring future spaces to life.</p>
+              </div>
+            </div>
+          </div>
+          <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" 
+              alt="Design Studio" 
+              className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+              <p className="text-white font-medium">NCA Certified Professional Standards</p>
             </div>
           </div>
         </div>

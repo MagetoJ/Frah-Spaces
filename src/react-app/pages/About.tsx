@@ -29,13 +29,14 @@ export default function About() {
           <div className="max-w-3xl">
             <Badge className="mb-4">Our Story</Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Building Dreams
-              <span className="block text-primary">Across Kenya</span>
+              Innovative Design,
+              <span className="block text-primary">Masterful Construction</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Established in 2020, Frah Spaces Limited is a multi-disciplinary Kenyan firm specializing in construction, 
-              real estate management, and specialized technical services. Managed by seasoned professionals 
-              with over a decade of experience, we provide modern, high-quality, and affordable homes.
+              Frah Spaces Limited is a premier high-end architecture and construction firm. 
+              We provide a seamless, end-to-end experience—from initial consultancy and 
+              architectural design to masterful construction and final outdoor styling. 
+              Our mission is to bring your vision to life with precision and luxury.
             </p>
           </div>
         </div>
@@ -123,13 +124,7 @@ export default function About() {
           </p>
           <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {team.map((member, idx) => (
-              <Card key={idx} className="overflow-hidden group hover:shadow-xl transition-shadow">
-                <div 
-                  className="h-80 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80')`
-                  }}
-                />
+              <Card key={idx} className="overflow-hidden group hover:shadow-xl transition-shadow border-2 hover:border-primary/20">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
                   <p className="text-lg text-primary mb-3">{member.role}</p>

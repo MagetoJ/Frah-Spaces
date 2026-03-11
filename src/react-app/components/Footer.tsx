@@ -49,13 +49,32 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-foreground uppercase tracking-wider text-xs">Solutions</h4>
+            <h4 className="font-bold mb-6 text-foreground uppercase tracking-wider text-xs">Core Solutions</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2"><ArrowRight className="w-3 h-3 text-primary" /> Construction & Civil Works</li>
-              <li className="flex items-center gap-2"><ArrowRight className="w-3 h-3 text-primary" /> Real Estate Management</li>
-              <li className="flex items-center gap-2"><ArrowRight className="w-3 h-3 text-primary" /> Interior Gypsum & Flooring</li>
-              <li className="flex items-center gap-2"><ArrowRight className="w-3 h-3 text-primary" /> Sustainable Solar Energy</li>
-              <li className="flex items-center gap-2"><ArrowRight className="w-3 h-3 text-primary" /> Architectural 3D Designs</li>
+              <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
+                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
+                Construction & Civil Works
+              </li>
+              <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
+                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
+                Real Estate Management
+              </li>
+              <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
+                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
+                Interior Gypsum & Flooring
+              </li>
+              <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
+                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
+                Architectural 3D Designs
+              </li>
+              <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
+                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
+                Sustainable Solar & HVAC
+              </li>
+              <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
+                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
+                Facility Care & Maintenance
+              </li>
             </ul>
           </div>
 

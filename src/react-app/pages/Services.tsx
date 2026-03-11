@@ -1,33 +1,45 @@
 import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
-import { Building2, Home, Shield, Mail, MessageCircle, Phone, Hammer, Layers } from "lucide-react";
+import { Building2, Shield, Mail, MessageCircle, Phone, Hammer, Ruler, Briefcase, Layout, Globe } from "lucide-react";
 
 export default function Services() {
   const serviceCategories = [
     {
+      icon: Ruler,
+      title: "Architectural Designs",
+      description: "Our visionary architectural team transforms concepts into structural masterpieces, blending aesthetic elegance with functional brilliance.",
+      options: ["Conceptual Design", "Detailed Blueprints", "3D Visualization", "Structural Engineering"]
+    },
+    {
       icon: Building2,
       title: "Construction",
-      description: "End-to-end building solutions from architectural plans to final quality control.",
-      options: ["Residential & Commercial", "Mixed-use developments", "Renovations & fit-outs", "Statutory Compliance"]
+      description: "Expert building solutions executed with precision. We oversee every detail of the build to ensure the highest standards of quality and safety.",
+      options: ["Residential Development", "Commercial Builds", "Renovations & Fit-outs", "Quality Control & Safety"]
     },
     {
-      icon: Home,
-      title: "Real Estate Management",
-      description: "Full-cycle property management to protect and maximize asset value.",
-      options: ["Operations & Inspections", "Preventive Maintenance", "Lease Administration", "Statutory Compliance"]
+      icon: Layout,
+      title: "Interior Design",
+      description: "Creating bespoke interior environments that reflect your personality. We focus on luxury, comfort, and sophisticated material selection.",
+      options: ["Space Planning", "Gypsum & Finishes", "Custom Cabinetry", "Furniture Selection"]
     },
     {
-      icon: Layers,
-      title: "Interiors (Gypsum & Flooring)",
-      description: "Specialized interior finishes including professional gypsum work and premium flooring.",
-      options: ["Gypsum Ceilings & Partitions", "Premium Tiling", "Hardwood & Laminate Flooring", "Wall Finishes & Painting"]
+      icon: Briefcase,
+      title: "Project Management",
+      description: "Seamless coordination of every project phase. We manage timelines, budgets, and contractors to deliver a stress-free client experience.",
+      options: ["Timeline Management", "Budget Optimization", "Contractor Oversight", "Risk Mitigation"]
     },
     {
       icon: Shield,
-      title: "Facility Care",
-      description: "Professional maintenance, office clean-up, and restoration services.",
-      options: ["Office Clean-up", "Regular Maintenance", "Furniture Restoration", "General Facility Care"]
+      title: "Consultancy",
+      description: "Expert advice at every step. We provide strategic guidance on land use, regulatory compliance, and investment feasibility.",
+      options: ["Feasibility Studies", "Statutory Approvals", "Material Selection", "Cost Estimation"]
+    },
+    {
+      icon: Globe,
+      title: "Outdoor Design",
+      description: "Extending luxury beyond your four walls. We design and implement stunning landscapes and outdoor living spaces.",
+      options: ["Landscaping", "Outdoor Paving", "Lighting Design", "Garden Elements"]
     }
   ];
 

@@ -41,6 +41,21 @@ export default function Products() {
               image: "/engineered 1.jpeg"
             }
           ]
+        },
+        {
+          title: "Roofing & Walling",
+          items: [
+            { 
+              name: "Premium Roofing Sheets", 
+              specs: "Durable metal and stone-coated roofing solutions",
+              image: "https://images.unsplash.com/photo-1632759162353-0801d936173b?w=800&q=80"
+            },
+            { 
+              name: "Structural Walling", 
+              specs: "High-quality stone and concrete walling units",
+              image: "https://images.unsplash.com/photo-1590069230002-70cc83815b41?w=800&q=80"
+            }
+          ]
         }
       ]
     },
@@ -147,12 +162,14 @@ export default function Products() {
           <div className="max-w-3xl">
             <Badge className="mb-4">Product Catalog</Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Quality Solutions
-              <span className="block text-primary">For Every Project</span>
+              Premium Products
+              <span className="block text-primary">From Foundation to Finish</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Explore our curated selection of building materials, interior finishes, 
-              and outdoor design solutions for the modern Kenyan environment.
+              We source only the highest quality components for our builds. 
+              From durable Walling and Roofing materials to luxury Flooring and 
+              bespoke Interior/Outdoor design elements, we ensure every detail 
+              exudes excellence.
             </p>
           </div>
         </div>

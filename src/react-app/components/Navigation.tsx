@@ -19,20 +19,22 @@ export default function Navigation() {
       path: "/services", 
       label: "Services",
       dropdown: [
-        { label: "Construction", path: "/services" },
-        { label: "Real Estate Management", path: "/services" },
-        { label: "Interiors", path: "/services" },
-        { label: "Facility Care", path: "/services" }
+        { label: "Architectural Designs", path: "/services/architectural-designs" },
+        { label: "Construction", path: "/services/construction" },
+        { label: "Interior Design", path: "/services/interior-design" },
+        { label: "Project Management", path: "/services/project-management" },
+        { label: "Consultancy", path: "/services/consultancy" }
       ]
     },
     { 
       path: "/products", 
       label: "Products",
       dropdown: [
-        { label: "Building Materials", path: "/products" },
-        { label: "Flooring & Tiles", path: "/products" },
-        { label: "Interiors", path: "/products" },
-        { label: "Outdoor & Vision", path: "/products" }
+        { label: "Walling & Roofing", path: "/products/walling-roofing" },
+        { label: "Flooring", path: "/products/flooring" },
+        { label: "Windows & Doors", path: "/products/windows-doors" },
+        { label: "Interior Finishes", path: "/products/interior-finishes" },
+        { label: "Outdoor & Landscaping", path: "/products/outdoor-landscaping" }
       ]
     },
     { 
@@ -55,17 +57,16 @@ export default function Navigation() {
       ]
     },
     { path: "/work", label: "Past Work" },
-    { path: "/engage", label: "Engage" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group" onClick={() => setIsOpen(false)}>
-            <div className="w-12 h-12 rounded-lg overflow-hidden bg-white shadow-sm border border-border group-hover:border-primary/50 transition-all">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden bg-white shadow-sm border border-border group-hover:border-primary/50 transition-all">
               <img 
                 src="/Frah Spaces Logo resized.jpg" 
                 alt="Frah Spaces Logo" 
@@ -73,13 +74,13 @@ export default function Navigation() {
               />
             </div>
             <div>
-              <h1 className="text-lg sm:text-xl font-bold tracking-tight">FRAH SPACES</h1>
-              <p className="text-[10px] sm:text-xs text-muted-foreground whitespace-nowrap">Construction & Real Estate Management</p>
+              <h1 className="text-sm sm:text-xl font-bold tracking-tight">FRAH SPACES</h1>
+              <p className="hidden sm:block text-[10px] sm:text-xs text-muted-foreground whitespace-nowrap">Construction & Real Estate Management</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          <div className="hidden md:flex items-center gap-4 lg:gap-6">
             {navLinks.map((link) => (
               link.dropdown ? (
                 <DropdownMenu key={link.path}>
@@ -113,15 +114,28 @@ export default function Navigation() {
                 </Link>
               )
             ))}
+            
+            <Link to="/engage">
+              <button className="bg-primary text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+                Engage Us
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2 text-foreground/70 hover:text-primary transition-colors"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-3 md:hidden">
+            <Link to="/engage">
+              <button className="bg-primary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg shadow-primary/20">
+                Engage
+              </button>
+            </Link>
+            <button 
+              className="p-2 text-foreground/70 hover:text-primary transition-colors"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
