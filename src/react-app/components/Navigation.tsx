@@ -12,7 +12,6 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/react-app/components/ui/dialog";
 import { MaterialCalculator } from "./MaterialCalculator";
 
@@ -45,7 +44,11 @@ export default function Navigation() {
         { label: "Windows & Doors", path: "/products/windows-doors" },
         { label: "Interior Finishes", path: "/products/interior-finishes" },
         { label: "Outdoor & Landscaping", path: "/products/outdoor-landscaping" },
-        { label: "Material Calculator", action: () => setIsCalculatorOpen(true) }
+        { 
+          label: "Material Calculator", 
+          type: "calculator",
+          action: () => setIsCalculatorOpen(true) 
+        }
       ]
     },
     { 
@@ -135,14 +138,17 @@ export default function Navigation() {
               )
             ))}
 
-            {/* Calculator Button */}
-            <button 
-              onClick={() => setIsCalculatorOpen(true)}
-              className="flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary outline-none text-foreground/70"
-            >
-              <Calculator className="w-4 h-4 mr-1" />
-              Calculator
-            </button>
+            {/* Calculator Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary outline-none text-foreground/70">
+                <Calculator className="w-4 h-4 mr-1" />
+                Calculator
+                <ChevronDown className="w-3 h-3 ml-0.5" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-[350px] p-0 border-none bg-transparent shadow-2xl">
+                <MaterialCalculator />
+              </DropdownMenuContent>
+            </DropdownMenu>
             
             <Link to="/engage">
               <button className="bg-primary text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">

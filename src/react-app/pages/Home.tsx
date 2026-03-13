@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/react-app/components/ui/button";
-import { ArrowRight, CheckCircle2, Sparkles, Users, Award, Building2, MessageCircle, PencilRuler, Palette, ClipboardList, Calculator } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles, Award, Building2, PencilRuler, Palette, ClipboardList, Calculator } from "lucide-react";
 import { Link } from "react-router";
 import { Badge } from "@/react-app/components/ui/badge";
 import { MaterialCalculator } from "@/react-app/components/MaterialCalculator";
-import { Card, CardContent } from "@/react-app/components/ui/card";
+import { Card } from "@/react-app/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/react-app/components/ui/tabs";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
+    "/Siri%20A%20frame%20house%201.heic",
     "/Siri%20A%20frame%20house%202.png",
     "/Siri%20A%20frame%20house%203.png",
+    "/Siri%20A%20frame%20house%204.heic",
+    "/Liuwa%20Gardens%201.jpg",
     "/nyambura%201.png"
   ];
 

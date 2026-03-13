@@ -3,7 +3,7 @@ import { projects } from "../data/projects";
 import { ArrowLeft, MapPin, CheckCircle, Calendar, User, ArrowRight } from "lucide-react";
 import { Button } from "@/react-app/components/ui/button";
 import { Badge } from "@/react-app/components/ui/badge";
-import { Card, CardContent } from "@/react-app/components/ui/card";
+import { Card } from "@/react-app/components/ui/card";
 import { useEffect } from "react";
 
 export default function ProjectDetail() {
@@ -110,16 +110,27 @@ export default function ProjectDetail() {
 
         {/* Visual Gallery */}
         <div className="mb-24">
-          <h3 className="text-2xl font-bold mb-8">Project Gallery</h3>
-          <div className="columns-1 md:columns-2 gap-6 space-y-6">
+          <div className="flex items-center justify-between mb-8">
+            <h3 className="text-2xl font-bold">Project Gallery</h3>
+            <Badge variant="outline" className="text-primary border-primary">
+              {project.images.length} High-Res Images
+            </Badge>
+          </div>
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
             {project.images.map((img, idx) => (
-              <div key={idx} className="relative group overflow-hidden rounded-3xl shadow-lg border border-border">
+              <div 
+                key={idx} 
+                className="relative group overflow-hidden rounded-3xl shadow-lg border border-border transition-all duration-500 hover:shadow-2xl hover:border-primary/30"
+              >
                 <img 
                   src={img} 
                   alt={`${project.title} view ${idx}`} 
-                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  className="w-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                  <p className="text-white text-sm font-medium">View Full Image</p>
+                </div>
               </div>
             ))}
           </div>
