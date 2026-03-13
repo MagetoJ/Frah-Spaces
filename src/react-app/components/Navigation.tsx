@@ -1,16 +1,26 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Calculator } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/react-app/components/ui/dropdown-menu";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/react-app/components/ui/dialog";
+import { MaterialCalculator } from "./MaterialCalculator";
 
 export default function Navigation() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
 
   const navLinks = [
     { path: "/", label: "Home" },
@@ -34,7 +44,8 @@ export default function Navigation() {
         { label: "Flooring", path: "/products/flooring" },
         { label: "Windows & Doors", path: "/products/windows-doors" },
         { label: "Interior Finishes", path: "/products/interior-finishes" },
-        { label: "Outdoor & Landscaping", path: "/products/outdoor-landscaping" }
+        { label: "Outdoor & Landscaping", path: "/products/outdoor-landscaping" },
+        { label: "Material Calculator", action: () => setIsCalculatorOpen(true) }
       ]
     },
     { 
@@ -93,9 +104,18 @@ export default function Navigation() {
                   <DropdownMenuContent align="start" className="w-56">
                     {link.dropdown.map((item, idx) => (
                       <DropdownMenuItem key={idx} asChild>
-                        <Link to={item.path} className="w-full">
-                          {item.label}
-                        </Link>
+                        {item.path ? (
+                          <Link to={item.path} className="w-full">
+                            {item.label}
+                          </Link>
+                        ) : (
+                          <button 
+                            onClick={item.action}
+                            className="w-full text-left"
+                          >
+                            {item.label}
+                          </button>
+                        )}
                       </DropdownMenuItem>
                     ))}
                   </DropdownMenuContent>
@@ -114,6 +134,15 @@ export default function Navigation() {
                 </Link>
               )
             ))}
+
+            {/* Calculator Button */}
+            <button 
+              onClick={() => setIsCalculatorOpen(true)}
+              className="flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary outline-none text-foreground/70"
+            >
+              <Calculator className="w-4 h-4 mr-1" />
+              Calculator
+            </button>
             
             <Link to="/engage">
               <button className="bg-primary text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
@@ -140,37 +169,86 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border mt-4 flex flex-col gap-2 animate-in slide-in-from-top duration-300">
+          <div className="md:hidden py-4 border-t border-border mt-4 flex flex-col gap-1 animate-in slide-in-from-top duration-300 max-h-[calc(100vh-80px)] overflow-y-auto pr-2 custom-scrollbar">
             {navLinks.map((link) => (
-              <div key={link.path} className="flex flex-col gap-2">
-                <Link
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`text-base font-semibold py-2 transition-colors hover:text-primary ${
-                    isActive(link.path) ? "text-primary" : "text-foreground/70"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-                {link.dropdown && (
-                  <div className="pl-4 flex flex-col gap-2 border-l border-border ml-2">
+              <div key={link.path} className="flex flex-col">
+                <div className="flex items-center justify-between">
+                  <Link
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-base font-semibold py-3 transition-colors hover:text-primary flex-1 ${
+                      isActive(link.path) ? "text-primary" : "text-foreground/70"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                  {link.dropdown && (
+                    <button 
+                      onClick={() => setActiveMobileDropdown(activeMobileDropdown === link.label ? null : link.label)}
+                      className={`p-3 text-muted-foreground transition-transform duration-200 ${
+                        activeMobileDropdown === link.label ? "rotate-180 text-primary" : ""
+                      }`}
+                    >
+                      <ChevronDown className="w-5 h-5" />
+                    </button>
+                  )}
+                </div>
+                {link.dropdown && activeMobileDropdown === link.label && (
+                  <div className="pl-4 flex flex-col gap-1 border-l-2 border-primary/20 ml-2 mb-2 animate-in slide-in-from-top-2 duration-200">
                     {link.dropdown.map((item, idx) => (
-                      <Link
-                        key={idx}
-                        to={item.path}
-                        onClick={() => setIsOpen(false)}
-                        className="text-sm text-muted-foreground hover:text-primary py-1"
-                      >
-                        {item.label}
-                      </Link>
+                      item.path ? (
+                        <Link
+                          key={idx}
+                          to={item.path}
+                          onClick={() => setIsOpen(false)}
+                          className={`text-sm py-2.5 transition-colors hover:text-primary border-b border-border/50 last:border-0 ${
+                            location.pathname === item.path ? "text-primary font-medium" : "text-muted-foreground"
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      ) : (
+                        <button
+                          key={idx}
+                          onClick={() => {
+                            item.action?.();
+                            setIsOpen(false);
+                          }}
+                          className="text-sm py-2.5 text-left transition-colors hover:text-primary border-b border-border/50 last:border-0 text-muted-foreground"
+                        >
+                          {item.label}
+                        </button>
+                      )
                     ))}
                   </div>
                 )}
               </div>
             ))}
+
+            {/* Mobile Calculator */}
+            <button 
+              onClick={() => {
+                setIsCalculatorOpen(true);
+                setIsOpen(false);
+              }}
+              className="text-base font-semibold py-3 transition-colors hover:text-primary flex-1 text-left flex items-center gap-2 text-foreground/70"
+            >
+              <Calculator className="w-5 h-5" />
+              Calculator
+            </button>
           </div>
         )}
       </div>
+
+      {/* Global Calculator Dialog */}
+      <Dialog open={isCalculatorOpen} onOpenChange={setIsCalculatorOpen}>
+        <DialogContent className="max-w-md p-0 overflow-hidden border-none bg-transparent shadow-none">
+          <DialogHeader className="sr-only">
+            <DialogTitle>Material Calculator</DialogTitle>
+          </DialogHeader>
+          <MaterialCalculator onClose={() => setIsCalculatorOpen(false)} />
+        </DialogContent>
+      </Dialog>
     </nav>
   );
 }

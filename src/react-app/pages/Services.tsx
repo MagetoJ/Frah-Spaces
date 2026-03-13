@@ -61,7 +61,7 @@ export default function Services() {
       <section className="relative py-20 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <Badge className="mb-4">Our Expertise</Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6">
             Multi-Disciplinary
             <span className="block text-primary">Service Hub</span>
           </h1>

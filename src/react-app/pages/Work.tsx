@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger } from "@/react-app/components/ui/tabs";
-import { Star, MapPin, Calendar, Play } from "lucide-react";
+import { Star, MapPin, Calendar, Play, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router";
+import { projects } from "../data/projects";
 
 export default function Work() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -20,69 +22,6 @@ export default function Work() {
       thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
       videoUrl: "#"
     }
-  ];
-
-  const projects = [
-    {
-      title: "Siri Africa A-Frame House",
-      category: "residential",
-      location: "Tigoni, Kiambu",
-      year: "2024",
-      description: "An innovative residential project blending contemporary architecture with the lush highlands of Kiambu County.",
-      image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80",
-      testimonial: "A masterpiece of modern design that perfectly complements its natural surroundings.",
-      client: "Siri Africa"
-    },
-    {
-      title: "Hospitality Renovation",
-      category: "commercial",
-      location: "Kitale, Trans Nzoia",
-      year: "2023",
-      description: "Comprehensive expansion of a prominent restaurant, including a new upper floor, grill section, and swimming pool.",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
-      testimonial: "The transformation was incredible. Frah Spaces delivered a world-class facility that our customers love.",
-      client: "Kitale Grill & Swim"
-    },
-    {
-      title: "Luxury Residential",
-      category: "residential",
-      location: "Karen, Nairobi",
-      year: "2024",
-      description: "Design and construction of high-value homes, including a KES 82M luxury villa featuring multiple bedrooms and guest wings.",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-      testimonial: "Exceptional attention to detail in every aspect of our new luxury home.",
-      client: "Private Client"
-    },
-    {
-      title: "Landscaping Portfolio",
-      category: "landscaping",
-      location: "Multiple Counties",
-      year: "2023",
-      description: "Successful transformations of gardens and courtyards across Nairobi, Kiambu, Machakos, and Trans Nzoia.",
-      image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80",
-      testimonial: "Transformed our outdoor spaces into beautiful, functional environments.",
-      client: "Various Clients"
-    },
-    {
-      title: "Civil Works & Drainage",
-      category: "commercial",
-      location: "Machakos County",
-      year: "2022",
-      description: "Implementation of essential drainage systems and paving for a commercial development project.",
-      image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?w=800&q=80",
-      testimonial: "Quality civil works that addressed all our structural concerns effectively.",
-      client: "Industrial Partner"
-    },
-    {
-      title: "Modern Mixed-Use Build",
-      category: "residential",
-      location: "Kiambu Road, Nairobi",
-      year: "2023",
-      description: "New build mixed-use development focusing on affordable but high-quality living spaces.",
-      image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
-      testimonial: "Frah Spaces brought our vision to life with strategic guidance and excellent execution.",
-      client: "Property Investor"
-    },
   ];
 
   const filteredProjects = selectedCategory === "all" 
@@ -123,49 +62,57 @@ export default function Work() {
           </Tabs>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, idx) => (
-              <Card key={idx} className="overflow-hidden group hover:shadow-2xl transition-all duration-300">
-                <div className="relative overflow-hidden">
-                  <div 
-                    className="h-64 bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
-                    style={{ backgroundImage: `url('${project.image}')` }}
-                  />
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-background/90 text-foreground border">
-                      {project.category}
-                    </Badge>
-                  </div>
-                </div>
-                
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                  
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-4 h-4" />
-                      {project.location}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {project.year}
-                    </span>
-                  </div>
-                  
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
-                  
-                  <div className="border-t pt-4">
-                    <div className="flex items-start gap-2 mb-2">
-                      <Star className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                      <p className="text-sm italic text-muted-foreground">
-                        "{project.testimonial}"
-                      </p>
+            {filteredProjects.map((project) => (
+              <Link key={project.id} to={`/work/${project.id}`}>
+                <Card className="overflow-hidden group h-full hover:shadow-2xl transition-all duration-300 border-none bg-muted/20">
+                  <div className="relative overflow-hidden aspect-[4/3]">
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
+                      style={{ backgroundImage: `url('${project.image}')` }}
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-background/90 text-foreground border backdrop-blur-sm">
+                        {project.category}
+                      </Badge>
                     </div>
-                    <p className="text-sm font-medium text-right">— {project.client}</p>
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg">
+                        <ArrowUpRight className="w-6 h-6" />
+                      </div>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
+                  
+                  <CardContent className="p-6">
+                    <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
+                    
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                      <span className="flex items-center gap-1">
+                        <MapPin className="w-4 h-4" />
+                        {project.location}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        {project.year}
+                      </span>
+                    </div>
+                    
+                    <p className="text-muted-foreground mb-6 leading-relaxed line-clamp-3">
+                      {project.description}
+                    </p>
+                    
+                    <div className="border-t pt-4">
+                      <div className="flex items-start gap-2 mb-2">
+                        <Star className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                        <p className="text-sm italic text-muted-foreground line-clamp-2">
+                          "{project.testimonial}"
+                        </p>
+                      </div>
+                      <p className="text-sm font-medium text-right">— {project.client}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>

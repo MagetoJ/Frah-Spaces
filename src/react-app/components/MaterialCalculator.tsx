@@ -3,9 +3,13 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/react-app/components
 import { Input } from "@/react-app/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/react-app/components/ui/select";
 import { Button } from "@/react-app/components/ui/button";
-import { Calculator } from "lucide-react";
+import { Calculator, X } from "lucide-react";
 
-export function MaterialCalculator() {
+interface MaterialCalculatorProps {
+  onClose?: () => void;
+}
+
+export function MaterialCalculator({ onClose }: MaterialCalculatorProps) {
   const [length, setLength] = useState("");
   const [width, setWidth] = useState("");
   const [tileType, setTileType] = useState("60x60");
@@ -30,7 +34,15 @@ export function MaterialCalculator() {
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto border-2 shadow-xl">
+    <Card className="w-full max-w-md mx-auto border-2 shadow-xl relative">
+      {onClose && (
+        <button 
+          onClick={onClose}
+          className="absolute right-4 top-4 p-2 hover:bg-muted rounded-full transition-colors z-10"
+        >
+          <X className="w-4 h-4" />
+        </button>
+      )}
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Calculator className="w-5 h-5 text-primary" />
