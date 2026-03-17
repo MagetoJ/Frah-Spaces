@@ -133,7 +133,7 @@ export default function Equipment() {
             excavation to completion.
           </p>
           <div className="flex flex-wrap gap-4 mt-10">
-            <Button size="lg" className="rounded-full px-8 h-14 text-lg font-bold shadow-xl shadow-primary/20" onClick={handleCall}>
+            <Button size="lg" className="rounded-full px-8 h-14 text-lg font-bold shadow-xl shadow-primary/20" onClick={() => handleCall()}>
               Talk to Logistics
             </Button>
             <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-lg font-bold border-white/20 hover:bg-white/10" onClick={() => window.scrollTo({ top: 800, behavior: 'smooth' })}>

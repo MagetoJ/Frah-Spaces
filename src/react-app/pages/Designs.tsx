@@ -4,6 +4,13 @@ import { Button } from "@/react-app/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/react-app/components/ui/dialog";
 import { Palette, Maximize2, Layout, Home, Building, Layers, Mail, MessageCircle, Phone, FileText, Download } from "lucide-react";
 
+interface Project {
+  name: string;
+  image: string;
+  type: string;
+  link?: string;
+}
+
 export default function Designs() {
   const designCategories = [
     {
@@ -13,7 +20,7 @@ export default function Designs() {
       projects: [
         { name: "Modern Minimalist Kitchen", image: "/design 2.jpg", type: "3D Rendering" },
         { name: "Luxury Island Concept", image: "/design 3.jpg", type: "Floor Plan" }
-      ]
+      ] as Project[]
     },
     {
       title: "Living Spaces",
@@ -22,7 +29,7 @@ export default function Designs() {
       projects: [
         { name: "Open-plan Living Room", image: "/design 4.jpg", type: "3D Rendering" },
         { name: "Master Suite Concept", image: "/design 5.jpg", type: "Interior Design" }
-      ]
+      ] as Project[]
     },
     {
       title: "Commercial Fit-outs",
@@ -31,7 +38,7 @@ export default function Designs() {
       projects: [
         { name: "Modern Co-working Space", image: "/design 6.jpg", type: "3D Rendering" },
         { name: "Retail Boutique Layout", image: "/design 7.jpg", type: "Floor Plan" }
-      ]
+      ] as Project[]
     },
     {
       title: "Flooring",
@@ -40,7 +47,7 @@ export default function Designs() {
       projects: [
         { name: "Luxury Porcelain Tiles", image: "/tiles 2.jpg", type: "3D Rendering" },
         { name: "Modern Ceramic Layout", image: "/tiles 1.jpg", type: "Floor Plan" }
-      ]
+      ] as Project[]
     },
     {
       title: "Architectural Plans",
@@ -50,7 +57,7 @@ export default function Designs() {
         { name: "A-Frame House Plan", image: "/design%201.png", type: "PDF Plan", link: "/A-frame%20house%20plan.pdf" },
         { name: "Flatroom Mansion - Type A", image: "/design%201.png", type: "PDF Plan", link: "/Flatroom%20Mansion%20house%20plan%20-%20type%20A.pdf" },
         { name: "Flatroom Mansion - Type B", image: "/design%201.png", type: "PDF Plan", link: "/Flatroom%20Mansion%20house%20plan%20-%20type%20B.pdf" }
-      ]
+      ] as Project[]
     }
   ];
 
