@@ -56,7 +56,7 @@ export default function Work() {
                 <TabsTrigger value="all" onClick={() => setSelectedCategory("all")} className="py-2">All Projects</TabsTrigger>
                 <TabsTrigger value="residential" onClick={() => setSelectedCategory("residential")} className="py-2">Residential</TabsTrigger>
                 <TabsTrigger value="commercial" onClick={() => setSelectedCategory("commercial")} className="py-2">Commercial</TabsTrigger>
-                <TabsTrigger value="landscaping" onClick={() => setSelectedCategory("landscaping")} className="py-2">Landscaping</TabsTrigger>
+                <TabsTrigger value="hotels" onClick={() => setSelectedCategory("hotels")} className="py-2">Hotels</TabsTrigger>
               </TabsList>
             </div>
           </Tabs>

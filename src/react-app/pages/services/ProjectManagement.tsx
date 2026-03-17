@@ -7,16 +7,16 @@ import { MaterialCalculator } from "@/react-app/components/MaterialCalculator";
 export default function ProjectManagement() {
   const options = ["Timeline Management", "Budget Optimization", "Contractor Oversight", "Risk Mitigation"];
 
-  const handleWhatsApp = () => {
-    window.open(`https://wa.me/254711441245?text=Hi, I'm interested in learning more about your Project Management services.`, "_blank");
+  const handleWhatsApp = (phone = "254721175735") => {
+    window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in learning more about your Project Management services. Could you please provide more information?`, "_blank");
   };
 
   const handleEmail = () => {
     window.location.href = `mailto:admin@frahspaces.com?subject=Inquiry about Project Management services`;
   };
 
-  const handleCall = () => {
-    window.location.href = "tel:+254711441245";
+  const handleCall = (phone = "254721175735") => {
+    window.location.href = `tel:+${phone}`;
   };
 
   return (
@@ -57,19 +57,31 @@ export default function ProjectManagement() {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 pt-6 border-t border-border">
-                <Button onClick={handleEmail} variant="outline" className="flex-1 gap-2">
-                  <Mail className="w-4 h-4" />
-                  Email
-                </Button>
-                <Button onClick={handleWhatsApp} variant="outline" className="flex-1 gap-2">
-                  <MessageCircle className="w-4 h-4" />
-                  WhatsApp
-                </Button>
-                <Button onClick={handleCall} className="flex-1 gap-2">
-                  <Phone className="w-4 h-4" />
-                  Direct Call
-                </Button>
+              <div className="flex flex-col gap-3 pt-6 border-t border-border">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <Button onClick={handleEmail} variant="outline" className="w-full gap-2">
+                    <Mail className="w-4 h-4" />
+                    Email
+                  </Button>
+                  <div className="flex gap-1">
+                    <Button onClick={() => handleWhatsApp("254721175735")} variant="outline" className="flex-[2] gap-2">
+                      <MessageCircle className="w-4 h-4" />
+                      WhatsApp
+                    </Button>
+                    <Button onClick={() => handleWhatsApp("254711441245")} variant="outline" className="flex-1 opacity-70">
+                      Alt
+                    </Button>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <Button onClick={() => handleCall("254721175735")} className="w-full gap-2">
+                    <Phone className="w-4 h-4" />
+                    Direct Call
+                  </Button>
+                  <Button onClick={() => handleCall("254711441245")} variant="outline" className="w-full gap-2 opacity-80">
+                    Alternative Call
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>

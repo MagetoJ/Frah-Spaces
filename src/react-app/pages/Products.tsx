@@ -142,16 +142,16 @@ export default function Products() {
     }
   ];
 
-  const handleWhatsApp = (item: string) => {
-    window.open(`https://wa.me/254711441245?text=Hi Frah Spaces, I am interested in ${item}.`, "_blank");
+  const handleWhatsApp = (item: string, phone = "254721175735") => {
+    window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in ${item}. Could you please provide more information?`, "_blank");
   };
 
   const handleEmail = (item: string) => {
     window.location.href = `mailto:admin@frahspaces.com?subject=Product Inquiry: ${item}`;
   };
 
-  const handleCall = () => {
-    window.location.href = "tel:+254711441245";
+  const handleCall = (phone = "254721175735") => {
+    window.location.href = `tel:+${phone}`;
   };
 
   return (
@@ -242,31 +242,51 @@ export default function Products() {
                                 {item.specs}
                               </p>
                               
-                              <div className="mt-auto grid grid-cols-3 gap-3">
-                                <Button 
-                                  variant="outline" 
-                                  className="flex-col h-auto py-3 gap-1 hover:bg-primary/5 border-primary/20"
-                                  onClick={() => handleEmail(item.name)}
-                                >
-                                  <Mail className="w-4 h-4" />
-                                  <span className="text-[10px] uppercase font-bold">Email</span>
-                                </Button>
-                                <Button 
-                                  variant="outline" 
-                                  className="flex-col h-auto py-3 gap-1 hover:bg-primary/5 border-primary/20"
-                                  onClick={() => handleWhatsApp(item.name)}
-                                >
-                                  <MessageCircle className="w-4 h-4" />
-                                  <span className="text-[10px] uppercase font-bold">WhatsApp</span>
-                                </Button>
-                                <Button 
-                                  variant="default" 
-                                  className="flex-col h-auto py-3 gap-1 shadow-lg"
-                                  onClick={handleCall}
-                                >
-                                  <Phone className="w-4 h-4" />
-                                  <span className="text-[10px] uppercase font-bold">Call</span>
-                                </Button>
+                              <div className="mt-auto flex flex-col gap-3">
+                                <div className="grid grid-cols-2 gap-2">
+                                  <Button 
+                                    variant="outline" 
+                                    className="flex-1 h-auto py-2.5 gap-1 hover:bg-primary/5 border-primary/20"
+                                    onClick={() => handleEmail(item.name)}
+                                  >
+                                    <Mail className="w-3.5 h-3.5" />
+                                    <span className="text-[9px] uppercase font-bold">Email</span>
+                                  </Button>
+                                  <div className="flex gap-1">
+                                    <Button 
+                                      variant="outline" 
+                                      className="flex-[2] h-auto py-2.5 gap-1 hover:bg-primary/5 border-primary/20"
+                                      onClick={() => handleWhatsApp(item.name, "254721175735")}
+                                    >
+                                      <MessageCircle className="w-3.5 h-3.5" />
+                                      <span className="text-[9px] uppercase font-bold">WhatsApp</span>
+                                    </Button>
+                                    <Button 
+                                      variant="outline" 
+                                      className="flex-1 h-auto py-2.5 text-[8px] font-bold opacity-70 border-primary/20"
+                                      onClick={() => handleWhatsApp(item.name, "254711441245")}
+                                    >
+                                      Alt
+                                    </Button>
+                                  </div>
+                                </div>
+                                <div className="grid grid-cols-2 gap-2">
+                                  <Button 
+                                    variant="default" 
+                                    className="flex-[2] h-auto py-2.5 gap-1 shadow-md"
+                                    onClick={() => handleCall("254721175735")}
+                                  >
+                                    <Phone className="w-3.5 h-3.5" />
+                                    <span className="text-[9px] uppercase font-bold">Call Primary</span>
+                                  </Button>
+                                  <Button 
+                                    variant="outline" 
+                                    className="flex-1 h-auto py-2.5 text-[9px] font-bold opacity-80"
+                                    onClick={() => handleCall("254711441245")}
+                                  >
+                                    Call Alt
+                                  </Button>
+                                </div>
                               </div>
                             </CardContent>
                           </Card>
@@ -297,10 +317,15 @@ export default function Products() {
                   <Badge className="bg-white/20 text-white py-2 px-4 border-0">Quality Guaranteed</Badge>
                 </div>
               </div>
-              <div className="flex justify-center">
-                <Button variant="secondary" size="lg" className="h-16 px-10 text-lg font-bold shadow-xl" onClick={() => handleWhatsApp("Bulk Materials Inquiry")}>
-                  Start Bulk Order
-                </Button>
+              <div className="flex flex-col gap-4 items-center">
+                <div className="flex gap-4">
+                  <Button variant="secondary" size="lg" className="h-16 px-10 text-lg font-bold shadow-xl" onClick={() => handleWhatsApp("Bulk Materials Inquiry", "254721175735")}>
+                    Start Bulk Order
+                  </Button>
+                  <Button variant="outline" size="lg" className="h-16 px-8 text-lg font-bold border-white/20 hover:bg-white/10 text-white opacity-80" onClick={() => handleWhatsApp("Bulk Materials Inquiry", "254711441245")}>
+                    Alt WhatsApp
+                  </Button>
+                </div>
               </div>
             </div>
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20" />

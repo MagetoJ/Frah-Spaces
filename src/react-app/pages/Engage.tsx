@@ -44,8 +44,8 @@ export default function Engage() {
     },
   ];
 
-  const handleWhatsApp = () => {
-    window.open("https://wa.me/254711441245?text=Hi, I'm interested in learning more about Frah Spaces services", "_blank");
+  const handleWhatsApp = (phone = "254721175735") => {
+    window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in learning more about your services. Could you please provide more information?`, "_blank");
   };
 
   return (
@@ -175,15 +175,26 @@ export default function Engage() {
                   <p className="mb-6 opacity-90">
                     Get instant answers to your questions. Our team is available to chat now.
                   </p>
-                  <Button 
-                    onClick={handleWhatsApp}
-                    variant="secondary"
-                    size="lg"
-                    className="w-full"
-                  >
-                    Start WhatsApp Chat
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
+                  <div className="grid grid-cols-1 gap-3">
+                    <Button 
+                      onClick={() => handleWhatsApp("254721175735")}
+                      variant="secondary"
+                      size="lg"
+                      className="w-full"
+                    >
+                      WhatsApp Primary
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                    <Button 
+                      onClick={() => handleWhatsApp("254711441245")}
+                      variant="outline"
+                      size="lg"
+                      className="w-full bg-white/10 border-white/20 hover:bg-white/20 text-white"
+                    >
+                      WhatsApp Alternative
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -206,9 +217,14 @@ export default function Engage() {
                     <Phone className="w-5 h-5 text-primary mt-0.5" />
                     <div>
                       <div className="font-medium">Phone</div>
-                      <a href="tel:+254711441245" className="text-muted-foreground hover:text-primary">
-                        254 711 441245
-                      </a>
+                      <div className="flex flex-col">
+                        <a href="tel:+254721175735" className="text-muted-foreground hover:text-primary transition-colors">
+                          +254 721 175735
+                        </a>
+                        <a href="tel:+254711441245" className="text-muted-foreground hover:text-primary transition-colors text-sm opacity-80">
+                          +254 711 441245 (Alt)
+                        </a>
+                      </div>
                     </div>
                   </div>
                   

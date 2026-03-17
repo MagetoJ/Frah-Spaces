@@ -43,16 +43,16 @@ export default function Services() {
     }
   ];
 
-  const handleWhatsApp = (service: string) => {
-    window.open(`https://wa.me/254711441245?text=Hi, I'm interested in learning more about your ${service} services.`, "_blank");
+  const handleWhatsApp = (service: string, phone = "254721175735") => {
+    window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in learning more about your ${service} services. Could you please provide more information?`, "_blank");
   };
 
   const handleEmail = (service: string) => {
     window.location.href = `mailto:admin@frahspaces.com?subject=Inquiry about ${service} services`;
   };
 
-  const handleCall = () => {
-    window.location.href = "tel:+254711441245";
+  const handleCall = (phone = "254721175735") => {
+    window.location.href = `tel:+${phone}`;
   };
 
   return (
@@ -100,30 +100,50 @@ export default function Services() {
                   </div>
                 </CardContent>
                 <div className="p-8 pt-0 border-t border-border mt-auto bg-muted/10 rounded-b-xl">
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Button 
-                      onClick={() => handleEmail(category.title)} 
-                      variant="outline" 
-                      className="flex-1 gap-2 border-primary/20 hover:bg-primary/5"
-                    >
-                      <Mail className="w-4 h-4" />
-                      Email
-                    </Button>
-                    <Button 
-                      onClick={() => handleWhatsApp(category.title)} 
-                      variant="outline" 
-                      className="flex-1 gap-2 border-primary/20 hover:bg-primary/5"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      WhatsApp
-                    </Button>
-                    <Button 
-                      onClick={handleCall} 
-                      className="flex-1 gap-2"
-                    >
-                      <Phone className="w-4 h-4" />
-                      Direct Call
-                    </Button>
+                  <div className="flex flex-col gap-4">
+                    <div className="flex flex-col sm:flex-row gap-2">
+                      <Button 
+                        onClick={() => handleEmail(category.title)} 
+                        variant="outline" 
+                        className="flex-1 gap-2 border-primary/20 hover:bg-primary/5 h-10 text-xs"
+                      >
+                        <Mail className="w-4 h-4" />
+                        Email
+                      </Button>
+                      <div className="flex flex-1 gap-1">
+                        <Button 
+                          onClick={() => handleWhatsApp(category.title, "254721175735")} 
+                          variant="outline" 
+                          className="flex-[2] gap-1 border-primary/20 hover:bg-primary/5 h-10 text-xs px-2"
+                        >
+                          <MessageCircle className="w-4 h-4" />
+                          WhatsApp
+                        </Button>
+                        <Button 
+                          onClick={() => handleWhatsApp(category.title, "254711441245")} 
+                          variant="outline" 
+                          className="flex-1 opacity-70 border-primary/20 hover:bg-primary/5 h-10 text-[10px] px-1"
+                        >
+                          Alt
+                        </Button>
+                      </div>
+                    </div>
+                    <div className="flex gap-2">
+                      <Button 
+                        onClick={() => handleCall("254721175735")} 
+                        className="flex-[2] gap-2 h-10 text-xs"
+                      >
+                        <Phone className="w-4 h-4" />
+                        Direct Call
+                      </Button>
+                      <Button 
+                        onClick={() => handleCall("254711441245")} 
+                        variant="outline"
+                        className="flex-1 gap-2 h-10 text-xs opacity-80"
+                      >
+                        Alt
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </Card>

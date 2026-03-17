@@ -102,16 +102,16 @@ export default function Equipment() {
     }
   ];
 
-  const handleWhatsApp = (item: string) => {
-    window.open(`https://wa.me/254711441245?text=Hi, I'm interested in renting/using the ${item}.`, "_blank");
+  const handleWhatsApp = (item: string, phone = "254721175735") => {
+    window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in renting/using the ${item}. Could you please provide more information?`, "_blank");
   };
 
   const handleEmail = (item: string) => {
     window.location.href = `mailto:admin@frahspaces.com?subject=Inquiry about ${item} equipment`;
   };
 
-  const handleCall = () => {
-    window.location.href = "tel:+254711441245";
+  const handleCall = (phone = "254721175735") => {
+    window.location.href = `tel:+${phone}`;
   };
 
   return (
@@ -208,12 +208,22 @@ export default function Equipment() {
                                 </div>
                               </div>
                               <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row gap-4">
-                                <Button className="flex-1 h-14 text-lg font-bold" onClick={() => handleWhatsApp(item.name)}>
-                                  Book this Unit
-                                </Button>
-                                <Button variant="outline" className="flex-1 h-14 text-lg font-bold border-white/20 hover:bg-white/10" onClick={handleCall}>
-                                  Speak to Logistics
-                                </Button>
+                                <div className="flex flex-1 gap-2">
+                                  <Button className="flex-[2] h-14 text-lg font-bold" onClick={() => handleWhatsApp(item.name, "254721175735")}>
+                                    Book this Unit
+                                  </Button>
+                                  <Button variant="outline" className="flex-1 h-14 text-sm font-bold border-white/20 hover:bg-white/10 opacity-70" onClick={() => handleWhatsApp(item.name, "254711441245")}>
+                                    Alt
+                                  </Button>
+                                </div>
+                                <div className="flex flex-1 gap-2">
+                                  <Button variant="outline" className="flex-[2] h-14 text-lg font-bold border-white/20 hover:bg-white/10" onClick={() => handleCall("254721175735")}>
+                                    Talk to Logistics
+                                  </Button>
+                                  <Button variant="outline" className="flex-1 h-14 text-sm font-bold border-white/20 hover:bg-white/10 opacity-70" onClick={() => handleCall("254711441245")}>
+                                    Alt
+                                  </Button>
+                                </div>
                               </div>
                             </div>
                           </DialogContent>
@@ -232,16 +242,28 @@ export default function Equipment() {
                       <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-2 italic">
                         {item.details}
                       </p>
-                      <div className="mt-auto pt-6 border-t border-border/50 grid grid-cols-3 gap-2">
-                        <Button variant="ghost" size="sm" className="h-10 text-[11px] font-bold uppercase hover:bg-primary/5 hover:text-primary" onClick={() => handleEmail(item.name)}>
-                          Email
-                        </Button>
-                        <Button variant="ghost" size="sm" className="h-10 text-[11px] font-bold uppercase hover:bg-primary/5 hover:text-primary" onClick={() => handleWhatsApp(item.name)}>
-                          WhatsApp
-                        </Button>
-                        <Button variant="ghost" size="sm" className="h-10 text-[11px] font-bold uppercase hover:bg-primary/5 hover:text-primary" onClick={handleCall}>
-                          Call
-                        </Button>
+                      <div className="mt-auto pt-6 border-t border-border/50 flex flex-col gap-3">
+                        <div className="grid grid-cols-2 gap-2">
+                          <Button variant="ghost" size="sm" className="h-10 text-[11px] font-bold uppercase hover:bg-primary/5 hover:text-primary border border-border/50" onClick={() => handleEmail(item.name)}>
+                            Email
+                          </Button>
+                          <div className="flex gap-1">
+                            <Button variant="ghost" size="sm" className="flex-[2] h-10 text-[11px] font-bold uppercase hover:bg-primary/5 hover:text-primary border border-border/50" onClick={() => handleWhatsApp(item.name, "254721175735")}>
+                              WhatsApp
+                            </Button>
+                            <Button variant="ghost" size="sm" className="flex-1 h-10 text-[9px] font-bold uppercase hover:bg-primary/5 hover:text-primary border border-border/50 opacity-60" onClick={() => handleWhatsApp(item.name, "254711441245")}>
+                              Alt
+                            </Button>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2">
+                          <Button variant="ghost" size="sm" className="h-10 text-[11px] font-bold uppercase hover:bg-primary/5 hover:text-primary border border-border/50" onClick={() => handleCall("254721175735")}>
+                            Call Primary
+                          </Button>
+                          <Button variant="ghost" size="sm" className="h-10 text-[11px] font-bold uppercase hover:bg-primary/5 hover:text-primary border border-border/50 opacity-60" onClick={() => handleCall("254711441245")}>
+                            Call Alt
+                          </Button>
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
@@ -261,13 +283,23 @@ export default function Equipment() {
             for your terrain and project requirements. From one-day rentals to 
             full-scale construction contracts.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="rounded-full px-10 h-16 text-lg font-bold" onClick={() => window.open("https://wa.me/254711441245", "_blank")}>
-              Chat with Logistics
-            </Button>
-            <Button variant="outline" size="lg" className="rounded-full px-10 h-16 text-lg font-bold border-white/20 hover:bg-white/10" onClick={handleCall}>
-              Call Support: 254 711 441245
-            </Button>
+          <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="rounded-full px-10 h-16 text-lg font-bold" onClick={() => window.open("https://wa.me/254721175735?text=Hello Frah Spaces, I'm interested in learning more about your equipment and logistics services. Could you please provide more information?", "_blank")}>
+                Chat Primary
+              </Button>
+              <Button variant="outline" size="lg" className="rounded-full px-10 h-16 text-lg font-bold border-white/20 hover:bg-white/10 text-white opacity-80" onClick={() => window.open("https://wa.me/254711441245?text=Hello Frah Spaces, I'm interested in learning more about your equipment and logistics services. Could you please provide more information?", "_blank")}>
+                Chat Alternative
+              </Button>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="link" className="text-zinc-400" onClick={() => handleCall("254721175735")}>
+                Primary: +254 721 175 735
+              </Button>
+              <Button variant="link" className="text-zinc-400" onClick={() => handleCall("254711441245")}>
+                Alternative: +254 711 441 245
+              </Button>
+            </div>
           </div>
         </div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -mr-48 -mt-48" />

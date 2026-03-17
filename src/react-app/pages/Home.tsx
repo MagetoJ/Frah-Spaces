@@ -10,10 +10,6 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/react-app/components
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    "/Siri%20A%20frame%20house%201.heic",
-    "/Siri%20A%20frame%20house%202.png",
-    "/Siri%20A%20frame%20house%203.png",
-    "/Siri%20A%20frame%20house%204.heic",
     "/Liuwa%20Gardens%201.jpg",
     "/nyambura%201.png"
   ];
@@ -77,8 +73,8 @@ export default function Home() {
             <div className="w-full md:w-1/2">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/Siri%20A%20frame%20house%202.png" 
-                  alt="Siri Africa A-Frame House" 
+                  src="/Liuwa%20Gardens%201.jpg" 
+                  alt="Liuwa Gardens" 
                   className="w-full h-[500px] object-cover"
                 />
                 <div className="absolute top-6 left-6">
@@ -88,22 +84,22 @@ export default function Home() {
             </div>
             <div className="w-full md:w-1/2 space-y-6">
               <h4 className="text-primary font-bold uppercase tracking-widest text-sm">Case Study</h4>
-              <h2 className="text-4xl font-bold leading-tight">Siri Africa A-Frame: <br/>Maximizing Small Urban Footprints</h2>
+              <h2 className="text-4xl font-bold leading-tight">Liuwa Gardens: <br/>Modern Hospitality Design</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                The challenge was to create a functional, modern living space on a restricted highland site in Tigoni. 
-                Our team utilized an innovative A-frame structure to optimize vertical volume while minimizing the foundation footprint.
+                Liuwa Gardens represents the pinnacle of our hospitality design portfolio, seamlessly 
+                integrating modern architecture with lush garden landscapes.
               </p>
               <div className="grid grid-cols-2 gap-8 py-4">
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Location</p>
-                  <p className="font-bold">Tigoni, Kiambu</p>
+                  <p className="font-bold">Kenya</p>
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Status</p>
                   <p className="font-bold">Completed 2024</p>
                 </div>
               </div>
-              <Link to="/work/siri-africa-a-frame">
+              <Link to="/work/liuwa-gardens">
                 <Button variant="outline" size="lg" className="rounded-full px-8">
                   View Full Case Study
                   <ArrowRight className="ml-2 w-4 h-4" />
@@ -245,16 +241,16 @@ export default function Home() {
               <TabsList className="bg-white/50 dark:bg-slate-800/50 p-1 border border-border">
                 <TabsTrigger value="residential" className="px-8 py-2.5">Residential</TabsTrigger>
                 <TabsTrigger value="commercial" className="px-8 py-2.5">Commercial</TabsTrigger>
-                <TabsTrigger value="landscaping" className="px-8 py-2.5">Landscaping</TabsTrigger>
+                <TabsTrigger value="hotels" className="px-8 py-2.5">Hotels</TabsTrigger>
               </TabsList>
             </div>
 
             <TabsContent value="residential" className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
-                  { id: "siri-africa-a-frame", title: "Siri Africa A-Frame", loc: "Tigoni", img: "/Siri%20A%20frame%20house%202.png" },
                   { id: "syokimau-residence", title: "Syokimau Residence", loc: "Syokimau", img: "/Syokimau%202.jpg" },
-                  { id: "nyambura-house", title: "Nyambura House", loc: "Nairobi", img: "/nyambura 1.png" }
+                  { id: "nyambura-house", title: "Nyambura House", loc: "Nairobi", img: "/nyambura 1.png" },
+                  { id: "kapsaret-residence", title: "Kapsaret Residence", loc: "Eldoret", img: "/kapsaret%201.jpg" }
                 ].map((p, i) => (
                   <Link key={i} to={`/work/${p.id}`}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full">
@@ -274,20 +270,18 @@ export default function Home() {
             </TabsContent>
 
             <TabsContent value="commercial" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
                 {[
-                  { id: "liuwa-gardens", title: "Liuwa Gardens", loc: "Kenya", img: "/Liuwa%20Gardens%201.jpg" },
-                  { id: "hospitality-renovation-kitale", title: "Hospitality Renovation", loc: "Kitale", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" },
-                  { id: "civil-works-drainage", title: "Industrial Civil Works", loc: "Machakos", img: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?w=800&q=80" }
+                  { id: "modern-apartment-complex", title: "Modern Apartment Complex", loc: "Nairobi", img: "/Apartment%204.jpg" }
                 ].map((p, i) => (
                   <Link key={i} to={`/work/${p.id}`}>
-                    <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full">
-                      <div className="relative aspect-[4/3] overflow-hidden">
+                    <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full max-w-2xl">
+                      <div className="relative aspect-[16/9] overflow-hidden">
                         <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                           <div className="text-white">
                             <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">{p.loc}</p>
-                            <p className="font-bold text-lg">{p.title}</p>
+                            <p className="font-bold text-2xl">{p.title}</p>
                           </div>
                         </div>
                       </div>
@@ -297,19 +291,19 @@ export default function Home() {
               </div>
             </TabsContent>
 
-            <TabsContent value="landscaping" className="mt-0">
+            <TabsContent value="hotels" className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
                 {[
-                  { id: "landscaping-portfolio", title: "Regional Landscaping Portfolio", loc: "Multiple Counties", img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=80" }
+                  { id: "liuwa-gardens", title: "Liuwa Gardens", loc: "Kenya", img: "/Liuwa%20Gardens%201.jpg" }
                 ].map((p, i) => (
                   <Link key={i} to={`/work/${p.id}`}>
-                    <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full">
-                      <div className="relative aspect-[21/9] overflow-hidden">
+                    <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full max-w-2xl">
+                      <div className="relative aspect-[16/9] overflow-hidden">
                         <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-12">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                           <div className="text-white">
                             <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">{p.loc}</p>
-                            <p className="font-bold text-3xl">{p.title}</p>
+                            <p className="font-bold text-2xl">{p.title}</p>
                           </div>
                         </div>
                       </div>

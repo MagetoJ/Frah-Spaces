@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/react-app/components/ui/dialog";
-import { Palette, Maximize2, Layout, Home, Building, Layers, Mail, MessageCircle, Phone } from "lucide-react";
+import { Palette, Maximize2, Layout, Home, Building, Layers, Mail, MessageCircle, Phone, FileText, Download } from "lucide-react";
 
 export default function Designs() {
   const designCategories = [
@@ -41,19 +41,29 @@ export default function Designs() {
         { name: "Luxury Porcelain Tiles", image: "/tiles 2.jpg", type: "3D Rendering" },
         { name: "Modern Ceramic Layout", image: "/tiles 1.jpg", type: "Floor Plan" }
       ]
+    },
+    {
+      title: "Architectural Plans",
+      icon: FileText,
+      description: "Detailed architectural blueprints and floor plans for various residential styles.",
+      projects: [
+        { name: "A-Frame House Plan", image: "/design%201.png", type: "PDF Plan", link: "/A-frame%20house%20plan.pdf" },
+        { name: "Flatroom Mansion - Type A", image: "/design%201.png", type: "PDF Plan", link: "/Flatroom%20Mansion%20house%20plan%20-%20type%20A.pdf" },
+        { name: "Flatroom Mansion - Type B", image: "/design%201.png", type: "PDF Plan", link: "/Flatroom%20Mansion%20house%20plan%20-%20type%20B.pdf" }
+      ]
     }
   ];
 
-  const handleWhatsApp = (item: string) => {
-    window.open(`https://wa.me/254711441245?text=Hi, I'm interested in the ${item} design.`, "_blank");
+  const handleWhatsApp = (item: string, phone = "254721175735") => {
+    window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in the ${item} design. Could you please provide more information?`, "_blank");
   };
 
   const handleEmail = (item: string) => {
     window.location.href = `mailto:admin@frahspaces.com?subject=Inquiry about ${item} design`;
   };
 
-  const handleCall = () => {
-    window.location.href = "tel:+254711441245";
+  const handleCall = (phone = "254721175735") => {
+    window.location.href = `tel:+${phone}`;
   };
 
   return (
@@ -97,7 +107,7 @@ export default function Designs() {
                         alt={project.name}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                         <Dialog>
                           <DialogTrigger asChild>
                             <Button variant="secondary" className="gap-2">
@@ -116,20 +126,41 @@ export default function Designs() {
                                 <h3 className="text-2xl font-bold">{project.name}</h3>
                                 <p className="text-muted-foreground mt-2">Part of our {category.title} portfolio. Available for customization.</p>
                                 <div className="mt-4 flex flex-wrap gap-3">
-                                  <Button className="gap-2" onClick={() => handleWhatsApp(project.name)}>
-                                    <MessageCircle className="w-4 h-4" /> WhatsApp
-                                  </Button>
+                                  {project.link && (
+                                    <Button className="gap-2 bg-primary hover:bg-primary/90" onClick={() => window.open(project.link, "_blank")}>
+                                      <Download className="w-4 h-4" /> View PDF Plan
+                                    </Button>
+                                  )}
+                                  <div className="flex gap-2">
+                                    <Button className="gap-2" onClick={() => handleWhatsApp(project.name, "254721175735")}>
+                                      <MessageCircle className="w-4 h-4" /> WhatsApp
+                                    </Button>
+                                    <Button variant="outline" className="gap-2 opacity-80" onClick={() => handleWhatsApp(project.name, "254711441245")}>
+                                      <MessageCircle className="w-4 h-4" /> Alt
+                                    </Button>
+                                  </div>
                                   <Button variant="outline" className="gap-2" onClick={() => handleEmail(project.name)}>
                                     <Mail className="w-4 h-4" /> Email
                                   </Button>
-                                  <Button variant="outline" className="gap-2" onClick={handleCall}>
-                                    <Phone className="w-4 h-4" /> Call
-                                  </Button>
+                                  <div className="flex gap-2">
+                                    <Button variant="outline" className="gap-2" onClick={() => handleCall("254721175735")}>
+                                      <Phone className="w-4 h-4" /> Call
+                                    </Button>
+                                    <Button variant="outline" className="gap-2 opacity-80" onClick={() => handleCall("254711441245")}>
+                                      <Phone className="w-4 h-4" /> Alt
+                                    </Button>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </DialogContent>
                         </Dialog>
+                        {project.link && (
+                          <Button variant="secondary" className="gap-2" onClick={() => window.open(project.link, "_blank")}>
+                            <Download className="w-4 h-4" />
+                            PDF Plan
+                          </Button>
+                        )}
                       </div>
                     </div>
                     <CardContent className="p-6">
@@ -142,28 +173,47 @@ export default function Designs() {
                           <Palette className="w-5 h-5 text-primary" />
                         </div>
                         
-                        <div className="flex gap-2">
+                        <div className="flex flex-wrap gap-2">
+                          {project.link ? (
+                            <Button 
+                              variant="default" 
+                              size="sm" 
+                              className="flex-1 min-w-[100px] gap-1 text-[11px] px-1"
+                              onClick={() => window.open(project.link, "_blank")}
+                            >
+                              <FileText className="w-3.5 h-3.5" /> View Plan
+                            </Button>
+                          ) : (
+                            <Button 
+                              variant="outline" 
+                              size="sm" 
+                              className="flex-1 min-w-[100px] gap-1 text-[11px] px-1"
+                              onClick={() => handleEmail(project.name)}
+                            >
+                              <Mail className="w-3.5 h-3.5" /> Email
+                            </Button>
+                          )}
                           <Button 
                             variant="outline" 
                             size="sm" 
-                            className="flex-1 gap-1 text-[11px] px-1"
-                            onClick={() => handleEmail(project.name)}
-                          >
-                            <Mail className="w-3.5 h-3.5" /> Email
-                          </Button>
-                          <Button 
-                            variant="outline" 
-                            size="sm" 
-                            className="flex-1 gap-1 text-[11px] px-1"
-                            onClick={() => handleWhatsApp(project.name)}
+                            className="flex-1 min-w-[100px] gap-1 text-[11px] px-1"
+                            onClick={() => handleWhatsApp(project.name, "254721175735")}
                           >
                             <MessageCircle className="w-3.5 h-3.5" /> WhatsApp
                           </Button>
                           <Button 
                             variant="outline" 
                             size="sm" 
-                            className="flex-1 gap-1 text-[11px] px-1 border-primary/20 hover:bg-primary hover:text-white"
-                            onClick={handleCall}
+                            className="flex-1 min-w-[60px] gap-1 text-[11px] px-1 opacity-70"
+                            onClick={() => handleWhatsApp(project.name, "254711441245")}
+                          >
+                            Alt
+                          </Button>
+                          <Button 
+                            variant="outline" 
+                            size="sm" 
+                            className="flex-1 min-w-[100px] gap-1 text-[11px] px-1 border-primary/20 hover:bg-primary hover:text-white"
+                            onClick={() => handleCall("254721175735")}
                           >
                             <Phone className="w-3.5 h-3.5" /> Call
                           </Button>

@@ -17,16 +17,16 @@ export default function WallingRoofing() {
     }
   ];
 
-  const handleWhatsApp = (item: string) => {
-    window.open(`https://wa.me/254711441245?text=Hi Frah Spaces, I am interested in ${item}.`, "_blank");
+  const handleWhatsApp = (item: string, phone = "254721175735") => {
+    window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in ${item}. Could you please provide more information?`, "_blank");
   };
 
   const handleEmail = (item: string) => {
     window.location.href = `mailto:admin@frahspaces.com?subject=Product Inquiry: ${item}`;
   };
 
-  const handleCall = () => {
-    window.location.href = "tel:+254711441245";
+  const handleCall = (phone = "254721175735") => {
+    window.location.href = `tel:+${phone}`;
   };
 
   return (
@@ -68,19 +68,31 @@ export default function WallingRoofing() {
                     {item.specs}
                   </p>
                   
-                  <div className="mt-auto grid grid-cols-3 gap-3">
-                    <Button variant="outline" className="flex-col h-auto py-3 gap-1" onClick={() => handleEmail(item.name)}>
-                      <Mail className="w-4 h-4" />
-                      <span className="text-[10px] uppercase font-bold">Email</span>
-                    </Button>
-                    <Button variant="outline" className="flex-col h-auto py-3 gap-1" onClick={() => handleWhatsApp(item.name)}>
-                      <MessageCircle className="w-4 h-4" />
-                      <span className="text-[10px] uppercase font-bold">WhatsApp</span>
-                    </Button>
-                    <Button className="flex-col h-auto py-3 gap-1" onClick={handleCall}>
-                      <Phone className="w-4 h-4" />
-                      <span className="text-[10px] uppercase font-bold">Call</span>
-                    </Button>
+                  <div className="mt-auto flex flex-col gap-3">
+                    <div className="grid grid-cols-2 gap-2">
+                      <Button variant="outline" className="flex-1 h-auto py-2.5 gap-1" onClick={() => handleEmail(item.name)}>
+                        <Mail className="w-4 h-4" />
+                        <span className="text-[9px] uppercase font-bold">Email</span>
+                      </Button>
+                      <div className="flex gap-1">
+                        <Button variant="outline" className="flex-[2] h-auto py-2.5 gap-1" onClick={() => handleWhatsApp(item.name, "254721175735")}>
+                          <MessageCircle className="w-4 h-4" />
+                          <span className="text-[9px] uppercase font-bold">WhatsApp</span>
+                        </Button>
+                        <Button variant="outline" className="flex-1 h-auto py-2.5 text-[8px] font-bold opacity-70" onClick={() => handleWhatsApp(item.name, "254711441245")}>
+                          Alt
+                        </Button>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      <Button className="flex-[2] h-auto py-2.5 gap-1" onClick={() => handleCall("254721175735")}>
+                        <Phone className="w-4 h-4" />
+                        <span className="text-[9px] uppercase font-bold">Call</span>
+                      </Button>
+                      <Button variant="outline" className="flex-1 h-auto py-2.5 text-[9px] font-bold opacity-80" onClick={() => handleCall("254711441245")}>
+                        Alt
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

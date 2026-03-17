@@ -15,115 +15,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "siri-africa-a-frame",
-    title: "Siri Africa A-Frame House",
-    category: "residential",
-    location: "Tigoni, Kiambu",
-    year: "2024",
-    description: "An innovative residential project blending contemporary architecture with the lush highlands of Kiambu County.",
-    image: "/Siri%20A%20frame%20house%202.png",
-    testimonial: "A masterpiece of modern design that perfectly complements its natural surroundings.",
-    client: "Siri Africa",
-    story: "The Siri Africa A-Frame House was designed to redefine highland living. By utilizing a steep roofline and expansive glazing, we captured the breathtaking views of Tigoni while maintaining a cozy, private atmosphere. The project emphasizes sustainable timber construction and minimal site impact.",
-    features: ["A-Frame Architecture", "Highland Integration", "Sustainable Timber", "Panoramic Glazing"],
-    images: [
-      "/Siri%20A%20frame%20house%201.heic",
-      "/Siri%20A%20frame%20house%202.png",
-      "/Siri%20A%20frame%20house%203.png",
-      "/Siri%20A%20frame%20house%204.heic"
-    ]
-  },
-  {
-    id: "hospitality-renovation-kitale",
-    title: "Hospitality Renovation",
-    category: "commercial",
-    location: "Kitale, Trans Nzoia",
-    year: "2023",
-    description: "Comprehensive expansion of a prominent restaurant, including a new upper floor, grill section, and swimming pool.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
-    testimonial: "The transformation was incredible. Frah Spaces delivered a world-class facility that our customers love.",
-    client: "Kitale Grill & Swim",
-    story: "This project involved transforming a local eatery into a premier hospitality destination. We added a modern upper-floor dining area, a professional-grade grill section, and a resort-style swimming pool, all while maintaining operational continuity for the client.",
-    features: ["Floor Expansion", "Commercial Kitchen", "Pool Design", "Modern Facade"],
-    images: [
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80"
-    ]
-  },
-  {
-    id: "luxury-residential-karen",
-    title: "Luxury Residential Villa",
-    category: "residential",
-    location: "Karen, Nairobi",
-    year: "2024",
-    description: "Design and construction of high-value homes, including a KES 82M luxury villa featuring multiple bedrooms and guest wings.",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-    testimonial: "Exceptional attention to detail in every aspect of our new luxury home.",
-    client: "Private Client",
-    story: "Located in the prestigious Karen suburb, this luxury villa exemplifies modern elegance. The design features open-plan living spaces, high-end finishes, and integrated smart home technology, providing a seamless blend of comfort and sophistication.",
-    features: ["Smart Home Tech", "Guest Wing", "Open-Plan Design", "Premium Finishes"],
-    images: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1200&q=80"
-    ]
-  },
-  {
-    id: "landscaping-portfolio",
-    title: "Landscaping Portfolio",
-    category: "landscaping",
-    location: "Multiple Counties",
-    year: "2023",
-    description: "Successful transformations of gardens and courtyards across Nairobi, Kiambu, Machakos, and Trans Nzoia.",
-    image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80",
-    testimonial: "Transformed our outdoor spaces into beautiful, functional environments.",
-    client: "Various Clients",
-    story: "Our landscaping work focuses on creating harmonious outdoor environments that complement the architecture. We specialize in drought-resistant planting, automated irrigation systems, and decorative hardscaping to enhance the curb appeal and functionality of any property.",
-    features: ["Native Planting", "Automated Irrigation", "Hardscaping", "Landscape Lighting"],
-    images: [
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=80",
-      "https://images.unsplash.com/photo-1558904541-efa8c196b27d?w=1200&q=80",
-      "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1200&q=80"
-    ]
-  },
-  {
-    id: "civil-works-drainage",
-    title: "Civil Works & Drainage",
-    category: "commercial",
-    location: "Machakos County",
-    year: "2022",
-    description: "Implementation of essential drainage systems and paving for a commercial development project.",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?w=800&q=80",
-    testimonial: "Quality civil works that addressed all our structural concerns effectively.",
-    client: "Industrial Partner",
-    story: "Addressing core infrastructure needs, this project involved the design and installation of heavy-duty drainage systems and professional paving for an industrial site. Our focus was on durability, efficiency, and long-term structural integrity.",
-    features: ["Stormwater Mgmt", "Industrial Paving", "Site Grading", "Infrastructure Design"],
-    images: [
-      "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?w=1200&q=80",
-      "https://images.unsplash.com/photo-1590486803833-ffc6f684c303?w=1200&q=80",
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80"
-    ]
-  },
-  {
-    id: "modern-mixed-use",
-    title: "Modern Mixed-Use Build",
-    category: "residential",
-    location: "Kiambu Road, Nairobi",
-    year: "2023",
-    description: "New build mixed-use development focusing on affordable but high-quality living spaces.",
-    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
-    testimonial: "Frah Spaces brought our vision to life with strategic guidance and excellent execution.",
-    client: "Property Investor",
-    story: "This mixed-use development aims to bridge the gap between affordability and quality. By optimizing spatial layouts and selecting cost-effective but durable materials, we've created a vibrant community space that serves both residential and light commercial needs.",
-    features: ["Spatial Optimization", "Mixed-Use Zoning", "Energy Efficiency", "Community Spaces"],
-    images: [
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80",
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
-      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1200&q=80"
-    ]
-  },
-  {
     id: "nyambura-house",
     title: "Nyambura House",
     category: "residential",
@@ -141,7 +32,11 @@ export const projects: Project[] = [
       "/nyambura 3.png",
       "/nyambura 4.png",
       "/nyambura 5.png",
-      "/nyambura 6.png"
+      "/nyambura 6.png",
+      "/nyambura 7.png",
+      "/nyambura 8.png",
+      "/nyambura 9.png",
+      "/nyambura 10.png"
     ]
   },
   {
@@ -159,13 +54,19 @@ export const projects: Project[] = [
     images: [
       "/Syokimau%201.jpeg",
       "/Syokimau%202.jpg",
-      "/Syokimau%203.jpeg"
+      "/Syokimau%203.jpeg",
+      "/Syokimau%204.jpg",
+      "/Syokimau%205.jpg",
+      "/Syokimau%206.jpeg",
+      "/Syokimau%207.jpeg",
+      "/Syokimau%208.jpeg",
+      "/Syokimau%209.jpeg"
     ]
   },
   {
     id: "liuwa-gardens",
     title: "Liuwa Gardens Hotel & Restaurant",
-    category: "commercial",
+    category: "hotels",
     location: "Kenya",
     year: "2024",
     description: "An exquisite hospitality landmark featuring a perfect blend of modern architecture and lush garden landscapes.",
@@ -179,7 +80,55 @@ export const projects: Project[] = [
       "/Liuwa%20Gardens%202.jpg",
       "/Liuwa%20Gardens%203.jpg",
       "/Liuwa%20Gardens%204.jpg",
-      "/Liuwa%20Gardens%205.jpg"
+      "/Liuwa%20Gardens%205.jpg",
+      "/Liuwa%20Gardens%206.jpg",
+      "/Liuwa%20Gardens%207.jpg",
+      "/Liuwa%20Gardens%208.jpg",
+      "/Liuwa%20Gardens%209.jpg",
+      "/Liuwa%20Gardens%2010.jpg"
+    ]
+  },
+  {
+    id: "modern-apartment-complex",
+    title: "Modern Apartment Complex",
+    category: "commercial",
+    location: "Nairobi, Kenya",
+    year: "2024",
+    description: "A contemporary multi-unit residential development designed for urban living with premium amenities.",
+    image: "/Apartment%204.jpg",
+    testimonial: "Frah Spaces maximized our space while maintaining a high standard of luxury and comfort.",
+    client: "Urban Development Group",
+    story: "This apartment complex project focused on urban density without sacrificing quality of life. The design includes open-plan units, natural ventilation, and shared rooftop spaces. We utilized durable materials and modern architectural elements to create a sustainable and attractive living environment in the heart of the city.",
+    features: ["Urban Living Design", "Open-Plan Units", "Premium Amenities", "Sustainable Materials"],
+    images: [
+      "/Apartment%201.jpg",
+      "/Apartment%202.jpg",
+      "/Apartment%203.jpg",
+      "/Apartment%204.jpg",
+      "/Apartment%205.jpg"
+    ]
+  },
+  {
+    id: "kapsaret-residence",
+    title: "Kapsaret Modern Residence",
+    category: "residential",
+    location: "Kapsaret, Eldoret",
+    year: "2024",
+    description: "A stunning modern home featuring clean lines, expansive windows, and a perfect blend of indoor-outdoor living.",
+    image: "/kapsaret%201.jpg",
+    testimonial: "The architectural brilliance of Frah Spaces is evident in every corner of our new home. We couldn't be happier.",
+    client: "Private Client",
+    story: "Kapsaret Modern Residence was designed to harmonize with its serene surroundings in Eldoret. The house features a spacious open-plan layout that connects the living areas with the beautifully landscaped gardens. High ceilings and large glass panels ensure the interior is always filled with natural light, creating a warm and inviting atmosphere.",
+    features: ["Open-Plan Layout", "Expansive Glazing", "Indoor-Outdoor Flow", "Modern Facade"],
+    images: [
+      "/kapsaret%201.jpg",
+      "/Kapsaret%202.jpg",
+      "/Kapsaret%203.jpg",
+      "/Kapsaret%204.jpg",
+      "/Kapsaret%205.jpg",
+      "/Kapsaret%206.jpg",
+      "/Kapsaret%208.jpg",
+      "/Kapsaret%209.jpg"
     ]
   },
 ];
