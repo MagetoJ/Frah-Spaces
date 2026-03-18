@@ -96,12 +96,22 @@ export default function Products() {
           ]
         },
         {
-          title: "Doors & Finishes",
+          title: "Doors & Windows",
           items: [
             { 
               name: "Solid Wood Doors", 
               specs: "Custom mahogany and mvule entrance doors",
               image: "/bluegum 1.jpeg"
+            },
+            { 
+              name: "Aluminum Windows", 
+              specs: "Durable and stylish aluminum window solutions",
+              image: "/Aluminium 1.jpg"
+            },
+            { 
+              name: "Slimline Profiles", 
+              specs: "Modern thin-frame aluminum designs",
+              image: "/Aluminium 2.jpg"
             }
           ]
         }

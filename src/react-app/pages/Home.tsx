@@ -242,6 +242,8 @@ export default function Home() {
                 <TabsTrigger value="residential" className="px-8 py-2.5">Residential</TabsTrigger>
                 <TabsTrigger value="commercial" className="px-8 py-2.5">Commercial</TabsTrigger>
                 <TabsTrigger value="hotels" className="px-8 py-2.5">Hotels</TabsTrigger>
+                <TabsTrigger value="landscaping" className="px-8 py-2.5">Landscaping</TabsTrigger>
+                <TabsTrigger value="management" className="px-8 py-2.5">Management</TabsTrigger>
               </TabsList>
             </div>
 
@@ -296,6 +298,50 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
                 {[
                   { id: "liuwa-gardens", title: "Liuwa Gardens", loc: "Kenya", img: "/Liuwa%20Gardens%201.jpg" }
+                ].map((p, i) => (
+                  <Link key={i} to={`/work/${p.id}`}>
+                    <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full max-w-2xl">
+                      <div className="relative aspect-[16/9] overflow-hidden">
+                        <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                          <div className="text-white">
+                            <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">{p.loc}</p>
+                            <p className="font-bold text-2xl">{p.title}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="landscaping" className="mt-0">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+                {[
+                  { id: "landscaping-design-portfolio", title: "Premium Landscaping & Outdoor Styling", loc: "Nairobi & Eldoret", img: "/Landscaping%201.jpeg" }
+                ].map((p, i) => (
+                  <Link key={i} to={`/work/${p.id}`}>
+                    <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full max-w-2xl">
+                      <div className="relative aspect-[16/9] overflow-hidden">
+                        <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                          <div className="text-white">
+                            <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">{p.loc}</p>
+                            <p className="font-bold text-2xl">{p.title}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="management" className="mt-0">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+                {[
+                  { id: "project-management-portfolio", title: "Project Management & Site Supervision", loc: "Across Kenya", img: "/Project%20Management%204.png" }
                 ].map((p, i) => (
                   <Link key={i} to={`/work/${p.id}`}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full max-w-2xl">

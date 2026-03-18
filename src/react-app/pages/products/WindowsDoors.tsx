@@ -13,7 +13,12 @@ export default function WindowsDoors() {
     { 
       name: "Aluminum Windows", 
       specs: "Durable and stylish aluminum window solutions",
-      image: "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=800&q=80"
+      image: "/Aluminium 1.jpg"
+    },
+    { 
+      name: "Slimline Profiles", 
+      specs: "Modern thin-frame aluminum designs for maximum views",
+      image: "/Aluminium 2.jpg"
     }
   ];
 
@@ -46,7 +51,7 @@ export default function WindowsDoors() {
 
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {items.map((item, idx) => (
               <Card key={idx} className="group overflow-hidden border-2 hover:border-primary/50 transition-all flex flex-col shadow-sm">
                 <div className="aspect-[16/9] w-full overflow-hidden relative">

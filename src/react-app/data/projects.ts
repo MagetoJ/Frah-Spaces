@@ -154,4 +154,47 @@ export const projects: Project[] = [
       "/Siri%20A%20frame%20house%2010.jpg"
     ]
   },
+  {
+    id: "landscaping-design-portfolio",
+    title: "Premium Landscaping & Outdoor Styling",
+    category: "landscaping",
+    location: "Nairobi & Eldoret",
+    year: "2024",
+    description: "Transformative outdoor environments featuring native planting, automated irrigation, and decorative hardscaping.",
+    image: "/Landscaping%201.jpeg",
+    testimonial: "The transformation of our outdoor space was incredible. Frah Spaces created a beautiful, functional environment.",
+    client: "Various Clients",
+    story: "Our landscaping projects focus on creating harmonious outdoor environments that complement the architecture. We specialize in drought-resistant planting, automated irrigation systems, and decorative hardscaping to enhance curb appeal and functionality.",
+    features: ["Native Planting", "Automated Irrigation", "Hardscaping", "Landscape Lighting"],
+    images: [
+      "/Landscaping%201.jpeg",
+      "/Landscaping%202.jpg",
+      "/Landscaping%203.jpg",
+      "/Landscaping%204.jpg"
+    ]
+  },
+  {
+    id: "project-management-portfolio",
+    title: "Project Management & Site Supervision",
+    category: "management",
+    location: "Kenya",
+    year: "2024",
+    description: "Comprehensive site management and technical supervision ensuring quality, safety, and timely project delivery.",
+    image: "/Project%20Management%204.png",
+    testimonial: "Their attention to detail and proactive management style kept our project on track and within budget.",
+    client: "Various Corporate & Private Clients",
+    story: "Our project management team provides end-to-end supervision for complex construction sites. We handle everything from contractor coordination and quality control to safety compliance and progress reporting. These photos showcase our active involvement in managing various high-profile residential and commercial developments across Kenya.",
+    features: ["Site Supervision", "Quality Assurance", "Contractor Coordination", "Safety Management"],
+    images: [
+      "/Project%20Management%201.jpg",
+      "/Project%20Management%202.jpg",
+      "/Project%20Management%203.jpeg",
+      "/Project%20Management%204.png",
+      "/Project%20Management%205.jpeg",
+      "/Project%20Management%206.jpg",
+      "/Project%20Management%207.jpg",
+      "/Project%20Management%208.jpg",
+      "/Project%20Management%209.jpg"
+    ]
+  },
 ];

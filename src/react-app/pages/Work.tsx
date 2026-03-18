@@ -52,11 +52,13 @@ export default function Work() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Tabs defaultValue="all" className="mb-12">
             <div className="flex justify-center">
-              <TabsList className="grid w-full max-w-lg grid-cols-2 md:grid-cols-4 h-auto">
+              <TabsList className="grid w-full max-w-2xl grid-cols-3 md:grid-cols-6 h-auto">
                 <TabsTrigger value="all" onClick={() => setSelectedCategory("all")} className="py-2">All Projects</TabsTrigger>
                 <TabsTrigger value="residential" onClick={() => setSelectedCategory("residential")} className="py-2">Residential</TabsTrigger>
                 <TabsTrigger value="commercial" onClick={() => setSelectedCategory("commercial")} className="py-2">Commercial</TabsTrigger>
                 <TabsTrigger value="hotels" onClick={() => setSelectedCategory("hotels")} className="py-2">Hotels</TabsTrigger>
+                <TabsTrigger value="landscaping" onClick={() => setSelectedCategory("landscaping")} className="py-2">Landscaping</TabsTrigger>
+                <TabsTrigger value="management" onClick={() => setSelectedCategory("management")} className="py-2 text-xs md:text-sm">Management</TabsTrigger>
               </TabsList>
             </div>
           </Tabs>

@@ -86,6 +86,39 @@ export default function Construction() {
           </Card>
         </div>
       </section>
+
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Construction & Site Portfolio</h2>
+            <p className="text-xl text-muted-foreground">Showcasing our active involvement in precision building and site execution.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              "/Project%20Management%204.png",
+              "/Project%20Management%201.jpg",
+              "/Project%20Management%202.jpg",
+              "/Project%20Management%203.jpeg",
+              "/Project%20Management%205.jpeg",
+              "/Project%20Management%206.jpg",
+              "/Project%20Management%207.jpg",
+              "/Project%20Management%208.jpg",
+              "/Project%20Management%209.jpg"
+            ].map((img, idx) => (
+              <Card key={idx} className="overflow-hidden group border-none shadow-lg rounded-2xl">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={img} 
+                    alt={`Construction Site ${idx + 1}`} 
+                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
