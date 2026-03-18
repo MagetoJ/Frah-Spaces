@@ -246,13 +246,14 @@ export default function Home() {
             </div>
 
             <TabsContent value="residential" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
+                  { id: "siri-africa-a-frame", title: "Siri Africa A-Frame", loc: "Kenya", img: "/Siri%20A%20frame%20house%202.png" },
                   { id: "syokimau-residence", title: "Syokimau Residence", loc: "Syokimau", img: "/Syokimau%202.jpg" },
                   { id: "nyambura-house", title: "Nyambura House", loc: "Nairobi", img: "/nyambura 1.png" },
                   { id: "kapsaret-residence", title: "Kapsaret Residence", loc: "Eldoret", img: "/kapsaret%201.jpg" }
                 ].map((p, i) => (
-                  <Link key={i} to={`/work/${p.id}`}>
+                  <Link key={i} to={`/work/${p.id}`} className={i === 0 ? "md:col-span-2 lg:col-span-1" : ""}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full">
                       <div className="relative aspect-[4/3] overflow-hidden">
                         <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />

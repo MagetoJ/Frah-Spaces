@@ -10,8 +10,36 @@ export default function About() {
   ];
 
   const team = [
-    { name: "Fred Nyanturi", role: "Managing Director", specialty: "General Construction & Renovation" },
-    { name: "Technical Team", role: "Specialized Services", specialty: "Electrical, Plumbing, HVAC & Landscaping" },
+    { 
+      name: "Fred Nyanturi", 
+      role: "Managing Director", 
+      specialty: "General Construction & Renovation",
+      image: "/Fred - Managing Director.jpg"
+    },
+    { 
+      name: "Carlos", 
+      role: "Director", 
+      specialty: "Project Management & Strategy",
+      image: "/Carlos - Director.jpg"
+    },
+    { 
+      name: "Ezra", 
+      role: "Architect", 
+      specialty: "Design & Planning",
+      image: "/Ezra - Architect.jpg"
+    },
+    { 
+      name: "James", 
+      role: "Business Development Manager", 
+      specialty: "Strategic Growth & Client Relations",
+      image: "/James - Business Development Manager.jpg"
+    },
+    { 
+      name: "Hellen", 
+      role: "Finance & Admin Manager", 
+      specialty: "Financial Management & Operations",
+      image: "/Hellen - Finance & Admin Manager.jpg"
+    },
   ];
 
   const values = [
@@ -122,13 +150,26 @@ export default function About() {
           <p className="text-xl text-muted-foreground mb-12 text-center max-w-2xl mx-auto">
             Managed by seasoned professionals with over a decade of experience in the construction industry.
           </p>
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {team.map((member, idx) => (
-              <Card key={idx} className="overflow-hidden group hover:shadow-xl transition-shadow border-2 hover:border-primary/20">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
-                  <p className="text-lg text-primary mb-3">{member.role}</p>
-                  <p className="text-muted-foreground">{member.specialty}</p>
+              <Card key={idx} className="overflow-hidden group hover:shadow-2xl transition-all duration-500 border-none bg-muted/20">
+                <div className="aspect-[4/5] overflow-hidden relative">
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <Badge className="mb-2 bg-primary/90 text-white border-none">{member.role}</Badge>
+                    <h3 className="text-2xl font-bold text-white">{member.name}</h3>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Expertise in <span className="text-foreground font-semibold">{member.specialty}</span>. 
+                    Committed to delivering excellence across all Frah Spaces projects.
+                  </p>
                 </CardContent>
               </Card>
             ))}

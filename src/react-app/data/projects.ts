@@ -131,4 +131,27 @@ export const projects: Project[] = [
       "/Kapsaret%209.jpg"
     ]
   },
+  {
+    id: "siri-africa-a-frame",
+    title: "Siri Africa A-Frame House",
+    category: "residential",
+    location: "Kenya",
+    year: "2024",
+    description: "An iconic A-frame residential design that perfectly complements its natural surroundings with sustainable timber and panoramic glazing.",
+    image: "/Siri%20A%20frame%20house%202.png",
+    testimonial: "Frah Spaces brought our vision of a modern forest retreat to life. The A-frame design is both efficient and breathtaking.",
+    client: "Siri Africa Retreats",
+    story: "The Siri Africa A-Frame House is a masterclass in modern timber construction. Designed as a sustainable retreat, it features a dramatic steeply pitched roof that creates expansive double-height interior spaces. Large panoramic windows offer uninterrupted views of the landscape, while the use of natural materials ensures the structure feels grounded and eco-friendly.",
+    features: ["A-Frame Architecture", "Sustainable Timber", "Panoramic Glazing", "Double-Height Living"],
+    images: [
+      "/Siri%20A%20frame%20house%202.png",
+      "/Siri%20A%20frame%20house%203.png",
+      "/Siri%20A%20frame%20house%204%20(1).jpg",
+      "/Siri%20A%20frame%20house%206%20(1).jpg",
+      "/Siri%20A%20frame%20house%207%20(1).jpg",
+      "/Siri%20A%20frame%20house%208%20(1).jpg",
+      "/Siri%20A%20frame%20house%209%20(1).jpg",
+      "/Siri%20A%20frame%20house%2010.jpg"
+    ]
+  },
 ];
