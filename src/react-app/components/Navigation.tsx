@@ -15,13 +15,25 @@ import {
 } from "@/react-app/components/ui/dialog";
 import { MaterialCalculator } from "./MaterialCalculator";
 
+interface NavItem {
+  label: string;
+  path?: string;
+  action?: () => void;
+}
+
+interface NavLink {
+  path: string;
+  label: string;
+  dropdown?: NavItem[];
+}
+
 export default function Navigation() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About Us" },
     { 
