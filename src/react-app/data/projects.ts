@@ -64,6 +64,29 @@ export const projects: Project[] = [
     ]
   },
   {
+    id: "kahawa-sukari-villa",
+    title: "Kahawa Sukari Modern Villa",
+    category: "residential",
+    location: "Kahawa Sukari, Nairobi",
+    year: "2024",
+    description: "A sophisticated residential development featuring modern architectural lines and premium finishes.",
+    image: "/kahawa%20sukari%201.png",
+    testimonial: "Frah Spaces brought a level of professionalism and design excellence that exceeded our expectations for our Kahawa Sukari home.",
+    client: "Private Homeowner",
+    story: "Located in the serene Kahawa Sukari neighborhood, this modern villa project focuses on maximizing space and natural light. The design incorporates clean lines, large windows, and a functional layout that caters to modern family living. Every detail, from the structural elements to the final interior finishes, was carefully considered to create a luxurious and comfortable environment.",
+    features: ["Modern Architectural Lines", "Spacious Interior", "Premium Finishes", "Natural Lighting"],
+    images: [
+      "/kahawa%20sukari%201.png",
+      "/Kahawa%20sukari%202.png",
+      "/kahawa%20sukari%203.jpg",
+      "/kahawa%20sukari%204.jpg",
+      "/kahawa%20sukari%205.jpg",
+      "/kahawa%20sukari%206.jpg",
+      "/kahawa%20sukari%207.jpg",
+      "/kahawa%20sukari%208.jpg"
+    ]
+  },
+  {
     id: "liuwa-gardens",
     title: "Liuwa Gardens Hotel & Restaurant",
     category: "hotels",

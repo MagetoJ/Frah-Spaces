@@ -99,19 +99,24 @@ export default function Products() {
           title: "Doors & Windows",
           items: [
             { 
-              name: "Solid Wood Doors", 
-              specs: "Custom mahogany and mvule entrance doors",
-              image: "/bluegum 1.jpeg"
+              name: "Mahogany Solid Doors", 
+              specs: "Premium handcrafted mahogany entrance doors",
+              image: "/Mahogany doors 2.jpg"
             },
             { 
-              name: "Aluminum Windows", 
-              specs: "Durable and stylish aluminum window solutions",
-              image: "/Aluminium 1.jpg"
+              name: "Security Steel Doors", 
+              specs: "Reinforced steel doors for maximum security",
+              image: "/Steel Doors.jpg"
             },
             { 
-              name: "Slimline Profiles", 
-              specs: "Modern thin-frame aluminum designs",
-              image: "/Aluminium 2.jpg"
+              name: "Engineered Wood Doors", 
+              specs: "Modern durable composite wood doors",
+              image: "/Engineered Wood Doors 2.jpg"
+            },
+            { 
+              name: "Classic Panel Doors", 
+              specs: "Traditional elegant raised panel designs",
+              image: "/panel-doors.jpg"
             }
           ]
         }

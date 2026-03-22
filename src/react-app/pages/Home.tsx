@@ -11,7 +11,8 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     "/Liuwa%20Gardens%201.jpg",
-    "/nyambura%201.png"
+    "/nyambura%201.png",
+    "/kahawa%20sukari%201.png"
   ];
 
   useEffect(() => {
@@ -251,6 +252,7 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
                   { id: "siri-africa-a-frame", title: "Siri Africa A-Frame", loc: "Kenya", img: "/Siri%20A%20frame%20house%202.png" },
+                  { id: "kahawa-sukari-villa", title: "Kahawa Sukari Villa", loc: "Nairobi", img: "/kahawa%20sukari%201.png" },
                   { id: "syokimau-residence", title: "Syokimau Residence", loc: "Syokimau", img: "/Syokimau%202.jpg" },
                   { id: "nyambura-house", title: "Nyambura House", loc: "Nairobi", img: "/nyambura 1.png" },
                   { id: "kapsaret-residence", title: "Kapsaret Residence", loc: "Eldoret", img: "/kapsaret%201.jpg" }

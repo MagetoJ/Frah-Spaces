@@ -96,6 +96,7 @@ export default function ProjectManagement() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
+              "/kahawa%20sukari%208.jpg",
               "/Project%20Management%204.png",
               "/Project%20Management%201.jpg",
               "/Project%20Management%202.jpg",

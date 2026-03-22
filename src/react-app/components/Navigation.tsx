@@ -43,12 +43,7 @@ export default function Navigation() {
         { label: "Flooring", path: "/products/flooring" },
         { label: "Windows & Doors", path: "/products/windows-doors" },
         { label: "Interior Finishes", path: "/products/interior-finishes" },
-        { label: "Outdoor & Landscaping", path: "/products/outdoor-landscaping" },
-        { 
-          label: "Material Calculator", 
-          type: "calculator",
-          action: () => setIsCalculatorOpen(true) 
-        }
+        { label: "Outdoor & Landscaping", path: "/products/outdoor-landscaping" }
       ]
     },
     { 
