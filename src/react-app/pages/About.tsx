@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
-import { Building2, Award, Users, Target } from "lucide-react";
+import { Building2, Award, Users, Target, ShieldCheck, FileText, CheckCircle } from "lucide-react";
 
 export default function About() {
   const timeline = [
@@ -14,19 +14,25 @@ export default function About() {
       name: "Fred Nyanturi", 
       role: "Managing Director", 
       specialty: "General Construction & Renovation",
-      image: "/Fred - Managing Director.jpg"
+      image: "/Fred_-_Managing_Director-removebg-preview.png"
+    },
+    { 
+      name: "Arch. Mutuku John Kaeke", 
+      role: "Lead Architect", 
+      specialty: "Architectural Design & Planning (B.Arch, JKUAT)",
+      image: "/Frah_Spaces_Team-removebg-preview.png"
     },
     { 
       name: "Carlos", 
       role: "Director", 
       specialty: "Project Management & Strategy",
-      image: "/Carlos - Director.jpg"
+      image: "/Carlos_Director-removebg-preview.png"
     },
     { 
-      name: "Ezra", 
-      role: "Architect", 
-      specialty: "Design & Planning",
-      image: "/Ezra - Architect.jpg"
+      name: "Eng. Orina", 
+      role: "Civil Engineer", 
+      specialty: "Civil Works & Infrastructure",
+      image: "/Eng._Orina_-_Civil_Engineer-removebg-preview.png"
     },
     { 
       name: "James", 
@@ -38,7 +44,31 @@ export default function About() {
       name: "Hellen", 
       role: "Finance & Admin Manager", 
       specialty: "Financial Management & Operations",
-      image: "/Hellen - Finance & Admin Manager.jpg"
+      image: "/Hellen_-_Finance___Admin-removebg-preview.png"
+    },
+    { 
+      name: "Phillip", 
+      role: "Senior Foreman", 
+      specialty: "Site Supervision & Construction Management",
+      image: "/Phillip_-_Senior_Foreman-removebg-preview.png"
+    },
+    { 
+      name: "Timothy", 
+      role: "Office Operations", 
+      specialty: "Logistics & Administrative Support",
+      image: "/Timothy_-_Office_Operations-removebg-preview.png"
+    },
+    { 
+      name: "David", 
+      role: "Electrician", 
+      specialty: "Electrical Systems & Solar Installation",
+      image: "/David_-_Electrician-removebg-preview.png"
+    },
+    { 
+      name: "Sebastian", 
+      role: "Painter", 
+      specialty: "Interior & Exterior Finishing",
+      image: "/Sebastian_-_Painter-removebg-preview.png"
     },
   ];
 
@@ -47,6 +77,24 @@ export default function About() {
     { icon: Building2, title: "Innovation", description: "Driving innovation with modern, high-quality designs and sustainable practices." },
     { icon: Target, title: "Precision", description: "Ensuring precision in every project to exceed our clients' expectations." },
     { icon: Users, title: "Commitment", description: "A deep commitment to providing luxury with affordability for all Kenyans." },
+  ];
+
+  const credentials = [
+    { 
+      title: "NCA Registered", 
+      description: "NCA5 Building Works, NCA6 Electrical & Mechanical Engineering Services.",
+      icon: ShieldCheck
+    },
+    { 
+      title: "Licensed Architects", 
+      description: "Registered practicing certificates valid through June 2026.",
+      icon: FileText
+    },
+    { 
+      title: "KRA Compliant", 
+      description: "Full tax compliance with current certificates valid through 2026.",
+      icon: CheckCircle
+    }
   ];
 
   return (
@@ -61,10 +109,10 @@ export default function About() {
               <span className="block text-primary">Masterful Construction</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Frah Spaces Limited is a premier high-end architecture and construction firm. 
+              Frah Spaces Limited is a premier high-end architecture and construction firm based in Nairobi. 
               We provide a seamless, end-to-end experience—from initial consultancy and 
               architectural design to masterful construction and final outdoor styling. 
-              Our mission is to bring your vision to life with precision and luxury.
+              Our mission is to bring your vision to life with precision and luxury across Kenya.
             </p>
           </div>
         </div>
@@ -82,15 +130,38 @@ export default function About() {
               </p>
               <h2 className="text-4xl font-bold mb-6">Our Vision</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To foster excellence through collaboration, innovation, and sustainability, ensuring every project exceeds expectations.
+                To foster excellence through collaboration, innovation, and sustainability, ensuring every project exceeds expectations and sets new standards in the built environment.
               </p>
             </div>
             <div 
               className="h-96 rounded-2xl bg-cover bg-center shadow-2xl"
               style={{
-                backgroundImage: `url('https://images.unsplash.com/photo-1503387762-592dee58c460?w=800&q=80')`
+                backgroundImage: `url('/Liuwa Gardens 1.jpg')`
               }}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Credentials Section */}
+      <section className="py-20 bg-primary/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Compliance & Credentials</h2>
+            <p className="text-xl text-muted-foreground">Certified excellence and regulatory adherence.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {credentials.map((item, idx) => (
+              <Card key={idx} className="bg-background/50 backdrop-blur border-none shadow-lg">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <item.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

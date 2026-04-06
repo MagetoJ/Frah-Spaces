@@ -13,13 +13,13 @@ export default function Work() {
     {
       title: "Luxury Villa Walkthrough",
       description: "A detailed tour of our most recent residential completion in Nairobi.",
-      thumbnail: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80",
+      thumbnail: "/nyambura 1.png",
       videoUrl: "#"
     },
     {
       title: "Design Process: Concept to Completion",
       description: "Behind the scenes of our project management and interior design workflow.",
-      thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+      thumbnail: "/Project Management 4.png",
       videoUrl: "#"
     }
   ];

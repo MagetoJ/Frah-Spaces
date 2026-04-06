@@ -266,7 +266,7 @@ export default function Designs() {
               </Button>
             </div>
             <div className="bg-primary rounded-3xl p-1 shadow-2xl overflow-hidden">
-               <div className="aspect-square bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592dee58c460?w=800&q=80')" }} />
+               <div className="aspect-square bg-cover bg-center" style={{ backgroundImage: "url('/design 4.jpg')" }} />
             </div>
           </div>
         </div>

@@ -158,14 +158,14 @@ export const projects: Project[] = [
     id: "siri-africa-a-frame",
     title: "Siri Africa A-Frame House",
     category: "residential",
-    location: "Kenya",
+    location: "Tigoni, Kiambu County",
     year: "2024",
-    description: "An iconic A-frame residential design that perfectly complements its natural surroundings with sustainable timber and panoramic glazing.",
+    description: "An iconic A-frame residential design featuring geometric lines and expansive glass panels designed for the cool climate of Kiambu County.",
     image: "/Siri%20A%20frame%20house%202.png",
     testimonial: "Frah Spaces brought our vision of a modern forest retreat to life. The A-frame design is both efficient and breathtaking.",
     client: "Siri Africa Retreats",
-    story: "The Siri Africa A-Frame House is a masterclass in modern timber construction. Designed as a sustainable retreat, it features a dramatic steeply pitched roof that creates expansive double-height interior spaces. Large panoramic windows offer uninterrupted views of the landscape, while the use of natural materials ensures the structure feels grounded and eco-friendly.",
-    features: ["A-Frame Architecture", "Sustainable Timber", "Panoramic Glazing", "Double-Height Living"],
+    story: "The Siri Africa A-Frame House is a masterclass in modern residential architecture. Designed for the cool Tigoni climate, it features geometric lines and expansive glass panels that offer uninterrupted views of the landscape. The steep roof creates dramatic double-height interior spaces while the use of sustainable materials ensures the structure feels grounded and eco-friendly.",
+    features: ["A-Frame Architecture", "Geometric Lines", "Expansive Glass Panels", "Double-Height Living"],
     images: [
       "/Siri%20A%20frame%20house%202.png",
       "/Siri%20A%20frame%20house%203.png",
@@ -175,6 +175,23 @@ export const projects: Project[] = [
       "/Siri%20A%20frame%20house%208%20(1).jpg",
       "/Siri%20A%20frame%20house%209%20(1).jpg",
       "/Siri%20A%20frame%20house%2010.jpg"
+    ]
+  },
+  {
+    id: "kitale-restaurant-renovation",
+    title: "Restaurant Renovation & Expansion",
+    category: "commercial",
+    location: "Kitale, Trans Nzoia",
+    year: "2024",
+    description: "A major hospitality expansion project including an upper floor addition, swimming pool, and improved access infrastructure.",
+    image: "/Liuwa%20Gardens%201.jpg", // Using a placeholder hospitality image
+    testimonial: "The expansion has significantly increased our capacity and elevated the guest experience. Exceptional project management.",
+    client: "Private Hospitality Client",
+    story: "This renovation project in Kitale transformed a local restaurant into a full-scale hospitality destination. We added an entire upper floor, a dedicated grill section, and a modern swimming pool. The project also involved significant infrastructure improvements, including paved access and enhanced site drainage.",
+    features: ["Upper Floor Addition", "Swimming Pool Construction", "Grill Section Expansion", "Infrastructure Upgrades"],
+    images: [
+      "/Liuwa%20Gardens%201.jpg",
+      "/Liuwa%20Gardens%202.jpg"
     ]
   },
   {

@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
-import { Building2, Shield, Mail, MessageCircle, Phone, Hammer, Ruler, Briefcase, Layout, Globe } from "lucide-react";
+import { Building2, Shield, Mail, MessageCircle, Phone, Hammer, Ruler, Briefcase, Layout, Globe, Droplets, Sun, Wind, Box } from "lucide-react";
 
 export default function Services() {
   const serviceCategories = [
@@ -40,6 +40,29 @@ export default function Services() {
       title: "Outdoor Design",
       description: "Extending luxury beyond your four walls. We design and implement stunning landscapes and outdoor living spaces.",
       options: ["Landscaping", "Outdoor Paving", "Lighting Design", "Garden Elements"]
+    }
+  ];
+
+  const technicalSolutions = [
+    {
+      icon: Droplets,
+      title: "Plumbing",
+      description: "Specialized installation of biodigesters, water supply systems, sewer lines, and septic tanks with long-term durability."
+    },
+    {
+      icon: Sun,
+      title: "Electrical & Solar",
+      description: "Professional wiring and off-grid/hybrid solar system installations (panels, inverters, and batteries) for energy independence."
+    },
+    {
+      icon: Wind,
+      title: "HVAC",
+      description: "Expert installation of advanced air conditioning, ventilation, and heating systems tailored to building requirements."
+    },
+    {
+      icon: Box,
+      title: "Glazing & Welding",
+      description: "Precision fabrication of metal fixtures and installation of architectural glass panels, partitions, and facades."
     }
   ];
 
@@ -146,6 +169,31 @@ export default function Services() {
                     </div>
                   </div>
                 </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Infrastructure Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Technical Infrastructure</h2>
+            <p className="text-xl text-muted-foreground">Specialized solutions for modern technical systems.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {technicalSolutions.map((solution, idx) => (
+              <Card key={idx} className="border-none shadow-lg hover:shadow-xl transition-all">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <solution.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{solution.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {solution.description}
+                  </p>
+                </CardContent>
               </Card>
             ))}
           </div>

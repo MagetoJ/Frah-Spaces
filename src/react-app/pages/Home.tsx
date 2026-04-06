@@ -251,7 +251,7 @@ export default function Home() {
             <TabsContent value="residential" className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
-                  { id: "siri-africa-a-frame", title: "Siri Africa A-Frame", loc: "Kenya", img: "/Siri%20A%20frame%20house%202.png" },
+                  { id: "siri-africa-a-frame", title: "Siri Africa A-Frame", loc: "Tigoni, Kiambu", img: "/Siri%20A%20frame%20house%202.png" },
                   { id: "kahawa-sukari-villa", title: "Kahawa Sukari Villa", loc: "Nairobi", img: "/kahawa%20sukari%201.png" },
                   { id: "syokimau-residence", title: "Syokimau Residence", loc: "Syokimau", img: "/Syokimau%202.jpg" },
                   { id: "nyambura-house", title: "Nyambura House", loc: "Nairobi", img: "/nyambura 1.png" },
@@ -275,12 +275,13 @@ export default function Home() {
             </TabsContent>
 
             <TabsContent value="commercial" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
-                  { id: "modern-apartment-complex", title: "Modern Apartment Complex", loc: "Nairobi", img: "/Apartment%204.jpg" }
+                  { id: "modern-apartment-complex", title: "Modern Apartment Complex", loc: "Nairobi", img: "/Apartment%204.jpg" },
+                  { id: "kitale-restaurant-renovation", title: "Kitale Restaurant Expansion", loc: "Kitale", img: "/Liuwa%20Gardens%201.jpg" }
                 ].map((p, i) => (
                   <Link key={i} to={`/work/${p.id}`}>
-                    <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full max-w-2xl">
+                    <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full">
                       <div className="relative aspect-[16/9] overflow-hidden">
                         <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
@@ -434,7 +435,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1 relative group overflow-hidden rounded-2xl shadow-2xl">
             <img 
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" 
+              src="/Project Management 1.jpg" 
               alt="Technical Precision" 
               className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" 
             />

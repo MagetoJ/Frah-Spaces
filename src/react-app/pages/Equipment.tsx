@@ -118,7 +118,7 @@ export default function Equipment() {
     <div className="pb-20">
       {/* Premium Hero Section */}
       <section className="relative py-24 bg-zinc-950 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-[url('/Excavator.jpg')] bg-cover bg-center opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">

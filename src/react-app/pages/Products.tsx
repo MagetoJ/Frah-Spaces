@@ -48,12 +48,12 @@ export default function Products() {
             { 
               name: "Premium Roofing Sheets", 
               specs: "Durable metal and stone-coated roofing solutions",
-              image: "https://images.unsplash.com/photo-1632759162353-0801d936173b?w=800&q=80"
+              image: "/design 1.png"
             },
             { 
               name: "Structural Walling", 
               specs: "High-quality stone and concrete walling units",
-              image: "https://images.unsplash.com/photo-1590069230002-70cc83815b41?w=800&q=80"
+              image: "/Ballast.jpg"
             }
           ]
         }
