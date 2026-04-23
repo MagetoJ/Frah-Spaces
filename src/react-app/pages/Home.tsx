@@ -6,7 +6,7 @@ import { Badge } from "@/react-app/components/ui/badge";
 import { MaterialCalculator } from "@/react-app/components/MaterialCalculator";
 import { Card } from "@/react-app/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/react-app/components/ui/tabs";
-import { blogPosts } from "../data/blog";
+import { blogPosts, type BlogPost } from "@/react-app/data/blog";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -496,7 +496,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            {blogPosts.map((post) => (
+            {blogPosts.map((post: BlogPost) => (
               <Link key={post.id} to={`/blog/${post.id}`}>
                 <Card className="overflow-hidden group hover:shadow-xl transition-all border-none bg-background">
                   <div className="grid sm:grid-cols-5 h-full">
