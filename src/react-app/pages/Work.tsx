@@ -55,14 +55,14 @@ export default function Work() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Tabs defaultValue="all" className="mb-12 w-full">
-            <div className="flex justify-center overflow-x-auto pb-4">
-              <TabsList className="grid w-full max-w-2xl grid-cols-3 md:grid-cols-6 h-auto">
-                <TabsTrigger value="all" onClick={() => setSelectedCategory("all")} className="py-2">All Projects</TabsTrigger>
-                <TabsTrigger value="residential" onClick={() => setSelectedCategory("residential")} className="py-2">Residential</TabsTrigger>
-                <TabsTrigger value="commercial" onClick={() => setSelectedCategory("commercial")} className="py-2">Commercial</TabsTrigger>
-                <TabsTrigger value="hotels" onClick={() => setSelectedCategory("hotels")} className="py-2">Hotels</TabsTrigger>
-                <TabsTrigger value="landscaping" onClick={() => setSelectedCategory("landscaping")} className="py-2">Landscaping</TabsTrigger>
-                <TabsTrigger value="management" onClick={() => setSelectedCategory("management")} className="py-2 text-xs md:text-sm">Management</TabsTrigger>
+            <div className="flex justify-center overflow-x-auto pb-4 no-scrollbar">
+              <TabsList className="grid w-full max-w-2xl grid-cols-3 md:grid-cols-4 lg:grid-cols-6 h-auto flex-wrap md:flex-nowrap">
+                <TabsTrigger value="all" onClick={() => setSelectedCategory("all")} className="py-2 px-3 md:px-4 text-xs md:text-sm">All Projects</TabsTrigger>
+                <TabsTrigger value="residential" onClick={() => setSelectedCategory("residential")} className="py-2 px-3 md:px-4 text-xs md:text-sm">Residential</TabsTrigger>
+                <TabsTrigger value="commercial" onClick={() => setSelectedCategory("commercial")} className="py-2 px-3 md:px-4 text-xs md:text-sm">Commercial</TabsTrigger>
+                <TabsTrigger value="hotels" onClick={() => setSelectedCategory("hotels")} className="py-2 px-3 md:px-4 text-xs md:text-sm">Hotels</TabsTrigger>
+                <TabsTrigger value="landscaping" onClick={() => setSelectedCategory("landscaping")} className="py-2 px-3 md:px-4 text-xs md:text-sm">Landscaping</TabsTrigger>
+                <TabsTrigger value="management" onClick={() => setSelectedCategory("management")} className="py-2 px-3 md:px-4 text-xs md:text-sm">Management</TabsTrigger>
               </TabsList>
             </div>
           </Tabs>

@@ -129,7 +129,7 @@ export default function Equipment() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <Badge className="mb-4 bg-primary text-white border-0 hover:bg-primary/90">Asset Fleet 2024</Badge>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-            Industrial Power.
+            Industrial Power.<span className="md:text-6xl lg:text-7xl">
             <span className="block text-primary/80">Professional Precision.</span>
           </h1>
           <p className="text-xl text-zinc-400 leading-relaxed max-w-2xl">

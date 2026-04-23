@@ -155,7 +155,7 @@ export default function ProjectDetail() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {relatedProjects.map((p) => (
                 <Link key={p.id} to={`/work/${p.id}`}>
                   <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full flex flex-col hover:shadow-2xl transition-all duration-300">

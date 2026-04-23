@@ -96,7 +96,7 @@ export default function Navigation() {
             </div>
             <div>
               <h1 className="text-sm sm:text-xl font-bold tracking-tight">FRAH SPACES</h1>
-              <p className="hidden sm:block text-[10px] sm:text-xs text-muted-foreground whitespace-nowrap">Construction & Property Management</p>
+              <p className="hidden sm:block text-[10px] sm:text-xs md:text-sm text-muted-foreground whitespace-nowrap">Construction & Property Management</p>
             </div>
           </Link>
 

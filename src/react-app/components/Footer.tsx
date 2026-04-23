@@ -18,8 +18,8 @@ export default function Footer() {
               <h3 className="text-lg font-bold tracking-tight">FRAH SPACES</h3>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Building dreams through modern design, high-quality construction, 
-              and innovative real estate management across Kenya.
+git              Building dreams through modern design, high-quality construction,
+              and innovative property management across Kenya.
             </p>
             <div className="flex items-center gap-4 pt-2">
                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
@@ -54,7 +54,7 @@ export default function Footer() {
               <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
                 <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
                 Construction & Civil Works
-              </li>
+              </li> 
               <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
                 <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
                 Real Estate Management

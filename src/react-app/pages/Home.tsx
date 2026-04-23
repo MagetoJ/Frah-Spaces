@@ -47,7 +47,7 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
           <div className="max-w-4xl">
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight text-white drop-shadow-md">
-              East Africa's Most
+              East Africa's Most<span className="md:text-6xl lg:text-7xl">
               <span className="block text-primary-foreground">Reliable & Quality-Verified Construction Firm</span>
             </h1>
             
@@ -77,7 +77,7 @@ export default function Home() {
                 <img 
                   src="/Liuwa%20Gardens%201.jpg" 
                   alt="Liuwa Gardens - Premier hospitality design and quality construction in Kenya by Frah Spaces" 
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-[300px] md:h-[500px] object-cover"
                 />
                 <div className="absolute top-6 left-6">
                   <Badge className="bg-primary text-white px-4 py-1 text-sm">Featured Project</Badge>
@@ -240,12 +240,12 @@ export default function Home() {
 
           <Tabs defaultValue="residential" className="w-full">
             <div className="flex justify-start mb-8 overflow-x-auto pb-2">
-              <TabsList className="bg-white/50 dark:bg-slate-800/50 p-1 border border-border">
-                <TabsTrigger value="residential" className="px-8 py-2.5">Residential</TabsTrigger>
-                <TabsTrigger value="commercial" className="px-8 py-2.5">Commercial</TabsTrigger>
-                <TabsTrigger value="hotels" className="px-8 py-2.5">Hotels</TabsTrigger>
-                <TabsTrigger value="landscaping" className="px-8 py-2.5">Landscaping</TabsTrigger>
-                <TabsTrigger value="management" className="px-8 py-2.5">Management</TabsTrigger>
+              <TabsList className="bg-white/50 dark:bg-slate-800/50 p-1 border border-border flex-wrap md:flex-nowrap">
+                <TabsTrigger value="residential" className="px-4 md:px-6 py-2.5">Residential</TabsTrigger>
+                <TabsTrigger value="commercial" className="px-4 md:px-6 py-2.5">Commercial</TabsTrigger>
+                <TabsTrigger value="hotels" className="px-4 md:px-6 py-2.5">Hotels</TabsTrigger>
+                <TabsTrigger value="landscaping" className="px-4 md:px-6 py-2.5">Landscaping</TabsTrigger>
+                <TabsTrigger value="management" className="px-4 md:px-6 py-2.5">Management</TabsTrigger>
               </TabsList>
             </div>
 
