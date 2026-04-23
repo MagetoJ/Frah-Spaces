@@ -124,7 +124,7 @@ export default function ProjectDetail() {
               >
                 <img 
                   src={img} 
-                  alt={`${project.title} view ${idx}`} 
+                  alt={`${project.category.charAt(0).toUpperCase() + project.category.slice(1)} construction project in ${project.location} - ${project.title} by Frah Spaces`} 
                   className="w-full object-cover transition-transform duration-700 group-hover:scale-110" 
                   loading="lazy"
                 />
@@ -159,7 +159,7 @@ export default function ProjectDetail() {
                     <div className="relative aspect-[4/3] overflow-hidden">
                       <img 
                         src={p.image} 
-                        alt={p.title} 
+                        alt={`${p.category.charAt(0).toUpperCase() + p.category.slice(1)} construction project in ${p.location} - ${p.title} by Frah Spaces`} 
                         className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" 
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">

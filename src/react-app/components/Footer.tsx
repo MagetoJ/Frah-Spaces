@@ -94,7 +94,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary mt-0.5" />
-                <span>4Ways Village Business Park, Kiambu Road, Nairobi</span>
+                <span>Fourways Junction, Kiambu Road, Nairobi</span>
               </li>
             </ul>
           </div>

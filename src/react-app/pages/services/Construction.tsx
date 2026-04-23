@@ -24,11 +24,12 @@ export default function Construction() {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <Badge className="mb-4">Our Expertise</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Construction
-            <span className="block text-primary">Services</span>
+            Reliable Building
+            <span className="block text-primary">Solutions in Kenya</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            Focusing on the building process, safety standards, and site execution to ensure quality and precision.
+            Quality-driven civil works and construction services, 
+            focused on safety standards, site excellence, and masterful execution.
           </p>
         </div>
       </section>
@@ -111,7 +112,7 @@ export default function Construction() {
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
                     src={img} 
-                    alt={`Construction Site ${idx + 1}`} 
+                    alt={`Reliable civil works and quality construction site in Kenya - Frah Spaces Project Portfolio ${idx + 1}`} 
                     className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" 
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />

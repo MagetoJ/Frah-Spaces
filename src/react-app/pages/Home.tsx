@@ -36,7 +36,7 @@ export default function Home() {
           >
             <img 
               src={slide} 
-              alt={`Slide ${index}`}
+              alt={`High-quality and reliable construction project in East Africa by Frah Spaces - Featured Build ${index + 1}`}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/40" />
@@ -45,9 +45,9 @@ export default function Home() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
           <div className="max-w-4xl">
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-md">
-              Building Dreams from
-              <span className="block text-primary-foreground">Foundation to Finish</span>
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight text-white drop-shadow-md">
+              East Africa's Most
+              <span className="block text-primary-foreground">Reliable & Quality-Verified Construction Firm</span>
             </h1>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -75,7 +75,7 @@ export default function Home() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img 
                   src="/Liuwa%20Gardens%201.jpg" 
-                  alt="Liuwa Gardens" 
+                  alt="Liuwa Gardens - Premier hospitality design and quality construction in Kenya by Frah Spaces" 
                   className="w-full h-[500px] object-cover"
                 />
                 <div className="absolute top-6 left-6">
@@ -396,10 +396,10 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <Badge variant="outline" className="mb-4 text-primary border-primary">Integrated Tools</Badge>
-              <h2 className="text-4xl font-bold mb-6">Built-in Precision: <br/>The Material Estimator</h2>
+              <h2 className="text-4xl font-bold mb-6">Kenya's Most Accurate <br/>Construction Material Estimator</h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 We provide immediate value through technical transparency. Use our custom estimator 
-                to calculate material requirements for your project, factoring in local standards 
+                to calculate building material requirements for your project, factoring in Kenyan construction standards 
                 and professional wastage rules.
               </p>
               <ul className="space-y-4 mb-8">
@@ -436,7 +436,7 @@ export default function Home() {
           <div className="order-2 md:order-1 relative group overflow-hidden rounded-2xl shadow-2xl">
             <img 
               src="/Project Management 1.jpg" 
-              alt="Technical Precision" 
+              alt="NCA Registered Technical Precision - Quality-verified building site management by Frah Spaces" 
               className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-8">

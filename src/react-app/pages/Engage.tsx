@@ -233,8 +233,8 @@ export default function Engage() {
                     <div>
                       <div className="font-medium">Office</div>
                       <p className="text-muted-foreground">
-                        4Ways Village Business Park, 1st Floor, Rm. 109<br />
-                        Fourways Junction, Kiambu Road, Nairobi
+                        Fourways Junction, 1st Floor, Rm. 109<br />
+                        Kiambu Road, Nairobi
                       </p>
                     </div>
                   </div>

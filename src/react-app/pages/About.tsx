@@ -9,67 +9,87 @@ export default function About() {
     { year: "Today", event: "70+ Projects Completed", description: "Excellence in construction, renovations, and property management delivered with precision." },
   ];
 
-  const team = [
-    { 
-      name: "Fred Nyanturi", 
-      role: "Managing Director", 
-      specialty: "General Construction & Renovation",
-      image: "/Fred_-_Managing_Director-removebg-preview.png"
+  const teamGroups = [
+    {
+      title: "Executive Leadership",
+      members: [
+        { 
+          name: "Fred Nyanturi", 
+          role: "Managing Director", 
+          specialty: "General Construction & Renovation",
+          image: "/Fred_-_Managing_Director-removebg-preview (1).png"
+        },
+        { 
+          name: "Carlos", 
+          role: "Director", 
+          specialty: "Project Management & Strategy",
+          image: "/Carlos_Director-removebg-preview (1).png"
+        },
+      ]
     },
-    { 
-      name: "Arch. Mutuku John Kaeke", 
-      role: "Lead Architect", 
-      specialty: "Architectural Design & Planning (B.Arch, JKUAT)",
-      image: "/Frah_Spaces_Team-removebg-preview.png"
+    {
+      title: "Technical Expertise",
+      members: [
+        { 
+          name: "Arch. Mutuku John Kaeke", 
+          role: "Lead Architect", 
+          specialty: "Architectural Design & Planning (B.Arch, JKUAT)",
+          image: "/Arch. John Kaeke.png"
+        },
+        { 
+          name: "Eng. Orina", 
+          role: "Civil Engineer", 
+          specialty: "Civil Works & Infrastructure",
+          image: "/Eng._Orina_-_Civil_Engineer-removebg-preview (1).png"
+        },
+      ]
     },
-    { 
-      name: "Carlos", 
-      role: "Director", 
-      specialty: "Project Management & Strategy",
-      image: "/Carlos_Director-removebg-preview.png"
+    {
+      title: "Business & Operations",
+      members: [
+        { 
+          name: "Jim", 
+          role: "Business Development Manager", 
+          specialty: "Strategic Growth & Client Relations",
+          image: "/James - Business Development Manager .png"
+        },
+        { 
+          name: "Hellen", 
+          role: "Finance & Admin Manager", 
+          specialty: "Financial Management & Operations",
+          image: "/Hellen_-_Finance___Admin-removebg-preview (1).png"
+        },
+        { 
+          name: "Timothy", 
+          role: "Office Operations", 
+          specialty: "Logistics & Administrative Support",
+          image: "/Timothy_-_Office_Operations-removebg-preview (1).png"
+        },
+      ]
     },
-    { 
-      name: "Eng. Orina", 
-      role: "Civil Engineer", 
-      specialty: "Civil Works & Infrastructure",
-      image: "/Eng._Orina_-_Civil_Engineer-removebg-preview.png"
-    },
-    { 
-      name: "James", 
-      role: "Business Development Manager", 
-      specialty: "Strategic Growth & Client Relations",
-      image: "/James - Business Development Manager.jpg"
-    },
-    { 
-      name: "Hellen", 
-      role: "Finance & Admin Manager", 
-      specialty: "Financial Management & Operations",
-      image: "/Hellen_-_Finance___Admin-removebg-preview.png"
-    },
-    { 
-      name: "Phillip", 
-      role: "Senior Foreman", 
-      specialty: "Site Supervision & Construction Management",
-      image: "/Phillip_-_Senior_Foreman-removebg-preview.png"
-    },
-    { 
-      name: "Timothy", 
-      role: "Office Operations", 
-      specialty: "Logistics & Administrative Support",
-      image: "/Timothy_-_Office_Operations-removebg-preview.png"
-    },
-    { 
-      name: "David", 
-      role: "Electrician", 
-      specialty: "Electrical Systems & Solar Installation",
-      image: "/David_-_Electrician-removebg-preview.png"
-    },
-    { 
-      name: "Sebastian", 
-      role: "Painter", 
-      specialty: "Interior & Exterior Finishing",
-      image: "/Sebastian_-_Painter-removebg-preview.png"
-    },
+    {
+      title: "Field Specialists",
+      members: [
+        { 
+          name: "Phillip", 
+          role: "Senior Foreman", 
+          specialty: "Site Supervision & Construction Management",
+          image: "/Phillip_-_Senior_Foreman-removebg-preview (1).png"
+        },
+        { 
+          name: "David", 
+          role: "Electrician", 
+          specialty: "Electrical Systems & Solar Installation",
+          image: "/David_-_Electrician-removebg-preview (1).png"
+        },
+        { 
+          name: "Sebastian", 
+          role: "Painter", 
+          specialty: "Interior & Exterior Finishing",
+          image: "/Sebastian_-_Painter-removebg-preview (1).png"
+        },
+      ]
+    }
   ];
 
   const values = [
@@ -100,19 +120,25 @@ export default function About() {
   return (
     <div className="pb-20">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('/Frah%20Spaces%20Team%20(1).png')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
             <Badge className="mb-4">Our Story</Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Innovative Design,
-              <span className="block text-primary">Masterful Construction</span>
+              The Best & Most Reliable
+              <span className="block text-primary">Construction Partner in East Africa</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Frah Spaces Limited is a premier high-end architecture and construction firm based in Nairobi. 
+              Frah Spaces Limited is a premier high-end architecture and construction firm based in Nairobi, 
+              recognized for delivering quality-verified building solutions. 
               We provide a seamless, end-to-end experience—from initial consultancy and 
               architectural design to masterful construction and final outdoor styling. 
-              Our mission is to bring your vision to life with precision and luxury across Kenya.
+              With our NCA5 and NCA6 registrations, we bring your vision to life with precision and luxury across Kenya.
             </p>
           </div>
         </div>
@@ -147,7 +173,7 @@ export default function About() {
       <section className="py-20 bg-primary/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Compliance & Credentials</h2>
+            <h2 className="text-4xl font-bold mb-4">Quality Assurance & Compliance</h2>
             <p className="text-xl text-muted-foreground">Certified excellence and regulatory adherence.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -157,7 +183,7 @@ export default function About() {
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <item.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                  <h3 className="text-xl font-bold mb-2">Reliable & {item.title}</h3>
                   <p className="text-muted-foreground">{item.description}</p>
                 </CardContent>
               </Card>
@@ -217,32 +243,42 @@ export default function About() {
       {/* Team Section */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-4 text-center">Our Leadership</h2>
-          <p className="text-xl text-muted-foreground mb-12 text-center max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-center">Our Expert Team</h2>
+          <p className="text-xl text-muted-foreground mb-16 text-center max-w-2xl mx-auto">
             Managed by seasoned professionals with over a decade of experience in the construction industry.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {team.map((member, idx) => (
-              <Card key={idx} className="overflow-hidden group hover:shadow-2xl transition-all duration-500 border-none bg-muted/20">
-                <div className="aspect-[4/5] overflow-hidden relative">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <Badge className="mb-2 bg-primary/90 text-white border-none">{member.role}</Badge>
-                    <h3 className="text-2xl font-bold text-white">{member.name}</h3>
-                  </div>
+          
+          <div className="space-y-20">
+            {teamGroups.map((group, groupIdx) => (
+              <div key={groupIdx}>
+                <div className="flex items-center gap-4 mb-10">
+                  <h3 className="text-2xl font-bold text-primary whitespace-nowrap">{group.title}</h3>
+                  <div className="h-px w-full bg-primary/10" />
                 </div>
-                <CardContent className="p-6">
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Expertise in <span className="text-foreground font-semibold">{member.specialty}</span>. 
-                    Committed to delivering excellence across all Frah Spaces projects.
-                  </p>
-                </CardContent>
-              </Card>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                  {group.members.map((member, idx) => (
+                    <Card key={idx} className="overflow-hidden group hover:shadow-2xl transition-all duration-500 border-none bg-background/50 backdrop-blur">
+                      <div className="aspect-[4/5] overflow-hidden relative">
+                        <img 
+                          src={member.image} 
+                          alt={`${member.name} - ${member.role} at Frah Spaces`} 
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                        <div className="absolute bottom-6 left-6 right-6">
+                          <Badge className="mb-2 bg-primary/90 text-white border-none">{member.role}</Badge>
+                          <h3 className="text-2xl font-bold text-white">{member.name}</h3>
+                        </div>
+                      </div>
+                      <CardContent className="p-6">
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          Expertise in <span className="text-foreground font-semibold">{member.specialty}</span>. 
+                        </p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
