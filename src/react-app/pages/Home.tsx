@@ -47,8 +47,8 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
           <div className="max-w-4xl">
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight text-white drop-shadow-md">
-              East Africa's Most<span className="md:text-6xl lg:text-7xl">
-              <span className="block text-primary-foreground">Reliable & Quality-Verified Construction Firm</span>
+              East Africa's Most
+              <span className="block text-primary-foreground md:text-6xl lg:text-7xl">Reliable & Quality-Verified Construction Firm</span>
             </h1>
             
             <div className="flex flex-col sm:flex-row gap-4">
