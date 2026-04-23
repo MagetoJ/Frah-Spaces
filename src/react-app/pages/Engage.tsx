@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/react-app/components/ui/card";
 import { Button } from "@/react-app/components/ui/button";
 import { Input } from "@/react-app/components/ui/input";
@@ -10,6 +10,10 @@ import { MessageCircle, Mail, Phone, MapPin, Home, Building2, Wrench, ArrowRight
 
 export default function Engage() {
   const [selectedService, setSelectedService] = useState("");
+
+  useEffect(() => {
+    document.title = "Contact Us | Build Your Dream Project with Frah Spaces";
+  }, []);
 
   const services = [
     {
@@ -32,7 +36,7 @@ export default function Engage() {
     },
     {
       icon: Home,
-      title: "Real Estate Management",
+      title: "Property Management",
       description: "Full-cycle property management to protect and maximize asset value",
       features: ["Operations & Inspections", "Preventive Maintenance", "Lease Administration", "Statutory Compliance"]
     },

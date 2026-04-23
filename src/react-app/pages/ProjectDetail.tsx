@@ -13,6 +13,9 @@ export default function ProjectDetail() {
   // Scroll to top when project changes
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (project) {
+      document.title = `${project.title} | ${project.location} | Frah Spaces Portfolio`;
+    }
   }, [id]);
 
   if (!project) {

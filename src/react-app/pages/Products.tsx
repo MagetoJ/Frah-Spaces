@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
@@ -5,6 +6,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/react-app/components
 import { Package, Check, Mail, MessageCircle, Phone, Home, TreePine, Paintbrush, DoorOpen, Flower2, Layout } from "lucide-react";
 
 export default function Products() {
+  useEffect(() => {
+    document.title = "Building Materials & Interior Products | Frah Spaces Catalog";
+  }, []);
+
   const categories = [
     {
       id: "building",
@@ -194,13 +199,13 @@ export default function Products() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <Tabs defaultValue="building" className="w-full">
-            <div className="flex justify-center mb-12">
-              <TabsList className="h-14 p-1.5 rounded-2xl bg-muted/50 border border-border">
+            <div className="flex justify-center mb-12 overflow-x-auto pb-4">
+              <TabsList className="h-auto md:h-14 p-1.5 rounded-2xl bg-muted/50 border border-border flex-wrap md:flex-nowrap justify-center">
                 {categories.map((cat) => (
                   <TabsTrigger 
                     key={cat.id} 
                     value={cat.id} 
-                    className="px-8 rounded-xl flex items-center gap-2 text-base data-[state=active]:shadow-md"
+                    className="px-4 md:px-8 py-2 md:py-0 rounded-xl flex items-center gap-2 text-sm md:text-base data-[state=active]:shadow-md"
                   >
                     <cat.icon className="w-5 h-5" />
                     {cat.label}

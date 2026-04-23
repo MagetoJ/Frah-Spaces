@@ -16,6 +16,7 @@ export default function Home() {
   ];
 
   useEffect(() => {
+    document.title = "Frah Spaces | Leading Construction & Architecture Firm in East Africa";
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);

@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Building2, Award, Users, Target, ShieldCheck, FileText, CheckCircle } from "lucide-react";
 
 export default function About() {
+  useEffect(() => {
+    document.title = "About Us | Frah Spaces - Quality Verified Construction";
+  }, []);
+
   const timeline = [
     { year: "2020", event: "Our Inception", description: "Frah Spaces was established with a mission to build dreams through luxury and affordable housing." },
     { year: "Growth", event: "National Reach", description: "Successfully expanded operations across more than 20 Kenyan counties." },
@@ -58,6 +63,12 @@ export default function About() {
           role: "Finance & Admin Manager", 
           specialty: "Financial Management & Operations",
           image: "/Hellen_-_Finance___Admin-removebg-preview (1).png"
+        },
+        { 
+          name: "Shallom", 
+          role: "Marketing and Client Relations Lead", 
+          specialty: "Marketing & Client Relations",
+          image: "/Shallom - Marketing Client Relations Lead.png"
         },
         { 
           name: "Timothy", 
@@ -129,7 +140,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
             <Badge className="mb-4">Our Story</Badge>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
               The Best & Most Reliable
               <span className="block text-primary">Construction Partner in East Africa</span>
             </h1>
@@ -217,11 +228,11 @@ export default function About() {
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-4xl font-bold mb-12 text-center">Our Journey</h2>
           <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/20" />
+            <div className="absolute left-5 md:left-8 top-0 bottom-0 w-0.5 bg-primary/20" />
             <div className="space-y-8">
               {timeline.map((item, idx) => (
-                <div key={idx} className="relative pl-20">
-                  <div className="absolute left-5 top-1 w-7 h-7 rounded-full bg-primary border-4 border-background shadow-lg" />
+                <div key={idx} className="relative pl-12 md:pl-20">
+                  <div className="absolute left-2 md:left-5 top-1 w-7 h-7 rounded-full bg-primary border-4 border-background shadow-lg" />
                   <Card>
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between mb-2">

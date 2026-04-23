@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
@@ -12,6 +13,10 @@ interface Project {
 }
 
 export default function Designs() {
+  useEffect(() => {
+    document.title = "Visionary Architectural Designs & 3D Concepts | Frah Spaces";
+  }, []);
+
   const designCategories = [
     {
       title: "Kitchens",
@@ -79,7 +84,7 @@ export default function Designs() {
       <section className="relative py-20 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <Badge className="mb-4">Visual Studio</Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Visionary
             <span className="block text-primary">Designs & Concepts</span>
           </h1>
@@ -128,10 +133,10 @@ export default function Designs() {
                             </DialogHeader>
                             <div className="relative w-full aspect-video">
                               <img src={project.image} alt={project.name} className="w-full h-full object-cover rounded-xl" />
-                              <div className="absolute bottom-6 left-6 right-6 p-6 bg-background/80 backdrop-blur-md rounded-xl border border-border">
+                              <div className="absolute bottom-2 left-2 right-2 md:bottom-6 md:left-6 md:right-6 p-4 md:p-6 bg-background/80 backdrop-blur-md rounded-xl border border-border">
                                 <Badge className="mb-2">{project.type}</Badge>
-                                <h3 className="text-2xl font-bold">{project.name}</h3>
-                                <p className="text-muted-foreground mt-2">Part of our {category.title} portfolio. Available for customization.</p>
+                                <h3 className="text-lg md:text-2xl font-bold">{project.name}</h3>
+                                <p className="text-muted-foreground mt-1 md:mt-2 text-xs md:text-base">Part of our {category.title} portfolio.</p>
                                 <div className="mt-4 flex flex-wrap gap-3">
                                   {project.link && (
                                     <Button className="gap-2 bg-primary hover:bg-primary/90" onClick={() => window.open(project.link, "_blank")}>

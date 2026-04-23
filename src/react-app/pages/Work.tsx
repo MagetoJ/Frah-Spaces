@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger } from "@/react-app/components/ui/tabs";
@@ -8,6 +8,10 @@ import { projects } from "../data/projects";
 
 export default function Work() {
   const [selectedCategory, setSelectedCategory] = useState("all");
+
+  useEffect(() => {
+    document.title = "Our Portfolio | Over 70 Completed Construction Projects | Frah Spaces";
+  }, []);
 
   const videos = [
     {
@@ -35,7 +39,7 @@ export default function Work() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
             <Badge className="mb-4">Portfolio</Badge>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Our Work Speaks
               <span className="block text-primary">For Itself</span>
             </h1>
@@ -50,8 +54,8 @@ export default function Work() {
       {/* Portfolio Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <Tabs defaultValue="all" className="mb-12">
-            <div className="flex justify-center">
+          <Tabs defaultValue="all" className="mb-12 w-full">
+            <div className="flex justify-center overflow-x-auto pb-4">
               <TabsList className="grid w-full max-w-2xl grid-cols-3 md:grid-cols-6 h-auto">
                 <TabsTrigger value="all" onClick={() => setSelectedCategory("all")} className="py-2">All Projects</TabsTrigger>
                 <TabsTrigger value="residential" onClick={() => setSelectedCategory("residential")} className="py-2">Residential</TabsTrigger>

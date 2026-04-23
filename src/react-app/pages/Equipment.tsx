@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
@@ -5,6 +6,10 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogTrigger } 
 import { Truck, Drill, Settings, ChevronRight } from "lucide-react";
 
 export default function Equipment() {
+  useEffect(() => {
+    document.title = "Heavy Machinery & Construction Equipment Fleet | Frah Spaces";
+  }, []);
+
   const equipmentList = [
     {
       category: "Heavy Machinery",

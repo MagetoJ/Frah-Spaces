@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
 import { Building2, Shield, Mail, MessageCircle, Phone, Hammer, Ruler, Briefcase, Layout, Globe, Droplets, Sun, Wind, Box } from "lucide-react";
 
 export default function Services() {
+  useEffect(() => {
+    document.title = "Construction & Technical Services Hub | Frah Spaces";
+  }, []);
+
   const serviceCategories = [
     {
       icon: Ruler,
