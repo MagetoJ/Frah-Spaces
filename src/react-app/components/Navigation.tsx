@@ -78,6 +78,7 @@ export default function Navigation() {
       ]
     },
     { path: "/work", label: "Past Work" },
+    { path: "/blog", label: "Blog" },
   ];
 
   const isActive = (path: string) => location.pathname === path;

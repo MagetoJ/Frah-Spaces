@@ -6,6 +6,7 @@ import { Badge } from "@/react-app/components/ui/badge";
 import { MaterialCalculator } from "@/react-app/components/MaterialCalculator";
 import { Card } from "@/react-app/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/react-app/components/ui/tabs";
+import { blogPosts } from "../data/blog";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -476,6 +477,41 @@ export default function Home() {
                 <p className="text-sm text-white/50">Prioritizing eco-friendly materials and energy-efficient designs for future-ready spaces.</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Knowledge Hub Preview */}
+      <section className="py-24 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div className="max-w-2xl">
+              <Badge variant="outline" className="mb-4 text-primary border-primary">Knowledge Hub</Badge>
+              <h2 className="text-4xl font-bold mb-4 text-foreground">Construction Insights for <br/>High-End Developers</h2>
+            </div>
+            <Link to="/blog">
+              <Button variant="ghost" className="text-primary font-bold hover:bg-primary/5">
+                Read All Guides <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {blogPosts.map((post) => (
+              <Link key={post.id} to={`/blog/${post.id}`}>
+                <Card className="overflow-hidden group hover:shadow-xl transition-all border-none bg-background">
+                  <div className="grid sm:grid-cols-5 h-full">
+                    <div className="sm:col-span-2 overflow-hidden h-48 sm:h-full">
+                      <img src={post.image} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div className="sm:col-span-3 p-6 flex flex-col justify-center">
+                      <Badge variant="outline" className="w-fit mb-3 text-[10px] uppercase tracking-wider">{post.category}</Badge>
+                      <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight">{post.title}</h3>
+                      <p className="text-sm text-muted-foreground line-clamp-2">{post.excerpt}</p>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
