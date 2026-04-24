@@ -6,7 +6,8 @@ import { Badge } from "@/react-app/components/ui/badge";
 import { MaterialCalculator } from "@/react-app/components/MaterialCalculator";
 import { Card } from "@/react-app/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/react-app/components/ui/tabs";
-import { blogPosts, type BlogPost } from "@/react-app/data/blog";
+import { blogPosts } from "@/react-app/data/blog";
+import type { BlogPost } from "@/react-app/data/blog";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);

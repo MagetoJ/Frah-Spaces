@@ -18,8 +18,8 @@ export default function Footer() {
               <h3 className="text-lg font-bold tracking-tight">FRAH SPACES</h3>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-git              Building dreams through modern design, high-quality construction,
-              and innovative property management across Kenya.
+              Building dreams through modern design, high-quality construction, 
+              and innovative real estate management across Kenya.
             </p>
             <div className="flex items-center gap-4 pt-2">
                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
@@ -44,6 +44,7 @@ git              Building dreams through modern design, high-quality constructio
               <li><Link to="/equipment" className="text-muted-foreground hover:text-primary transition-colors">Equipment</Link></li>
               <li><Link to="/designs" className="text-muted-foreground hover:text-primary transition-colors">Designs</Link></li>
               <li><Link to="/work" className="text-muted-foreground hover:text-primary transition-colors">Past Work</Link></li>
+              <li><Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
               <li><Link to="/engage" className="text-muted-foreground hover:text-primary transition-colors font-semibold">Engage</Link></li>
             </ul>
           </div>
@@ -54,10 +55,10 @@ git              Building dreams through modern design, high-quality constructio
               <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
                 <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
                 Construction & Civil Works
-              </li> 
+              </li>
               <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
                 <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
-                Real Estate Management
+                Project Management
               </li>
               <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
                 <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 

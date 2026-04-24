@@ -104,7 +104,12 @@ export default function Services() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8">
-            {serviceCategories.map((category, idx) => (
+            {serviceCategories.map((category: {
+              icon: any;
+              title: string;
+              description: string;
+              options: string[];
+            }, idx: number) => (
               <Card key={idx} className="border-2 hover:border-primary/50 transition-all flex flex-col h-full">
                 <CardContent className="p-8 flex-1">
                   <div className="flex items-start gap-6 mb-6">
@@ -119,7 +124,7 @@ export default function Services() {
                     </div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                    {category.options.map((option, oIdx) => (
+                    {category.options.map((option: string, oIdx: number) => (
                       <div key={oIdx} className="flex items-center gap-2 text-sm font-medium p-3 bg-muted/30 rounded-lg border border-border">
                         <Hammer className="w-4 h-4 text-primary" />
                         {option}
@@ -188,7 +193,11 @@ export default function Services() {
             <p className="text-xl text-muted-foreground">Specialized solutions for modern technical systems.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {technicalSolutions.map((solution, idx) => (
+            {technicalSolutions.map((solution: {
+              icon: any;
+              title: string;
+              description: string;
+            }, idx: number) => (
               <Card key={idx} className="border-none shadow-lg hover:shadow-xl transition-all">
                 <CardContent className="p-8 text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">

@@ -1,17 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger } from "@/react-app/components/ui/tabs";
 import { Star, MapPin, Calendar, Play, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
-import { projects } from "../data/projects";
+import { projects, type Project } from "@/react-app/data/projects";
 
 export default function Work() {
   const [selectedCategory, setSelectedCategory] = useState("all");
-
-  useEffect(() => {
-    document.title = "Our Portfolio | Over 70 Completed Construction Projects | Frah Spaces";
-  }, []);
 
   const videos = [
     {
@@ -39,7 +35,7 @@ export default function Work() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
             <Badge className="mb-4">Portfolio</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Our Work Speaks
               <span className="block text-primary">For Itself</span>
             </h1>
@@ -54,21 +50,21 @@ export default function Work() {
       {/* Portfolio Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <Tabs defaultValue="all" className="mb-12 w-full">
-            <div className="flex justify-center overflow-x-auto pb-4 no-scrollbar">
-              <TabsList className="grid w-full max-w-2xl grid-cols-3 md:grid-cols-4 lg:grid-cols-6 h-auto flex-wrap md:flex-nowrap">
-                <TabsTrigger value="all" onClick={() => setSelectedCategory("all")} className="py-2 px-3 md:px-4 text-xs md:text-sm">All Projects</TabsTrigger>
-                <TabsTrigger value="residential" onClick={() => setSelectedCategory("residential")} className="py-2 px-3 md:px-4 text-xs md:text-sm">Residential</TabsTrigger>
-                <TabsTrigger value="commercial" onClick={() => setSelectedCategory("commercial")} className="py-2 px-3 md:px-4 text-xs md:text-sm">Commercial</TabsTrigger>
-                <TabsTrigger value="hotels" onClick={() => setSelectedCategory("hotels")} className="py-2 px-3 md:px-4 text-xs md:text-sm">Hotels</TabsTrigger>
-                <TabsTrigger value="landscaping" onClick={() => setSelectedCategory("landscaping")} className="py-2 px-3 md:px-4 text-xs md:text-sm">Landscaping</TabsTrigger>
-                <TabsTrigger value="management" onClick={() => setSelectedCategory("management")} className="py-2 px-3 md:px-4 text-xs md:text-sm">Management</TabsTrigger>
+          <Tabs defaultValue="all" className="mb-12">
+            <div className="flex justify-center">
+              <TabsList className="grid w-full max-w-2xl grid-cols-3 md:grid-cols-6 h-auto">
+                <TabsTrigger value="all" onClick={() => setSelectedCategory("all")} className="py-2">All Projects</TabsTrigger>
+                <TabsTrigger value="residential" onClick={() => setSelectedCategory("residential")} className="py-2">Residential</TabsTrigger>
+                <TabsTrigger value="commercial" onClick={() => setSelectedCategory("commercial")} className="py-2">Commercial</TabsTrigger>
+                <TabsTrigger value="hotels" onClick={() => setSelectedCategory("hotels")} className="py-2">Hotels</TabsTrigger>
+                <TabsTrigger value="landscaping" onClick={() => setSelectedCategory("landscaping")} className="py-2">Landscaping</TabsTrigger>
+                <TabsTrigger value="management" onClick={() => setSelectedCategory("management")} className="py-2 text-xs md:text-sm">Management</TabsTrigger>
               </TabsList>
             </div>
           </Tabs>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project: Project) => (
               <Link key={project.id} to={`/work/${project.id}`}>
                 <Card className="overflow-hidden group h-full hover:shadow-2xl transition-all duration-300 border-none bg-muted/20">
                   <div className="relative overflow-hidden aspect-[4/3]">
@@ -135,7 +131,12 @@ export default function Work() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {videos.map((video, idx) => (
+            {videos.map((video: { 
+              title: string; 
+              description: string; 
+              thumbnail: string; 
+              videoUrl: string 
+            }, idx: number) => (
               <Card key={idx} className="overflow-hidden group cursor-pointer border-2 hover:border-primary/50 transition-all">
                 <div className="relative aspect-video overflow-hidden">
                   <div 

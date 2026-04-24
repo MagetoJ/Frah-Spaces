@@ -4,7 +4,7 @@ import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
 import { ArrowRight, Calendar, User } from "lucide-react";
 import { Link } from "react-router";
-import { blogPosts } from "@/react-app/data/blog";
+import { blogPosts, type BlogPost } from "@/react-app/data/blog";
 
 export default function Blog() {
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Blog() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8">
-            {blogPosts.map((post) => (
+            {blogPosts.map((post: BlogPost) => (
               <Link key={post.id} to={`/blog/${post.id}`}>
                 <Card className="overflow-hidden group h-full hover:shadow-2xl transition-all duration-300 border-none bg-muted/20">
                   <div className="relative aspect-video overflow-hidden">

@@ -1,12 +1,12 @@
 import { useParams, Link } from "react-router";
-import { blogPosts, type BlogPost as BlogPostType } from "@/react-app/data/blog";
+import { blogPosts, type BlogPost as BlogPostType, type BlogSection } from "@/react-app/data/blog";
 import { ArrowLeft, Calendar, User, MessageCircle, ArrowRight, Quote } from "lucide-react";
 import { Button } from "@/react-app/components/ui/button";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Card } from "@/react-app/components/ui/card";
 import { useEffect } from "react";
 import { MaterialCalculator } from "@/react-app/components/MaterialCalculator";
-import { projects } from "@/react-app/data/projects";
+import { projects, type Project } from "@/react-app/data/projects";
 
 export default function BlogPost() {
   const { id } = useParams();
@@ -19,7 +19,14 @@ export default function BlogPost() {
     }
   }, [id, post]);
 
-  if (!post) return null;
+  if (!post) {
+    return (
+      <div className="min-h-screen pt-32 text-center">
+        <h2 className="text-2xl font-bold">Post not found</h2>
+        <Link to="/blog" className="text-primary hover:underline">Return to Hub</Link>
+      </div>
+    );
+  }
 
   const featuredProjects = projects.slice(0, 2);
 
@@ -46,13 +53,13 @@ export default function BlogPost() {
                 {post.hook}
               </p>
 
-              {post.sections.map((section, idx) => (
+              {post.sections.map((section: BlogSection, idx: number) => (
                 <div key={idx} className="mb-12">
                   <h2 className="text-3xl font-bold mb-6">{section.title}</h2>
                   <p className="text-muted-foreground mb-6 leading-relaxed">{section.content}</p>
                   {section.list && (
                     <ul className="space-y-4 mb-6">
-                      {section.list.map((item, lIdx) => (
+                      {section.list.map((item: string, lIdx: number) => (
                         <li key={lIdx} className="flex gap-3 text-muted-foreground">
                           <div className="w-2 h-2 rounded-full bg-primary mt-2.5 flex-shrink-0" />
                           <span>{item}</span>
@@ -101,7 +108,7 @@ export default function BlogPost() {
               <Card className="border-none shadow-xl bg-slate-50 dark:bg-slate-900/50 p-6 rounded-[32px]">
                 <h4 className="font-bold mb-4 uppercase text-xs tracking-widest text-primary">Featured Projects</h4>
                 <div className="space-y-4">
-                  {featuredProjects.map(p => (
+                  {featuredProjects.map((p: Project) => (
                     <Link key={p.id} to={`/work/${p.id}`} className="flex gap-4 group">
                       <img src={p.image} className="w-20 h-20 rounded-xl object-cover shadow-sm group-hover:scale-105 transition-transform" />
                       <div className="flex flex-col justify-center">

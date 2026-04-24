@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router";
-import { projects } from "../data/projects";
+import { projects } from "@/react-app/data/projects";
 import { ArrowLeft, MapPin, CheckCircle, Calendar, User, ArrowRight } from "lucide-react";
 import { Button } from "@/react-app/components/ui/button";
 import { Badge } from "@/react-app/components/ui/badge";
