@@ -8,6 +8,8 @@ import ProductsPage from "@/react-app/pages/Products";
 import EquipmentPage from "@/react-app/pages/Equipment";
 import DesignsPage from "@/react-app/pages/Designs";
 import WorkPage from "@/react-app/pages/Work";
+import BlogPage from "@/react-app/pages/Blog";
+import BlogPostPage from "@/react-app/pages/BlogPost";
 import ProjectDetailPage from "@/react-app/pages/ProjectDetail";
 import EngagePage from "@/react-app/pages/Engage";
 
@@ -49,6 +51,8 @@ export default function App() {
             <Route path="/equipment" element={<EquipmentPage />} />
             <Route path="/designs" element={<DesignsPage />} />
             <Route path="/work" element={<WorkPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:id" element={<BlogPostPage />} />
             <Route path="/work/:id" element={<ProjectDetailPage />} />
             <Route path="/engage" element={<EngagePage />} />
           </Routes>
