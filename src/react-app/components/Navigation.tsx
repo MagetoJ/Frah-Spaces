@@ -70,11 +70,7 @@ export default function Navigation() {
       path: "/designs", 
       label: "Designs",
       dropdown: [
-        { label: "Flooring", path: "/designs" },
-        { label: "Kitchens", path: "/designs" },
-        { label: "Living Spaces", path: "/designs" },
         { label: "Floorplans", path: "/designs" },
-        { label: "Commercial Fit-outs", path: "/designs" },
         { label: "2D renders", path: "/designs" },
         { label: "3D renders", path: "/designs" }
       ]
