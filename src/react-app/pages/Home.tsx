@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/react-app/components/ui/button";
-import { ArrowRight, CheckCircle2, Sparkles, Award, Building2, PencilRuler, Palette, ClipboardList, Calculator } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles, Award, Building2, PencilRuler, ClipboardList, Calculator, Hammer } from "lucide-react";
 import { Link } from "react-router";
 import { Badge } from "@/react-app/components/ui/badge";
 import { MaterialCalculator } from "@/react-app/components/MaterialCalculator";
@@ -12,9 +12,11 @@ import type { BlogPost } from "@/react-app/data/blog";
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    "/Liuwa%20Gardens%201.jpg",
-    "/nyambura%201.png",
-    "/kahawa%20sukari%201.png"
+    "/Syokimau%201.jpeg",
+    "/Syokimau%207.jpeg",
+    "/Siri%20A%20frame%20house%206%20(1).jpg",
+    "/Kahawa%20sukari%202.png",
+    "/Eldoret%20club%20house%204.jpg"
   ];
 
   useEffect(() => {
@@ -122,61 +124,61 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Architecture - Indigo Theme */}
+            {/* Pillar I: Design - Indigo Theme */}
             <div className="flex flex-col h-full bg-indigo-50/50 dark:bg-indigo-950/20 p-8 rounded-3xl border border-indigo-100 dark:border-indigo-900 shadow-sm transition-transform hover:scale-[1.02]">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-white">
                   <PencilRuler className="w-6 h-6" />
                 </div>
-                <h2 className="text-2xl font-bold">Architecture</h2>
+                <h2 className="text-2xl font-bold">Pillar I: Design</h2>
               </div>
               <p className="text-muted-foreground mb-6 flex-grow">
-                From conceptual sketches to detailed structural designs, we create spaces that balance aesthetic vision with functional necessity.
+                Design isn't just about aesthetics; it is a coordinated architectural vision that integrates spatial functionality, building codes, and material science to meet user needs and environmental factors.
               </p>
               <div className="space-y-4 mb-8 text-sm">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-indigo-600" />
-                  Conceptual Planning
+                  Floorplans
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-indigo-600" />
-                  3D Visualization
+                  2D renders
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-indigo-600" />
-                  Structural Engineering
+                  3D renders
                 </div>
               </div>
               <Link to="/services" className="mt-auto">
                 <Button variant="outline" className="w-full border-indigo-600 text-indigo-600 hover:bg-indigo-50">
-                  Explore Architecture
+                  Explore Design
                 </Button>
               </Link>
             </div>
 
-            {/* Interior Design - Blue Theme */}
+            {/* Pillar II: Construction - Blue Theme */}
             <div className="flex flex-col h-full bg-blue-50/50 dark:bg-blue-950/20 p-8 rounded-3xl border border-blue-100 dark:border-blue-900 shadow-sm transition-transform hover:scale-[1.02]">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white">
-                  <Palette className="w-6 h-6" />
+                  <Hammer className="w-6 h-6" />
                 </div>
-                <h2 className="text-2xl font-bold">Interior Design</h2>
+                <h2 className="text-2xl font-bold">Pillar II: Construction</h2>
               </div>
               <p className="text-muted-foreground mb-6 flex-grow">
-                Bespoke interiors that reflect your brand or personality. We manage every detail of finishing, lighting, and furnishing.
+                We manage physical assembly via Turnkey/EPC or Labour-based models. We leverage our strategic supply chain and machinery fleet to ensure site-wide quality compliance and milestone achievement.
               </p>
               <div className="space-y-4 mb-8 text-sm">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-blue-600" />
-                  Space Optimization
+                  Turnkey / EPC Delivery
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-blue-600" />
-                  Material Selection
+                  Labour-Based Procurement
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-blue-600" />
-                  Custom Cabinetry
+                  Strategic Supplies & Equipment
                 </div>
               </div>
               <Link to="/services" className="mt-auto">
@@ -186,29 +188,29 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Project Management - Sky Theme */}
+            {/* Pillar III: Project Management - Sky Theme */}
             <div className="flex flex-col h-full bg-sky-50/50 dark:bg-sky-950/20 p-8 rounded-3xl border border-sky-100 dark:border-sky-900 shadow-sm transition-transform hover:scale-[1.02]">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-sky-500 rounded-2xl flex items-center justify-center text-white">
                   <ClipboardList className="w-6 h-6" />
                 </div>
-                <h2 className="text-2xl font-bold">Project Management</h2>
+                <h2 className="text-2xl font-bold">Pillar III: Project Management</h2>
               </div>
               <p className="text-muted-foreground mb-6 flex-grow">
-                Meticulous oversight from foundation to finish. We ensure your project stays on schedule, on budget, and meets all quality benchmarks.
+                Enforcing fiduciary oversight through auditing and QA/QC. We maintain technical integrity with a "Zero Rework" policy via BIM validation and manage all compliance markers for project closeout.
               </p>
               <div className="space-y-4 mb-8 text-sm">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-sky-500" />
-                  Budgeting & Costing
+                  Fiduciary Oversight & Auditing
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-sky-500" />
-                  Site Supervision
+                  QA/QC & Zero Rework Policy
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-sky-500" />
-                  NCA Compliance
+                  Compliance & Administrative Closeout
                 </div>
               </div>
               <Link to="/engage" className="mt-auto">
@@ -226,8 +228,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-2xl">
-              <Badge variant="outline" className="mb-4 text-primary border-primary">Portfolio spotlight</Badge>
-              <h2 className="text-4xl font-bold mb-4">A Legacy of Diverse <br/>Architectural Typologies</h2>
+              <Badge variant="outline" className="mb-4 text-primary border-primary">Portfolio Spotlight</Badge>
+              <h2 className="text-4xl font-bold mb-4">A Legacy</h2>
               <p className="text-lg text-muted-foreground">
                 From high-end residential villas to complex commercial renovations, 
                 explore how we apply technical excellence across different sectors.

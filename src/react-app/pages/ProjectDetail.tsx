@@ -29,6 +29,8 @@ export default function ProjectDetail() {
     );
   }
 
+  const uniqueImages = Array.from(new Set(project.images));
+
   // Find related projects (same category, excluding current)
   const relatedProjects = projects
     .filter(p => p.category === project.category && p.id !== project.id)
@@ -116,11 +118,11 @@ export default function ProjectDetail() {
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-2xl font-bold">Project Gallery</h3>
             <Badge variant="outline" className="text-primary border-primary">
-              {project.images.length} High-Res Images
+              {uniqueImages.length} High-Res Images
             </Badge>
           </div>
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            {project.images.map((img, idx) => (
+            {uniqueImages.map((img, idx) => (
               <div 
                 key={idx} 
                 className="relative group overflow-hidden rounded-3xl shadow-lg border border-border transition-all duration-500 hover:shadow-2xl hover:border-primary/30"

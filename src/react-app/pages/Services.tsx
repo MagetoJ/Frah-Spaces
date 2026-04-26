@@ -12,9 +12,9 @@ export default function Services() {
   const serviceCategories = [
     {
       icon: Ruler,
-      title: "Architectural Designs",
+      title: "Design",
       description: "Our visionary architectural team transforms concepts into structural masterpieces, blending aesthetic elegance with functional brilliance.",
-      options: ["Conceptual Design", "Detailed Blueprints", "3D Visualization", "Structural Engineering"]
+      options: ["Floorplans", "2D renders", "3D renders"]
     },
     {
       icon: Building2,

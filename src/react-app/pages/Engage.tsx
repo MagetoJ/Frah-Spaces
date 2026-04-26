@@ -4,51 +4,39 @@ import { Button } from "@/react-app/components/ui/button";
 import { Input } from "@/react-app/components/ui/input";
 import { Textarea } from "@/react-app/components/ui/textarea";
 import { Label } from "@/react-app/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/react-app/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SelectGroup, SelectLabel } from "@/react-app/components/ui/select";
 import { Badge } from "@/react-app/components/ui/badge";
-import { MessageCircle, Mail, Phone, MapPin, Home, Building2, Wrench, ArrowRight } from "lucide-react";
+import { MessageCircle, Mail, Phone, MapPin, ArrowRight, PencilRuler, Hammer, ClipboardList } from "lucide-react";
 
 export default function Engage() {
   const [selectedService, setSelectedService] = useState("");
 
   useEffect(() => {
     document.title = "Contact Us | Build Your Dream Project with Frah Spaces";
-  }, []);
+  }, []); 
 
   const services = [
     {
-      icon: Building2,
+      icon: PencilRuler,
+      title: "Design",
+      description: "Comprehensive design services from concept to detailed plans.",
+      features: ["Floorplans", "2D renders", "3D renders"]
+    },
+    {
+      icon: Hammer,
       title: "Construction",
-      description: "End-to-end building solutions from architectural plans to final quality control",
-      features: ["Residential & Commercial", "Mixed-use developments", "Renovations & fit-outs", "Statutory Compliance"]
+      description: "Expert execution of building projects with various delivery models.",
+      features: ["Engineering Procurement Construction (EPC/Turnkey)", "Labour-based", "Supplies", "Equipment"]
     },
     {
-      icon: Wrench,
-      title: "Sustainable Energy",
-      description: "Specialized design and installation of off-grid and hybrid solar systems",
-      features: ["Solar PV Installation", "Off-grid Systems", "Hybrid Solar Solutions", "Energy Consultations"]
-    },
-    {
-      icon: Wrench,
-      title: "Technical Services",
-      description: "Expert HVAC, plumbing, biodigesters, and metal fabrication",
-      features: ["HVAC & Plumbing", "Biodigesters", "Metal Fabrication", "Welding & Glazing"]
-    },
-    {
-      icon: Home,
-      title: "Property Management",
-      description: "Full-cycle property management to protect and maximize asset value",
-      features: ["Operations & Inspections", "Preventive Maintenance", "Lease Administration", "Statutory Compliance"]
-    },
-    {
-      icon: Building2,
-      title: "Facility Care",
-      description: "Professional maintenance, office clean-up, and restoration",
-      features: ["Office Clean-up", "Regular Maintenance", "Furniture Restoration", "General Facility Care"]
+      icon: ClipboardList,
+      title: "Project Management",
+      description: "Meticulous oversight ensuring quality, budget, and timely delivery.",
+      features: ["Construction Project Management", "Quality Control", "Progress Assessment", "Liaison"]
     },
   ];
 
-  const handleWhatsApp = (phone = "254721175735") => {
+  const handleWhatsApp = (phone = "254711441245") => {
     window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in learning more about your services. Could you please provide more information?`, "_blank");
   };
 
@@ -144,15 +132,19 @@ export default function Engage() {
                     <SelectTrigger id="service">
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
-                    <SelectContent>
-                      {services.map((service) => (
-                        <SelectItem key={service.title} value={service.title}>
+                    <SelectContent className="max-h-60 overflow-y-auto">
+                      <SelectGroup>
+                        <SelectLabel>Our Core Services</SelectLabel>
+                        {services.map((service) => (
+                          <SelectItem key={service.title} value={service.title}>
                           {service.title}
                         </SelectItem>
                       ))}
+                      </SelectGroup>
                     </SelectContent>
                   </Select>
                 </div>
+
                 
                 <div>
                   <Label htmlFor="message">Project Details</Label>
@@ -181,21 +173,21 @@ export default function Engage() {
                   </p>
                   <div className="grid grid-cols-1 gap-3">
                     <Button 
-                      onClick={() => handleWhatsApp("254721175735")}
+                      onClick={() => handleWhatsApp("254711441245")}
                       variant="secondary"
                       size="lg"
                       className="w-full"
                     >
-                      WhatsApp Primary
+                      WhatsApp Line 1 - +254 711 44 12 45
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                     <Button 
-                      onClick={() => handleWhatsApp("254711441245")}
+                      onClick={() => handleWhatsApp("254721175735")}
                       variant="outline"
                       size="lg"
                       className="w-full bg-white/10 border-white/20 hover:bg-white/20 text-white"
                     >
-                      WhatsApp Alternative
+                      WhatsApp Line 2 - +254 721 17 57 35
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </div>
@@ -237,8 +229,7 @@ export default function Engage() {
                     <div>
                       <div className="font-medium">Office</div>
                       <p className="text-muted-foreground">
-                        Fourways Junction, 1st Floor, Rm. 109<br />
-                        Kiambu Road, Nairobi
+                        Fourways Business Park, Kiambu Road
                       </p>
                     </div>
                   </div>

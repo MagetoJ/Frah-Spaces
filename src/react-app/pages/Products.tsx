@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/react-app/components/ui/tabs";
-import { Package, Check, Mail, MessageCircle, Phone, Home, TreePine, Paintbrush, DoorOpen, Flower2, Layout } from "lucide-react";
+import { Package, Check, MessageCircle, Phone, Home, TreePine, Paintbrush, DoorOpen, Flower2, Layout } from "lucide-react";
 
 export default function Products() {
   useEffect(() => {
@@ -132,12 +132,7 @@ export default function Products() {
       label: "Outdoor & Vision",
       icon: Flower2,
       color: "green",
-      subcategories: [
-        {
-          title: "Gardens & Landscaping",
-          items: [
-            { 
-              name: "Landscape Design", 
+    subcategories: [ { title: "Gardens & Landscaping", items: [ { name: "Landscape Design",
               specs: "Modern garden layouts and plant selection",
               image: "/Pavement cabros.jpeg"
             },
@@ -148,8 +143,7 @@ export default function Products() {
             }
           ]
         },
-        {
-          title: "Architectural Vision",
+        { title: "Architectural Vision",
           items: [
             { 
               name: "3D House Designs", 
@@ -166,13 +160,13 @@ export default function Products() {
     window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in ${item}. Could you please provide more information?`, "_blank");
   };
 
-  const handleEmail = (item: string) => {
-    window.location.href = `mailto:admin@frahspaces.com?subject=Product Inquiry: ${item}`;
-  };
-
   const handleCall = (phone = "254721175735") => {
     window.location.href = `tel:+${phone}`;
   };
+
+  // Update default phone numbers for WhatsApp and Call
+  const defaultWhatsAppNumber = "254711441245";
+  const defaultCallNumber = "254721175735";
 
   return (
     <div className="pb-20">
@@ -263,50 +257,26 @@ export default function Products() {
                               </p>
                               
                               <div className="mt-auto flex flex-col gap-3">
-                                <div className="grid grid-cols-2 gap-2">
-                                  <Button 
-                                    variant="outline" 
-                                    className="flex-1 h-auto py-2.5 gap-1 hover:bg-primary/5 border-primary/20"
-                                    onClick={() => handleEmail(item.name)}
-                                  >
-                                    <Mail className="w-3.5 h-3.5" />
-                                    <span className="text-[9px] uppercase font-bold">Email</span>
-                                  </Button>
-                                  <div className="flex gap-1">
-                                    <Button 
-                                      variant="outline" 
-                                      className="flex-[2] h-auto py-2.5 gap-1 hover:bg-primary/5 border-primary/20"
-                                      onClick={() => handleWhatsApp(item.name, "254721175735")}
-                                    >
-                                      <MessageCircle className="w-3.5 h-3.5" />
-                                      <span className="text-[9px] uppercase font-bold">WhatsApp</span>
-                                    </Button>
-                                    <Button 
-                                      variant="outline" 
-                                      className="flex-1 h-auto py-2.5 text-[8px] font-bold opacity-70 border-primary/20"
-                                      onClick={() => handleWhatsApp(item.name, "254711441245")}
-                                    >
-                                      Alt
-                                    </Button>
-                                  </div>
-                                </div>
-                                <div className="grid grid-cols-2 gap-2">
-                                  <Button 
-                                    variant="default" 
-                                    className="flex-[2] h-auto py-2.5 gap-1 shadow-md"
-                                    onClick={() => handleCall("254721175735")}
-                                  >
-                                    <Phone className="w-3.5 h-3.5" />
-                                    <span className="text-[9px] uppercase font-bold">Call Primary</span>
-                                  </Button>
-                                  <Button 
-                                    variant="outline" 
-                                    className="flex-1 h-auto py-2.5 text-[9px] font-bold opacity-80"
-                                    onClick={() => handleCall("254711441245")}
-                                  >
-                                    Call Alt
-                                  </Button>
-                                </div>
+                                <Button
+                                  variant="default"
+                                  className="h-auto py-2.5 gap-1 shadow-md"
+                                  onClick={() => handleWhatsApp(item.name, defaultWhatsAppNumber)}
+                                >
+                                  <MessageCircle className="w-3.5 h-3.5" />
+                                  <span className="text-[9px] uppercase font-bold">
+                                    WhatsApp (+254 711 44 12 45)
+                                  </span>
+                                </Button>
+                                <Button
+                                  variant="outline"
+                                  className="h-auto py-2.5 gap-1"
+                                  onClick={() => handleCall(defaultCallNumber)}
+                                >
+                                  <Phone className="w-3.5 h-3.5" />
+                                  <span className="text-[9px] uppercase font-bold">
+                                    Call (+254 721 17 57 35)
+                                  </span>
+                                </Button>
                               </div>
                             </CardContent>
                           </Card>
@@ -318,38 +288,6 @@ export default function Products() {
               </TabsContent>
             ))}
           </Tabs>
-        </div>
-      </section>
-
-      {/* Trust Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-primary rounded-3xl p-12 text-primary-foreground relative overflow-hidden shadow-2xl">
-            <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-4xl font-bold mb-6">Bulk Sourcing & Logistics</h2>
-                <p className="text-xl opacity-90 mb-8 leading-relaxed">
-                  Partner with Frah Spaces for reliable material supply and transport logistics. 
-                  We handle the sourcing, quality control, and delivery to your site.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Badge className="bg-white/20 text-white py-2 px-4 border-0">Kenya Wide Delivery</Badge>
-                  <Badge className="bg-white/20 text-white py-2 px-4 border-0">Quality Guaranteed</Badge>
-                </div>
-              </div>
-              <div className="flex flex-col gap-4 items-center">
-                <div className="flex gap-4">
-                  <Button variant="secondary" size="lg" className="h-16 px-10 text-lg font-bold shadow-xl" onClick={() => handleWhatsApp("Bulk Materials Inquiry", "254721175735")}>
-                    Start Bulk Order
-                  </Button>
-                  <Button variant="outline" size="lg" className="h-16 px-8 text-lg font-bold border-white/20 hover:bg-white/10 text-white opacity-80" onClick={() => handleWhatsApp("Bulk Materials Inquiry", "254711441245")}>
-                    Alt WhatsApp
-                  </Button>
-                </div>
-              </div>
-            </div>
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20" />
-          </div>
         </div>
       </section>
     </div>

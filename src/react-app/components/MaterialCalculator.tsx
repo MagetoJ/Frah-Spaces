@@ -34,9 +34,23 @@ export function MaterialCalculator({ onClose, className }: MaterialCalculatorPro
     "Tile Profile": 0.38,
   };
 
-  const calculate = () => {
+  const calculate = async () => {
     const area = parseFloat(length) * parseFloat(width);
     if (!area) return;
+
+    // Option: Use Backend API if available
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || ''}/api/pricing/calculate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: calcType, length, width, subType })
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setResult({ value: data.value, unit: data.unit });
+        return;
+      }
+    } catch (e) { console.log("Falling back to client-side calc"); }
 
     if (calcType === "flooring") {
       const areaPerBox = flooringData[subType] || 1.44;

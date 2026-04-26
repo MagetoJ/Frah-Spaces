@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router";
 
 export default function Footer() {
@@ -22,15 +22,15 @@ export default function Footer() {
               and innovative real estate management across Kenya.
             </p>
             <div className="flex items-center gap-4 pt-2">
-               <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-primary font-bold text-xs">FB</span>
-               </div>
-               <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-primary font-bold text-xs">IG</span>
-               </div>
-               <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-primary font-bold text-xs">LI</span>
-               </div>
+               <a href="https://facebook.com/frahspaces" target="_blank" rel="noopener noreferrer" title="Facebook: Frah Spaces" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                  <Facebook className="w-4 h-4 text-primary" />
+               </a>
+               <a href="https://instagram.com/frah_spaces" target="_blank" rel="noopener noreferrer" title="Instagram: @frah_spaces" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                  <Instagram className="w-4 h-4 text-primary" />
+               </a>
+               <a href="https://linkedin.com/company/frah-spaces" target="_blank" rel="noopener noreferrer" title="LinkedIn: Frah Spaces" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                  <Linkedin className="w-4 h-4 text-primary" />
+               </a>
             </div>
           </div>
 
@@ -51,32 +51,20 @@ export default function Footer() {
 
           <div>
             <h4 className="font-bold mb-6 text-foreground uppercase tracking-wider text-xs">Core Solutions</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
-                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
-                Construction & Civil Works
-              </li>
-              <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
-                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
-                Project Management
-              </li>
-              <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
-                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
-                Interior Gypsum & Flooring
-              </li>
-              <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
-                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
-                Architectural 3D Designs
-              </li>
-              <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
-                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
-                Sustainable Solar & HVAC
-              </li>
-              <li className="flex items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
-                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" /> 
-                Facility Care & Maintenance
-              </li>
-            </ul>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <p className="font-bold text-foreground mb-1">Pillar I: Design</p>
+                <p className="text-[11px] leading-relaxed">Floorplans, 2D renders, 3D renders</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground mb-1">Pillar II: Construction</p>
+                <p className="text-[11px] leading-relaxed">Engineering Procurement Construction (EPC/Turnkey), Labour-based, Supplies, Equipment</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground mb-1">Pillar III: Project Management</p>
+                <p className="text-[11px] leading-relaxed">Construction Project Management, Quality Control, Progress Assessment, Liaison</p>
+              </div>
+            </div>
           </div>
 
           <div>
@@ -89,13 +77,13 @@ export default function Footer() {
               <li className="flex items-start gap-3 text-muted-foreground">
                 <Phone className="w-5 h-5 text-primary mt-0.5" />
                 <div className="flex flex-col">
-                   <a href="tel:+254721175735" className="hover:text-primary transition-colors">+254 721 175735</a>
-                   <a href="tel:+254711441245" className="hover:text-primary transition-colors text-xs opacity-80">+254 711 441245 (Alt)</a>
+                   <a href="tel:+254711441245" className="hover:text-primary transition-colors">+254 711 441245</a>
+                   <a href="tel:+254721175735" className="hover:text-primary transition-colors text-xs opacity-80">+254 721 175735 (Alt)</a>
                 </div>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary mt-0.5" />
-                <span>Fourways Junction, Kiambu Road, Nairobi</span>
+                <span>Fourways Business Park, Kiambu Road</span>
               </li>
             </ul>
           </div>

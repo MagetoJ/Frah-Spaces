@@ -40,22 +40,23 @@ export default function Navigation() {
       path: "/services", 
       label: "Services",
       dropdown: [
-        { label: "Architectural Designs", path: "/services/architectural-designs" },
+        { label: "Floorplans", path: "/services/architectural-designs" },
+        { label: "2D renders", path: "/services/architectural-designs" },
+        { label: "3D renders", path: "/services/architectural-designs" },
         { label: "Construction", path: "/services/construction" },
-        { label: "Interior Design", path: "/services/interior-design" },
-        { label: "Project Management", path: "/services/project-management" },
-        { label: "Consultancy", path: "/services/consultancy" }
+        { label: "Project Management", path: "/services/project-management" }
       ]
     },
     { 
       path: "/products", 
       label: "Products",
       dropdown: [
-        { label: "Walling & Roofing", path: "/products/walling-roofing" },
+        { label: "Walling", path: "/products/walling-roofing" },
+        { label: "Roofing", path: "/products/walling-roofing" },
         { label: "Flooring", path: "/products/flooring" },
-        { label: "Windows & Doors", path: "/products/windows-doors" },
-        { label: "Interior Finishes", path: "/products/interior-finishes" },
-        { label: "Outdoor & Landscaping", path: "/products/outdoor-landscaping" }
+        { label: "Openings", path: "/products/windows-doors" },
+        { label: "Finishes", path: "/products/interior-finishes" },
+        { label: "Outdoor", path: "/products/outdoor-landscaping" }
       ]
     },
     { 

@@ -107,7 +107,7 @@ export default function Equipment() {
     }
   ];
 
-  const handleWhatsApp = (item: string, phone = "254721175735") => {
+  const handleWhatsApp = (item: string, phone = "254711441245") => {
     window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in renting/using the ${item}. Could you please provide more information?`, "_blank");
   };
 
@@ -115,7 +115,7 @@ export default function Equipment() {
     window.location.href = `mailto:admin@frahspaces.com?subject=Inquiry about ${item} equipment`;
   };
 
-  const handleCall = (phone = "254721175735") => {
+  const handleCall = (phone = "254711441245") => {
     window.location.href = `tel:+${phone}`;
   };
 
@@ -138,8 +138,8 @@ export default function Equipment() {
             excavation to completion.
           </p>
           <div className="flex flex-wrap gap-4 mt-10">
-            <Button size="lg" className="rounded-full px-8 h-14 text-lg font-bold shadow-xl shadow-primary/20" onClick={() => handleCall()}>
-              Talk to Logistics
+            <Button size="lg" className="rounded-full px-8 h-14 text-lg font-bold shadow-xl shadow-primary/20" onClick={() => handleCall("254721175735")}>
+              Talk to us
             </Button>
             <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-lg font-bold border-white/20 hover:bg-white/10" onClick={() => window.scrollTo({ top: 800, behavior: 'smooth' })}>
               Browse Fleet
@@ -290,19 +290,19 @@ export default function Equipment() {
           </p>
           <div className="flex flex-col items-center gap-6">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="rounded-full px-10 h-16 text-lg font-bold" onClick={() => window.open("https://wa.me/254721175735?text=Hello Frah Spaces, I'm interested in learning more about your equipment and logistics services. Could you please provide more information?", "_blank")}>
-                Chat Primary
+              <Button size="lg" className="rounded-full px-10 h-16 text-lg font-bold" onClick={() => window.open("https://wa.me/254711441245?text=Hello Frah Spaces, I'm interested in learning more about your equipment and logistics services. Could you please provide more information?", "_blank")}>
+                WhatsApp Line 1 - +254 711 44 12 45
               </Button>
-              <Button variant="outline" size="lg" className="rounded-full px-10 h-16 text-lg font-bold border-white/20 hover:bg-white/10 text-white opacity-80" onClick={() => window.open("https://wa.me/254711441245?text=Hello Frah Spaces, I'm interested in learning more about your equipment and logistics services. Could you please provide more information?", "_blank")}>
-                Chat Alternative
+              <Button variant="outline" size="lg" className="rounded-full px-10 h-16 text-lg font-bold border-white/20 hover:bg-white/10 text-white opacity-80" onClick={() => window.open("https://wa.me/254721175735?text=Hello Frah Spaces, I'm interested in learning more about your equipment and logistics services. Could you please provide more information?", "_blank")}>
+                WhatsApp Line 2 - +254 721 17 57 35
               </Button>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="link" className="text-zinc-400" onClick={() => handleCall("254721175735")}>
-                Primary: +254 721 175 735
-              </Button>
               <Button variant="link" className="text-zinc-400" onClick={() => handleCall("254711441245")}>
-                Alternative: +254 711 441 245
+                Line 1: +254 711 441 245
+              </Button>
+              <Button variant="link" className="text-zinc-400" onClick={() => handleCall("254721175735")}>
+                Line 2: +254 721 175 735
               </Button>
             </div>
           </div>
