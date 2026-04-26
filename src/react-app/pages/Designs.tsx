@@ -65,6 +65,24 @@ export default function Designs() {
         { name: "Flatroom Mansion - Type A", image: "/design%201.png", type: "PDF Plan", link: "/Flatroom%20Mansion%20house%20plan%20-%20type%20A.pdf" },
         { name: "Flatroom Mansion - Type B", image: "/design%201.png", type: "PDF Plan", link: "/Flatroom%20Mansion%20house%20plan%20-%20type%20B.pdf" }
       ] as Project[]
+    },
+    {
+      title: "2D Renders",
+      icon: Layout,
+      description: "High-precision 2D architectural visualizations, site maps, and technical layouts.",
+      projects: [
+        { name: "Residential Site Layout", image: "/design 7.jpg", type: "2D Visualization" },
+        { name: "Structural Elevation Detail", image: "/Siri%20A%20frame%20house%202.png", type: "2D Render" }
+      ] as Project[]
+    },
+    {
+      title: "3D Renders",
+      icon: Maximize2,
+      description: "Photorealistic 3D interior and exterior renderings that bring architectural concepts to life.",
+      projects: [
+        { name: "Contemporary Villa Exterior", image: "/Syokimau%202.jpg", type: "3D Photorealistic" },
+        { name: "Modern Kitchen Concept", image: "/design%202.jpg", type: "3D Rendering" }
+      ] as Project[]
     }
   ];
 

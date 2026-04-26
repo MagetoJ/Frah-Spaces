@@ -40,9 +40,7 @@ export default function Navigation() {
       path: "/services", 
       label: "Services",
       dropdown: [
-        { label: "Floorplans", path: "/services/architectural-designs" },
-        { label: "2D renders", path: "/services/architectural-designs" },
-        { label: "3D renders", path: "/services/architectural-designs" },
+        { label: "Design", path: "/services/architectural-designs" },
         { label: "Construction", path: "/services/construction" },
         { label: "Project Management", path: "/services/project-management" }
       ]
@@ -75,7 +73,10 @@ export default function Navigation() {
         { label: "Flooring", path: "/designs" },
         { label: "Kitchens", path: "/designs" },
         { label: "Living Spaces", path: "/designs" },
-        { label: "Commercial Fit-outs", path: "/designs" }
+        { label: "Floorplans", path: "/designs" },
+        { label: "Commercial Fit-outs", path: "/designs" },
+        { label: "2D renders", path: "/designs" },
+        { label: "3D renders", path: "/designs" }
       ]
     },
     { path: "/work", label: "Past Work" },
