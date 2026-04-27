@@ -132,21 +132,21 @@ export default function Home() {
                 </div>
                 <h2 className="text-2xl font-bold">Pillar I: Design</h2>
               </div>
-              <p className="text-muted-foreground mb-6 flex-grow">
-                Design isn't just about aesthetics; it is a coordinated architectural vision that integrates spatial functionality, building codes, and material science to meet user needs and environmental factors.
+              <p className="text-muted-foreground mb-6 flex-grow text-sm text-left">
+                Expertise in design means understanding spatial functionality, building codes, and material science. It is the production of a coordinated architectural vision that takes into account the users needs/resources, latest developments, and environmental qualities.
               </p>
-              <div className="space-y-4 mb-8 text-sm">
+              <div className="grid grid-cols-1 gap-2 mb-8 text-sm text-left">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-indigo-600" />
-                  Floorplans
+                  <CheckCircle2 className="w-4 h-4 text-indigo-600 flex-shrink-0" />
+                  Architectural & Structural
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-indigo-600" />
-                  2D renders
+                  <CheckCircle2 className="w-4 h-4 text-indigo-600 flex-shrink-0" />
+                  Mechanical, Electrical & Plumbing (MEP)
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-indigo-600" />
-                  3D renders
+                  <CheckCircle2 className="w-4 h-4 text-indigo-600 flex-shrink-0" />
+                  Interior & Landscaping
                 </div>
               </div>
               <Link to="/services" className="mt-auto">
@@ -164,26 +164,26 @@ export default function Home() {
                 </div>
                 <h2 className="text-2xl font-bold">Pillar II: Construction</h2>
               </div>
-              <p className="text-muted-foreground mb-6 flex-grow">
-                We manage physical assembly via Turnkey/EPC or Labour-based models. We leverage our strategic supply chain and machinery fleet to ensure site-wide quality compliance and milestone achievement.
+              <p className="text-muted-foreground mb-6 flex-grow text-sm text-left">
+                We manage the physical assembly—from foundations to the building envelope. We leverage our supply chain to source, verify, and deliver high-spec materials while managing specialized tools and heavy machinery.
               </p>
-              <div className="space-y-4 mb-8 text-sm">
+              <div className="grid grid-cols-1 gap-2 mb-8 text-sm text-left">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-600" />
-                  Turnkey / EPC Delivery
+                  <CheckCircle2 className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                  Turnkey / EPC Framework
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-600" />
-                  Labour-Based Procurement
+                  <CheckCircle2 className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                  Labour-Based Model
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-600" />
-                  Strategic Supplies & Equipment
+                  <CheckCircle2 className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                  Strategic Supplies & Logistics
                 </div>
               </div>
               <Link to="/services" className="mt-auto">
                 <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
-                  View Interiors
+                  View Construction
                 </Button>
               </Link>
             </div>
@@ -194,23 +194,23 @@ export default function Home() {
                 <div className="w-12 h-12 bg-sky-500 rounded-2xl flex items-center justify-center text-white">
                   <ClipboardList className="w-6 h-6" />
                 </div>
-                <h2 className="text-2xl font-bold">Pillar III: Project Management</h2>
+                <h2 className="text-2xl font-bold">Pillar III: PM</h2>
               </div>
-              <p className="text-muted-foreground mb-6 flex-grow">
-                Enforcing fiduciary oversight through auditing and QA/QC. We maintain technical integrity with a "Zero Rework" policy via BIM validation and manage all compliance markers for project closeout.
+              <p className="text-muted-foreground mb-6 flex-grow text-sm text-left">
+                This layer enforces fiduciary oversight through systematic auditing, scheduling, and QA/QC. We ensure technical integrity is never compromised for speed, validating each stage against the BIM model for zero rework.
               </p>
-              <div className="space-y-4 mb-8 text-sm">
+              <div className="grid grid-cols-1 gap-2 mb-8 text-sm text-left">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-500" />
+                  <CheckCircle2 className="w-4 h-4 text-sky-500 flex-shrink-0" />
                   Fiduciary Oversight & Auditing
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-500" />
-                  QA/QC & Zero Rework Policy
+                  <CheckCircle2 className="w-4 h-4 text-sky-500 flex-shrink-0" />
+                  Zero Rework Policy (BIM)
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-500" />
-                  Compliance & Administrative Closeout
+                  <CheckCircle2 className="w-4 h-4 text-sky-500 flex-shrink-0" />
+                  Administrative Closeout
                 </div>
               </div>
               <Link to="/engage" className="mt-auto">
@@ -256,16 +256,40 @@ export default function Home() {
             <TabsContent value="residential" className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
-                  { id: "siri-africa-a-frame", title: "Siri Africa A-Frame", loc: "Tigoni, Kiambu", img: "/Siri%20A%20frame%20house%202.png" },
-                  { id: "kahawa-sukari-villa", title: "Kahawa Sukari Villa", loc: "Nairobi", img: "/kahawa%20sukari%201.png" },
-                  { id: "syokimau-residence", title: "Syokimau Residence", loc: "Syokimau", img: "/Syokimau%202.jpg" },
-                  { id: "nyambura-house", title: "Nyambura House", loc: "Nairobi", img: "/nyambura 1.png" },
-                  { id: "kapsaret-residence", title: "Kapsaret Residence", loc: "Eldoret", img: "/kapsaret%201.jpg" }
+                  { id: "siri-africa-a-frame", title: "Siri Africa A-Frame", loc: "Tigoni, Kiambu", img: "/Siri%20A%20frame%20house%206%20(1).jpg" },
+                  { id: "interior-design-1", title: "Premium Interior Design", loc: "Nairobi", img: "/Interior%201.jpeg" },
+                  { id: "interior-design-2", title: "Modern Living Spaces", loc: "Nairobi", img: "/Interior%201.jpeg" },
+                  { id: "interior-detail-3", title: "Interior Finishes", loc: "Nairobi", img: "/Interior%203.jpeg" },
+                  { id: "interior-detail-4", title: "Modern Styling", loc: "Nairobi", img: "/interior%204.jpeg" },
+                  { id: "interior-detail-5", title: "Bespoke Interiors", loc: "Nairobi", img: "/Interior%205.jpeg" },
+                  { id: "interior-detail-6", title: "Interior Experience", loc: "Nairobi", img: "/Interior%206.mp4" },
+                  { id: "eldoret-clubhouse", title: "Eldoret Clubhouse", loc: "Eldoret", img: "/Eldoret%20clubhouse%201.jpg" },
+                  { id: "experience-1", title: "Project Experience", loc: "East Africa", img: "/Experience%20(1).jpeg" },
+                  { id: "experience-2", title: "Quality Verification", loc: "East Africa", img: "/Experience%20(2).jpeg" },
+                  { id: "experience-3", title: "Structural Integrity", loc: "East Africa", img: "/Experience%20(3).jpeg" },
+                  { id: "experience-4", title: "Site Mobilization", loc: "East Africa", img: "/Experience%20(4).jpeg" },
+                  { id: "experience-5", title: "Material Excellence", loc: "East Africa", img: "/Experience%20(5).jpeg" },
+                  { id: "experience-6", title: "Technical Precision", loc: "East Africa", img: "/Experience%20(6).jpeg" },
+                  { id: "experience-7", title: "Architectural Vision", loc: "East Africa", img: "/Experience%20(7).jpeg" },
+                  { id: "experience-8", title: "Project Milestones", loc: "East Africa", img: "/Experience%20(8).jpeg" },
+                  { id: "experience-9", title: "Finishing Quality", loc: "East Africa", img: "/Experience%20(9).jpeg" },
+                  { id: "experience-10", title: "Client Delivery", loc: "East Africa", img: "/Experience%20(10).jpeg" }
                 ].map((p, i) => (
-                  <Link key={i} to={`/work/${p.id}`} className={i === 0 ? "md:col-span-2 lg:col-span-1" : ""}>
+                  <div key={i} className={i === 0 ? "md:col-span-2 lg:col-span-1" : ""}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full">
                       <div className="relative aspect-[4/3] overflow-hidden">
-                        <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
+                        {p.img.endsWith('.mp4') ? (
+                          <video 
+                            src={p.img} 
+                            autoPlay 
+                            muted 
+                            loop 
+                            playsInline 
+                            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                          />
+                        ) : (
+                          <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
+                        )}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                           <div className="text-white">
                             <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">{p.loc}</p>
@@ -274,7 +298,7 @@ export default function Home() {
                         </div>
                       </div>
                     </Card>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </TabsContent>
@@ -285,7 +309,7 @@ export default function Home() {
                   { id: "modern-apartment-complex", title: "Modern Apartment Complex", loc: "Nairobi", img: "/Apartment%204.jpg" },
                   { id: "kitale-restaurant-renovation", title: "Kitale Restaurant Expansion", loc: "Kitale", img: "/Liuwa%20Gardens%201.jpg" }
                 ].map((p, i) => (
-                  <Link key={i} to={`/work/${p.id}`}>
+                  <div key={i}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full">
                       <div className="relative aspect-[16/9] overflow-hidden">
                         <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
@@ -297,7 +321,7 @@ export default function Home() {
                         </div>
                       </div>
                     </Card>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </TabsContent>
@@ -307,7 +331,7 @@ export default function Home() {
                 {[
                   { id: "liuwa-gardens", title: "Liuwa Gardens", loc: "Kenya", img: "/Liuwa%20Gardens%201.jpg" }
                 ].map((p, i) => (
-                  <Link key={i} to={`/work/${p.id}`}>
+                  <div key={i}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full max-w-2xl">
                       <div className="relative aspect-[16/9] overflow-hidden">
                         <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
@@ -319,7 +343,7 @@ export default function Home() {
                         </div>
                       </div>
                     </Card>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </TabsContent>
@@ -329,7 +353,7 @@ export default function Home() {
                 {[
                   { id: "landscaping-design-portfolio", title: "Premium Landscaping & Outdoor Styling", loc: "Nairobi & Eldoret", img: "/Landscaping%201.jpeg" }
                 ].map((p, i) => (
-                  <Link key={i} to={`/work/${p.id}`}>
+                  <div key={i}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full max-w-2xl">
                       <div className="relative aspect-[16/9] overflow-hidden">
                         <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
@@ -341,7 +365,7 @@ export default function Home() {
                         </div>
                       </div>
                     </Card>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </TabsContent>
@@ -351,7 +375,7 @@ export default function Home() {
                 {[
                   { id: "project-management-portfolio", title: "Project Management & Site Supervision", loc: "Across Kenya", img: "/Project%20Management%204.png" }
                 ].map((p, i) => (
-                  <Link key={i} to={`/work/${p.id}`}>
+                  <div key={i}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full max-w-2xl">
                       <div className="relative aspect-[16/9] overflow-hidden">
                         <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
@@ -363,7 +387,7 @@ export default function Home() {
                         </div>
                       </div>
                     </Card>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </TabsContent>
