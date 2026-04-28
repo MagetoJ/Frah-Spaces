@@ -273,12 +273,22 @@ export default function About() {
                         <img 
                           src={member.image} 
                           alt={`${member.name} - ${member.role} at Frah Spaces`} 
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-                        <div className="absolute bottom-6 left-6 right-6">
-                          <Badge className="mb-2 bg-primary/90 text-white border-none">{member.role}</Badge>
-                          <h3 className="text-2xl font-bold text-white">{member.name}</h3>
+                        {/* Glassmorphism Hover Overlay */}
+                        <div className="absolute inset-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-6 scale-95 group-hover:scale-100">
+                          <div className="text-white space-y-3">
+                            <Badge variant="outline" className="text-white border-white/40">{member.role}</Badge>
+                            <h3 className="font-black text-2xl uppercase tracking-tighter">{member.name}</h3>
+                            <p className="text-sm text-white/80">
+                              Expertise in <span className="font-semibold">{member.specialty}</span>.
+                            </p>
+                            <Button size="sm" variant="secondary" className="rounded-full font-bold">
+                              View Profile
+                            </Button>
+                          </div>
                         </div>
                       </div>
                       <CardContent className="p-6">

@@ -2,14 +2,27 @@ import { useEffect } from "react";
 import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
-import { Building2, Shield, Mail, MessageCircle, Phone, Hammer, Ruler, Briefcase, Layout, Globe, Droplets, Sun, Wind, Box } from "lucide-react";
+import { Building2, Shield, Mail, MessageCircle, Phone, Hammer, Ruler, Briefcase, Layout, Globe, Droplets, Sun, Wind, Box, type LucideIcon } from "lucide-react";
+
+interface ServiceCategory {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  options: string[];
+}
+
+interface TechnicalSolution {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
 
 export default function Services() {
   useEffect(() => {
     document.title = "Construction & Technical Services Hub | Frah Spaces";
   }, []);
 
-  const serviceCategories = [
+  const serviceCategories: ServiceCategory[] = [
     {
       icon: Ruler,
       title: "Design",
@@ -48,7 +61,7 @@ export default function Services() {
     }
   ];
 
-  const technicalSolutions = [
+  const technicalSolutions: TechnicalSolution[] = [
     {
       icon: Droplets,
       title: "Plumbing",
@@ -104,12 +117,7 @@ export default function Services() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8">
-            {serviceCategories.map((category: {
-              icon: any;
-              title: string;
-              description: string;
-              options: string[];
-            }, idx: number) => (
+            {serviceCategories.map((category, idx) => (
               <Card key={idx} className="border-2 hover:border-primary/50 transition-all flex flex-col h-full">
                 <CardContent className="p-8 flex-1">
                   <div className="flex items-start gap-6 mb-6">

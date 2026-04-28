@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Button } from "@/react-app/components/ui/button";
 import { ArrowRight, CheckCircle2, Sparkles, Award, Building2, PencilRuler, ClipboardList, Calculator, Hammer } from "lucide-react";
 import { Link } from "react-router";
@@ -7,66 +7,74 @@ import { MaterialCalculator } from "@/react-app/components/MaterialCalculator";
 import { Card } from "@/react-app/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/react-app/components/ui/tabs";
 import { blogPosts } from "@/react-app/data/blog";
-import type { BlogPost } from "@/react-app/data/blog";
+import { BeforeAfterSlider } from "@/react-app/components/BeforeAfterSlider";
+import type { BlogPost } from "@/react-app/data/blog"; // Ensure this import is correct
 
 export default function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
-    "/Syokimau%201.jpeg",
-    "/Syokimau%207.jpeg",
-    "/Siri%20A%20frame%20house%206%20(1).jpg",
-    "/Kahawa%20sukari%202.png",
-    "/Eldoret%20club%20house%204.jpg"
-  ];
-
   useEffect(() => {
     document.title = "Frah Spaces | Leading Construction & Architecture Firm in East Africa";
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
   }, []);
 
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] md:min-h-[90vh] flex items-center pt-20 overflow-hidden">
-        {/* Carousel Background */}
-        {slides.map((slide, index) => (
-          <div 
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <img 
-              src={slide} 
-              alt={`High-quality and reliable construction project in East Africa by Frah Spaces - Featured Build ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/40" />
+      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-slate-950">
+        <div className="absolute inset-0 grid grid-cols-1 lg:grid-cols-2">
+          {/* Left: Finished Drone View */}
+          <div className="relative h-full overflow-hidden hidden lg:block">
+             <img src="/Syokimau%201.jpeg" className="w-full h-full object-cover opacity-60" alt="Finished Build" loading="eager" decoding="async" />
+             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent" />
           </div>
-        ))}
+          {/* Right: Site Skeleton View */}
+          <div className="relative h-full overflow-hidden">
+             <img src="/Experience%20(3).jpeg" className="w-full h-full object-cover opacity-60" alt="Site Skeleton" loading="eager" decoding="async" />
+             <div className="absolute inset-0 bg-gradient-to-l from-slate-950 via-slate-950/70 to-transparent" />
+          </div>
+        </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
           <div className="max-w-4xl">
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight text-white drop-shadow-md">
-              East Africa's Most
-              <span className="block text-primary-foreground md:text-6xl lg:text-7xl">Reliable & Quality-Verified Construction Firm</span>
+            <Badge className="mb-6 bg-primary text-white px-4 py-1 text-xs uppercase tracking-[0.3em] font-black">Professional Precision</Badge>
+            <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9] text-white uppercase italic">
+              Built to <br />
+              <span className="text-primary italic">Endure.</span>
             </h1>
+            <p className="text-xl text-zinc-300 mb-10 leading-relaxed max-w-xl font-medium border-l-4 border-primary pl-6">
+              East Africa's premier quality-verified construction firm. We bridge the gap between architectural vision and structural reality.
+            </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/work">
-                <Button size="lg" className="w-full sm:w-auto text-lg px-10 h-14 rounded-full">
-                  View Our Work
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                <Button size="lg" className="w-full sm:w-auto text-lg px-10 h-16 rounded-full font-black uppercase tracking-wider">
+                  Explore Portfolio
                 </Button>
               </Link>
               <Link to="/engage">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-10 h-14 rounded-full bg-white/10 hover:bg-white/20 text-white border-white/40 backdrop-blur-sm">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-10 h-16 rounded-full bg-white/5 hover:bg-white/10 text-white border-white/20 backdrop-blur-md font-black uppercase tracking-wider">
                   Get Started
                 </Button>
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Transformation Showcase - Before & After */}
+      <section className="py-24 bg-white relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-5 gap-16 items-center">
+            <div className="lg:col-span-2">
+              <Badge className="mb-4 bg-primary/10 text-primary border-none">The Transformation</Badge>
+              <h2 className="text-5xl font-black uppercase tracking-tighter leading-none mb-6">Reality <br/>Validated.</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Drag the slider to see how we transform raw sites into architectural landmarks. Our "Zero Rework" policy ensures what you see in the design is exactly what we build.
+              </p>
+            </div>
+            <div className="lg:col-span-3">
+              <BeforeAfterSlider 
+                beforeImage="/Experience (3).jpeg" 
+                afterImage="/Syokimau 2.jpg" 
+              />
             </div>
           </div>
         </div>
@@ -81,6 +89,8 @@ export default function Home() {
                 <img 
                   src="/Liuwa%20Gardens%201.jpg" 
                   alt="Liuwa Gardens - Premier hospitality design and quality construction in Kenya by Frah Spaces" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-[300px] md:h-[500px] object-cover"
                 />
                 <div className="absolute top-6 left-6">
@@ -228,9 +238,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-2xl">
-              <Badge variant="outline" className="mb-4 text-primary border-primary">Portfolio Spotlight</Badge>
-              <h2 className="text-4xl font-bold mb-4">A Legacy</h2>
-              <p className="text-lg text-muted-foreground">
+              <Badge className="mb-4 bg-primary/10 text-primary border-none">Portfolio Spotlight</Badge>
+              <h2 className="text-5xl font-black uppercase tracking-tighter leading-none mb-6">A Legacy of <br/><span className="text-primary italic">Technical Excellence</span></h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
                 From high-end residential villas to complex commercial renovations, 
                 explore how we apply technical excellence across different sectors.
               </p>
@@ -254,11 +264,11 @@ export default function Home() {
             </div>
 
             <TabsContent value="residential" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Masonry Grid for Residential Projects */}
+              <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                 {[
                   { id: "siri-africa-a-frame", title: "Siri Africa A-Frame", loc: "Tigoni, Kiambu", img: "/Siri%20A%20frame%20house%206%20(1).jpg" },
                   { id: "interior-design-1", title: "Premium Interior Design", loc: "Nairobi", img: "/Interior%201.jpeg" },
-                  { id: "interior-design-2", title: "Modern Living Spaces", loc: "Nairobi", img: "/Interior%201.jpeg" },
                   { id: "interior-detail-3", title: "Interior Finishes", loc: "Nairobi", img: "/Interior%203.jpeg" },
                   { id: "interior-detail-4", title: "Modern Styling", loc: "Nairobi", img: "/interior%204.jpeg" },
                   { id: "interior-detail-5", title: "Bespoke Interiors", loc: "Nairobi", img: "/Interior%205.jpeg" },
@@ -275,9 +285,9 @@ export default function Home() {
                   { id: "experience-9", title: "Finishing Quality", loc: "East Africa", img: "/Experience%20(9).jpeg" },
                   { id: "experience-10", title: "Client Delivery", loc: "East Africa", img: "/Experience%20(10).jpeg" }
                 ].map((p, i) => (
-                  <div key={i} className={i === 0 ? "md:col-span-2 lg:col-span-1" : ""}>
-                    <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full">
-                      <div className="relative aspect-[4/3] overflow-hidden">
+                  <div key={i}>
+                    <Card className="group relative overflow-hidden border-none shadow-xl rounded-[40px] break-inside-avoid-column transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+                      <div className="relative overflow-hidden aspect-auto">
                         {p.img.endsWith('.mp4') ? (
                           <video 
                             src={p.img} 
@@ -285,15 +295,25 @@ export default function Home() {
                             muted 
                             loop 
                             playsInline 
-                            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                            className="object-cover w-full h-full min-h-[300px] transition-transform duration-700 group-hover:scale-110"
                           />
                         ) : (
-                          <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
+                          <img 
+                            src={p.img} 
+                            alt={p.title} 
+                            className="object-cover w-full h-full min-h-[300px] transition-transform duration-700 group-hover:scale-110" 
+                            loading="lazy"
+                            decoding="async"
+                          />
                         )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                          <div className="text-white">
-                            <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">{p.loc}</p>
-                            <p className="font-bold text-lg">{p.title}</p>
+                        {/* Enhanced Glassmorphism Overlay */}
+                        <div className="absolute inset-4 bg-black/20 backdrop-blur-md border border-white/10 rounded-[32px] opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-8 scale-90 group-hover:scale-100 shadow-2xl">
+                          <div className="text-white space-y-4">
+                            <Badge className="bg-primary/20 backdrop-blur-sm border-primary/30 text-white text-[10px] uppercase tracking-widest">{p.loc}</Badge>
+                            <h3 className="font-black text-3xl uppercase tracking-tighter leading-tight">{p.title}</h3>
+                            <Button size="sm" variant="secondary" className="rounded-full font-black uppercase text-xs tracking-wider px-6 h-10 shadow-lg shadow-black/20">
+                              View Project
+                            </Button>
                           </div>
                         </div>
                       </div>
@@ -304,19 +324,29 @@ export default function Home() {
             </TabsContent>
 
             <TabsContent value="commercial" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                 {[
                   { id: "modern-apartment-complex", title: "Modern Apartment Complex", loc: "Nairobi", img: "/Apartment%204.jpg" },
                   { id: "kitale-restaurant-renovation", title: "Kitale Restaurant Expansion", loc: "Kitale", img: "/Liuwa%20Gardens%201.jpg" }
                 ].map((p, i) => (
                   <div key={i}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full">
-                      <div className="relative aspect-[16/9] overflow-hidden">
-                        <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                          <div className="text-white">
-                            <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">{p.loc}</p>
-                            <p className="font-bold text-2xl">{p.title}</p>
+                      <div className="relative overflow-hidden">
+                        <img 
+                          src={p.img} 
+                          alt={p.title} 
+                          className="object-cover w-full h-full min-h-[250px] transition-transform duration-700 group-hover:scale-110" 
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        {/* Glassmorphism Hover Overlay */}
+                        <div className="absolute inset-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-6 scale-95 group-hover:scale-100">
+                          <div className="text-white space-y-3">
+                            <Badge variant="outline" className="text-white border-white/40">{p.loc}</Badge>
+                            <h3 className="font-black text-2xl uppercase tracking-tighter">{p.title}</h3>
+                            <Button size="sm" variant="secondary" className="rounded-full font-bold">
+                              View Project
+                            </Button>
                           </div>
                         </div>
                       </div>
@@ -327,18 +357,28 @@ export default function Home() {
             </TabsContent>
 
             <TabsContent value="hotels" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+              <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                 {[
                   { id: "liuwa-gardens", title: "Liuwa Gardens", loc: "Kenya", img: "/Liuwa%20Gardens%201.jpg" }
                 ].map((p, i) => (
                   <div key={i}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full max-w-2xl">
-                      <div className="relative aspect-[16/9] overflow-hidden">
-                        <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                          <div className="text-white">
-                            <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">{p.loc}</p>
-                            <p className="font-bold text-2xl">{p.title}</p>
+                      <div className="relative overflow-hidden">
+                        <img 
+                          src={p.img} 
+                          alt={p.title} 
+                          className="object-cover w-full h-full min-h-[250px] transition-transform duration-700 group-hover:scale-110" 
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        {/* Glassmorphism Hover Overlay */}
+                        <div className="absolute inset-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-6 scale-95 group-hover:scale-100">
+                          <div className="text-white space-y-3">
+                            <Badge variant="outline" className="text-white border-white/40">{p.loc}</Badge>
+                            <h3 className="font-black text-2xl uppercase tracking-tighter">{p.title}</h3>
+                            <Button size="sm" variant="secondary" className="rounded-full font-bold">
+                              View Project
+                            </Button>
                           </div>
                         </div>
                       </div>
@@ -349,18 +389,28 @@ export default function Home() {
             </TabsContent>
 
             <TabsContent value="landscaping" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+              <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                 {[
                   { id: "landscaping-design-portfolio", title: "Premium Landscaping & Outdoor Styling", loc: "Nairobi & Eldoret", img: "/Landscaping%201.jpeg" }
                 ].map((p, i) => (
                   <div key={i}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full max-w-2xl">
-                      <div className="relative aspect-[16/9] overflow-hidden">
-                        <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                          <div className="text-white">
-                            <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">{p.loc}</p>
-                            <p className="font-bold text-2xl">{p.title}</p>
+                      <div className="relative overflow-hidden">
+                        <img 
+                          src={p.img} 
+                          alt={p.title} 
+                          className="object-cover w-full h-full min-h-[250px] transition-transform duration-700 group-hover:scale-110" 
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        {/* Glassmorphism Hover Overlay */}
+                        <div className="absolute inset-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-6 scale-95 group-hover:scale-100">
+                          <div className="text-white space-y-3">
+                            <Badge variant="outline" className="text-white border-white/40">{p.loc}</Badge>
+                            <h3 className="font-black text-2xl uppercase tracking-tighter">{p.title}</h3>
+                            <Button size="sm" variant="secondary" className="rounded-full font-bold">
+                              View Project
+                            </Button>
                           </div>
                         </div>
                       </div>
@@ -371,18 +421,28 @@ export default function Home() {
             </TabsContent>
 
             <TabsContent value="management" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+              <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                 {[
                   { id: "project-management-portfolio", title: "Project Management & Site Supervision", loc: "Across Kenya", img: "/Project%20Management%204.png" }
                 ].map((p, i) => (
                   <div key={i}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full max-w-2xl">
-                      <div className="relative aspect-[16/9] overflow-hidden">
-                        <img src={p.img} alt={p.title} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                          <div className="text-white">
-                            <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">{p.loc}</p>
-                            <p className="font-bold text-2xl">{p.title}</p>
+                      <div className="relative overflow-hidden">
+                        <img 
+                          src={p.img} 
+                          alt={p.title} 
+                          className="object-cover w-full h-full min-h-[250px] transition-transform duration-700 group-hover:scale-110" 
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        {/* Glassmorphism Hover Overlay */}
+                        <div className="absolute inset-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-6 scale-95 group-hover:scale-100">
+                          <div className="text-white space-y-3">
+                            <Badge variant="outline" className="text-white border-white/40">{p.loc}</Badge>
+                            <h3 className="font-black text-2xl uppercase tracking-tighter">{p.title}</h3>
+                            <Button size="sm" variant="secondary" className="rounded-full font-bold">
+                              View Project
+                            </Button>
                           </div>
                         </div>
                       </div>
@@ -466,6 +526,8 @@ export default function Home() {
             <img 
               src="/Project Management 1.jpg" 
               alt="NCA Registered Technical Precision - Quality-verified building site management by Frah Spaces" 
+              loading="lazy"
+              decoding="async"
               className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-8">
@@ -528,7 +590,13 @@ export default function Home() {
                 <Card className="overflow-hidden group hover:shadow-xl transition-all border-none bg-background">
                   <div className="grid sm:grid-cols-5 h-full">
                     <div className="sm:col-span-2 overflow-hidden h-48 sm:h-full">
-                      <img src={post.image} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <img 
+                        src={post.image} 
+                        alt={post.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                      />
                     </div>
                     <div className="sm:col-span-3 p-6 flex flex-col justify-center">
                       <Badge variant="outline" className="w-fit mb-3 text-[10px] uppercase tracking-wider">{post.category}</Badge>

@@ -50,7 +50,7 @@ export function MaterialCalculator({ onClose, className }: MaterialCalculatorPro
         setResult({ value: data.value, unit: data.unit });
         return;
       }
-    } catch (e) { console.log("Falling back to client-side calc"); }
+    } catch { console.log("Falling back to client-side calc"); }
 
     if (calcType === "flooring") {
       const areaPerBox = flooringData[subType] || 1.44;

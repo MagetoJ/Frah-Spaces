@@ -166,11 +166,15 @@ export default function ProjectDetail() {
                         src={p.image} 
                         alt={`${p.category.charAt(0).toUpperCase() + p.category.slice(1)} construction project in ${p.location} - ${p.title} by Frah Spaces`} 
                         className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" 
+                        loading="lazy"
+                        decoding="async"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                        <div className="text-white">
-                          <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">{p.location}</p>
-                          <p className="font-bold text-lg">{p.title}</p>
+                      {/* Glassmorphism Hover Overlay - Fix for duplicate overlays and syntax error */}
+                      <div className="absolute inset-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-6 scale-95 group-hover:scale-100">
+                        <div className="text-white space-y-3">
+                          <Badge variant="outline" className="text-white border-white/40">{p.location}</Badge>
+                          <h3 className="font-black text-2xl uppercase tracking-tighter">{p.title}</h3>
+                          <Button size="sm" variant="secondary" className="rounded-full font-bold">View Case Study</Button>
                         </div>
                       </div>
                     </div>

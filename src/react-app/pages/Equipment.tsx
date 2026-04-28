@@ -172,6 +172,8 @@ export default function Equipment() {
                       <img 
                         src={item.image} 
                         alt={item.name} 
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -185,7 +187,12 @@ export default function Equipment() {
                           </DialogTrigger>
                           <DialogContent className="max-w-3xl overflow-hidden p-0 border-none bg-zinc-950 text-white">
                             <div className="relative aspect-video w-full overflow-hidden">
-                              <img src={item.image} alt={item.name} className="w-full h-full object-cover opacity-60" />
+                              <img 
+                                src={item.image} 
+                                alt={item.name} 
+                                decoding="async"
+                                className="w-full h-full object-cover opacity-60" 
+                              />
                               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent flex items-end p-8">
                                 <div>
                                   <Badge className="mb-3 bg-primary border-0">{item.usage}</Badge>

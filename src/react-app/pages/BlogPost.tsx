@@ -110,7 +110,13 @@ export default function BlogPost() {
                 <div className="space-y-4">
                   {featuredProjects.map((p: Project) => (
                     <Link key={p.id} to={`/work/${p.id}`} className="flex gap-4 group">
-                      <img src={p.image} className="w-20 h-20 rounded-xl object-cover shadow-sm group-hover:scale-105 transition-transform" />
+                      <img 
+                        src={p.image} 
+                        alt={p.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-20 h-20 rounded-xl object-cover shadow-sm group-hover:scale-105 transition-transform" 
+                      />
                       <div className="flex flex-col justify-center">
                         <p className="font-bold text-sm leading-tight group-hover:text-primary transition-colors">{p.title}</p>
                         <p className="text-[10px] text-muted-foreground uppercase mt-1">{p.location}</p>

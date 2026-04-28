@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/react-app/components/ui/dialog";
-import { Palette, Maximize2, Layout, Home, Building, Layers, Mail, MessageCircle, Phone, FileText, Download } from "lucide-react";
+import { Palette, Maximize2, Layout, Home, Building, Layers, Mail, MessageCircle, Phone, FileText, Download, type LucideIcon } from "lucide-react";
 
 interface Project {
   name: string;
@@ -13,7 +13,7 @@ interface Project {
 
 interface DesignCategory {
   title: string;
-  icon: any;
+  icon: LucideIcon;
   description: string;
   projects: Project[];
 }
@@ -62,8 +62,8 @@ export default function Designs() {
       description: "Detailed architectural blueprints and floor plans for various residential styles.",
       projects: [
         { name: "A-Frame House Plan", image: "/design%201.png", type: "PDF Plan", link: "/A-frame%20house%20plan.pdf" },
-        { name: "Flatroom Mansion - Type A", image: "/design%201.png", type: "PDF Plan", link: "/Flatroom%20Mansion%20house%20plan%20-%20type%20A.pdf" },
-        { name: "Flatroom Mansion - Type B", image: "/design%201.png", type: "PDF Plan", link: "/Flatroom%20Mansion%20house%20plan%20-%20type%20B.pdf" }
+        { name: "Flatroom Mansion - Type A", image: "/Apartment%204.jpg", type: "PDF Plan", link: "/Flatroom%20Mansion%20house%20plan%20-%20type%20A.pdf" },
+        { name: "Flatroom Mansion - Type B", image: "/Syokimau%202.jpg", type: "PDF Plan", link: "/Flatroom%20Mansion%20house%20plan%20-%20type%20B.pdf" }
       ] as Project[]
     },
     {
@@ -137,6 +137,8 @@ export default function Designs() {
                       <img 
                         src={project.image} 
                         alt={project.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
@@ -152,7 +154,12 @@ export default function Designs() {
                               <DialogTitle>{project.name}</DialogTitle>
                             </DialogHeader>
                             <div className="relative w-full aspect-video">
-                              <img src={project.image} alt={project.name} className="w-full h-full object-cover rounded-xl" />
+                              <img 
+                                src={project.image} 
+                                alt={project.name} 
+                                decoding="async"
+                                className="w-full h-full object-cover rounded-xl" 
+                              />
                               <div className="absolute bottom-6 left-6 right-6 p-6 bg-background/80 backdrop-blur-md rounded-xl border border-border">
                                 <Badge className="mb-2">{project.type}</Badge>
                                 <h3 className="text-2xl font-bold">{project.name}</h3>
@@ -187,10 +194,10 @@ export default function Designs() {
                             </div>
                           </DialogContent>
                         </Dialog>
-                        {project.link && (
-                          <Button variant="secondary" className="gap-2" onClick={() => window.open(project.link, "_blank")}>
-                            <Download className="w-4 h-4" />
-                            PDF Plan
+                        {project.link && ( // Only show PDF button if link exists
+                          <Button size="sm" variant="secondary" className="rounded-full font-bold mt-2" onClick={() => window.open(project.link, "_blank")}>
+                            <Download className="w-4 h-4 mr-2" />
+                            Download PDF
                           </Button>
                         )}
                       </div>

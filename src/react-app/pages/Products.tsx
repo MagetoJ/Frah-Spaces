@@ -235,6 +235,8 @@ export default function Products() {
                               <img 
                                 src={item.image} 
                                 alt={item.name} 
+                                loading="lazy"
+                                decoding="async"
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                               />
                               <div className="absolute top-4 right-4">
@@ -247,10 +249,21 @@ export default function Products() {
                                 </Badge>
                               </div>
                             </div>
-                            <CardContent className="p-8 flex-1 flex flex-col">
-                              <div className="flex items-start justify-between mb-2">
-                                <h3 className="text-2xl font-bold">{item.name}</h3>
-                                <Check className="w-6 h-6 text-primary" />
+                            {/* Glassmorphism Hover Overlay */}
+                            <div className="absolute inset-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-6 scale-95 group-hover:scale-100">
+                              <div className="text-white space-y-3">
+                                <Badge variant="outline" className="text-white border-white/40">{sub.title}</Badge>
+                                <h3 className="font-black text-2xl uppercase tracking-tighter">{item.name}</h3>
+                                <Button size="sm" variant="secondary" className="rounded-full font-bold" onClick={() => handleWhatsApp(item.name, defaultWhatsAppNumber)}>
+                                  <MessageCircle className="w-4 h-4 mr-2" />
+                                  Inquire Now
+                                </Button>
+                              </div>
+                            </div>
+                            <CardContent className="p-8 flex-1 flex flex-col hidden"> {/* Hide default content, show on hover via glassmorphism */}
+                              <div className="flex items-start justify-between mb-2"> {/* This content will be hidden */}
+                                <h3 className="text-2xl font-bold">{item.name}</h3> {/* This content will be hidden */}
+                                <Check className="w-6 h-6 text-primary" /> {/* This content will be hidden */}
                               </div>
                               <p className="text-muted-foreground mb-8 text-lg">
                                 {item.specs}

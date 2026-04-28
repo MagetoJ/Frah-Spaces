@@ -63,7 +63,7 @@ export default function Work() {
             </div>
           </Tabs>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
             {filteredProjects.map((project: Project) => (
               <Link key={project.id} to={`/work/${project.id}`}>
                 <Card className="overflow-hidden group h-full hover:shadow-2xl transition-all duration-300 border-none bg-muted/20">
@@ -83,11 +83,18 @@ export default function Work() {
                         <ArrowUpRight className="w-6 h-6" />
                       </div>
                     </div>
+                    {/* Glassmorphism Hover Overlay */}
+                    <div className="absolute inset-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-6 scale-95 group-hover:scale-100">
+                      <div className="text-white space-y-3">
+                        <Badge variant="outline" className="text-white border-white/40">{project.location}</Badge>
+                        <h3 className="font-black text-2xl uppercase tracking-tighter">{project.title}</h3>
+                        <Button size="sm" variant="secondary" className="rounded-full font-bold">
+                          View Case Study
+                        </Button>
+                      </div>
+                    </div>
                   </div>
-                  
-                  <CardContent className="p-6">
-                    <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
-                    
+                  <CardContent className="p-6 hidden"> {/* Hide default content, show on hover via glassmorphism */}
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                       <span className="flex items-center gap-1">
                         <MapPin className="w-4 h-4" />
@@ -139,9 +146,14 @@ export default function Work() {
             }, idx: number) => (
               <Card key={idx} className="overflow-hidden group cursor-pointer border-2 hover:border-primary/50 transition-all">
                 <div className="relative aspect-video overflow-hidden">
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
-                    style={{ backgroundImage: `url('${video.thumbnail}')` }}
+                  <img
+                    src={video.thumbnail}
+                    alt={video.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    role="img"
+                    aria-label={video.title}
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
                   <div className="absolute inset-0 flex items-center justify-center">
