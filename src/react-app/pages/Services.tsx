@@ -84,7 +84,7 @@ export default function Services() {
     }
   ];
 
-  const handleWhatsApp = (service: string, phone = "254721175735") => {
+  const handleWhatsApp = (service: string, phone = "254711441245") => {
     window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in learning more about your ${service} services. Could you please provide more information?`, "_blank");
   };
 
@@ -92,7 +92,7 @@ export default function Services() {
     window.location.href = `mailto:admin@frahspaces.com?subject=Inquiry about ${service} services`;
   };
 
-  const handleCall = (phone = "254721175735") => {
+  const handleCall = (phone = "254711441245") => {
     window.location.href = `tel:+${phone}`;
   };
 
@@ -153,7 +153,7 @@ export default function Services() {
                       </Button>
                       <div className="flex flex-1 gap-1">
                         <Button 
-                          onClick={() => handleWhatsApp(category.title, "254721175735")} 
+                          onClick={() => handleWhatsApp(category.title, "254711441245")} 
                           variant="outline" 
                           className="flex-[2] gap-1 border-primary/20 hover:bg-primary/5 h-10 text-xs px-2"
                         >
@@ -161,7 +161,7 @@ export default function Services() {
                           WhatsApp
                         </Button>
                         <Button 
-                          onClick={() => handleWhatsApp(category.title, "254711441245")} 
+                          onClick={() => handleWhatsApp(category.title, "254721175735")} 
                           variant="outline" 
                           className="flex-1 opacity-70 border-primary/20 hover:bg-primary/5 h-10 text-[10px] px-1"
                         >
@@ -171,14 +171,14 @@ export default function Services() {
                     </div>
                     <div className="flex gap-2">
                       <Button 
-                        onClick={() => handleCall("254721175735")} 
+                        onClick={() => handleCall("254711441245")} 
                         className="flex-[2] gap-2 h-10 text-xs"
                       >
                         <Phone className="w-4 h-4" />
                         Direct Call
                       </Button>
                       <Button 
-                        onClick={() => handleCall("254711441245")} 
+                        onClick={() => handleCall("254721175735")} 
                         variant="outline"
                         className="flex-1 gap-2 h-10 text-xs opacity-80"
                       >

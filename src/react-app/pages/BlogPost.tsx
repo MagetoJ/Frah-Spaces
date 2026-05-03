@@ -91,7 +91,7 @@ export default function BlogPost() {
                 <h3 className="text-2xl font-bold mb-4">Take the Next Step</h3>
                 <p className="mb-8 opacity-90 leading-relaxed">{post.cta}</p>
                 <div className="flex flex-wrap gap-4">
-                  <Button variant="secondary" onClick={() => window.open("https://wa.me/254721175735", "_blank")} className="gap-2">
+                  <Button variant="secondary" onClick={() => window.open("https://wa.me/254711441245", "_blank")} className="gap-2">
                     <MessageCircle className="w-4 h-4" /> Chat with us
                   </Button>
                   <Link to="/engage">

@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/react-app/components/ui/dialog";
-import { Palette, Maximize2, Layout, Home, Building, Layers, Mail, MessageCircle, Phone, FileText, Download, type LucideIcon } from "lucide-react";
+import { Palette, Maximize2, Layout, Layers, Mail, MessageCircle, Phone, FileText, Download, type LucideIcon } from "lucide-react";
 
 interface Project {
   name: string;
@@ -21,49 +21,13 @@ interface DesignCategory {
 export default function Designs() {
   const designCategories: DesignCategory[] = [
     {
-      title: "Kitchens",
-      icon: Layout,
-      description: "Modern, ergonomic kitchen layouts with premium finishes and smart storage solutions.",
-      projects: [
-        { name: "Modern Minimalist Kitchen", image: "/design 2.jpg", type: "3D Rendering" },
-        { name: "Luxury Island Concept", image: "/design 3.jpg", type: "Floor Plan" }
-      ] as Project[]
-    },
-    {
-      title: "Living Spaces",
-      icon: Home,
-      description: "Inviting residential interiors that maximize natural light and promote comfort.",
-      projects: [
-        { name: "Open-plan Living Room", image: "/design 4.jpg", type: "3D Rendering" },
-        { name: "Master Suite Concept", image: "/design 5.jpg", type: "Interior Design" }
-      ] as Project[]
-    },
-    {
-      title: "Commercial Fit-outs",
-      icon: Building,
-      description: "Professional office and retail designs tailored for productivity and brand identity.",
-      projects: [
-        { name: "Modern Co-working Space", image: "/design 6.jpg", type: "3D Rendering" },
-        { name: "Retail Boutique Layout", image: "/design 7.jpg", type: "Floor Plan" }
-      ] as Project[]
-    },
-    {
-      title: "Flooring",
-      icon: Layers,
-      description: "Creative flooring patterns and tile layouts for high-traffic and luxury spaces.",
-      projects: [
-        { name: "Luxury Porcelain Tiles", image: "/tiles 2.jpg", type: "3D Rendering" },
-        { name: "Modern Ceramic Layout", image: "/tiles 1.jpg", type: "Floor Plan" }
-      ] as Project[]
-    },
-    {
-      title: "Architectural Plans",
+      title: "Floorplans",
       icon: FileText,
-      description: "Detailed architectural blueprints and floor plans for various residential styles.",
+      description: "Detailed architectural blueprints and floor plans for various residential and commercial styles.",
       projects: [
         { name: "A-Frame House Plan", image: "/design%201.png", type: "PDF Plan", link: "/A-frame%20house%20plan.pdf" },
         { name: "Flatroom Mansion - Type A", image: "/Apartment%204.jpg", type: "PDF Plan", link: "/Flatroom%20Mansion%20house%20plan%20-%20type%20A.pdf" },
-        { name: "Flatroom Mansion - Type B", image: "/Syokimau%202.jpg", type: "PDF Plan", link: "/Flatroom%20Mansion%20house%20plan%20-%20type%20B.pdf" }
+        { name: "Flatroom Mansion - Type B", image: "/Syokimau%202.jpg", type: "PDF Plan", link: "/Flatroom%20Mansion%20house%20plan%20-%20type%20B.pdf" },
       ] as Project[]
     },
     {
@@ -81,12 +45,12 @@ export default function Designs() {
       description: "Photorealistic 3D interior and exterior renderings that bring architectural concepts to life.",
       projects: [
         { name: "Contemporary Villa Exterior", image: "/Syokimau%202.jpg", type: "3D Photorealistic" },
-        { name: "Modern Kitchen Concept", image: "/design%202.jpg", type: "3D Rendering" }
+        { name: "Modern Kitchen Concept", image: "/design%202.jpg", type: "3D Rendering" },
       ] as Project[]
     }
   ];
 
-  const handleWhatsApp = (item: string, phone = "254721175735") => {
+  const handleWhatsApp = (item: string, phone = "254711441245") => {
     window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in the ${item} design. Could you please provide more information?`, "_blank");
   };
 
@@ -94,7 +58,7 @@ export default function Designs() {
     window.location.href = `mailto:admin@frahspaces.com?subject=Inquiry about ${item} design`;
   };
 
-  const handleCall = (phone = "254721175735") => {
+  const handleCall = (phone = "254711441245") => {
     window.location.href = `tel:+${phone}`;
   };
 
@@ -171,10 +135,10 @@ export default function Designs() {
                                     </Button>
                                   )}
                                   <div className="flex gap-2">
-                                    <Button className="gap-2" onClick={() => handleWhatsApp(project.name, "254721175735")}>
+                                    <Button className="gap-2" onClick={() => handleWhatsApp(project.name, "254711441245")}>
                                       <MessageCircle className="w-4 h-4" /> WhatsApp
                                     </Button>
-                                    <Button variant="outline" className="gap-2 opacity-80" onClick={() => handleWhatsApp(project.name, "254711441245")}>
+                                    <Button variant="outline" className="gap-2 opacity-80" onClick={() => handleWhatsApp(project.name, "254721175735")}>
                                       <MessageCircle className="w-4 h-4" /> Alt
                                     </Button>
                                   </div>
@@ -182,10 +146,10 @@ export default function Designs() {
                                     <Mail className="w-4 h-4" /> Email
                                   </Button>
                                   <div className="flex gap-2">
-                                    <Button variant="outline" className="gap-2" onClick={() => handleCall("254721175735")}>
+                                    <Button variant="outline" className="gap-2" onClick={() => handleCall("254711441245")}>
                                       <Phone className="w-4 h-4" /> Call
                                     </Button>
-                                    <Button variant="outline" className="gap-2 opacity-80" onClick={() => handleCall("254711441245")}>
+                                    <Button variant="outline" className="gap-2 opacity-80" onClick={() => handleCall("254721175735")}>
                                       <Phone className="w-4 h-4" /> Alt
                                     </Button>
                                   </div>
@@ -236,7 +200,7 @@ export default function Designs() {
                             variant="outline" 
                             size="sm" 
                             className="flex-1 min-w-[100px] gap-1 text-[11px] px-1"
-                            onClick={() => handleWhatsApp(project.name, "254721175735")}
+                            onClick={() => handleWhatsApp(project.name, "254711441245")}
                           >
                             <MessageCircle className="w-3.5 h-3.5" /> WhatsApp
                           </Button>
@@ -244,7 +208,7 @@ export default function Designs() {
                             variant="outline" 
                             size="sm" 
                             className="flex-1 min-w-[60px] gap-1 text-[11px] px-1 opacity-70"
-                            onClick={() => handleWhatsApp(project.name, "254711441245")}
+                            onClick={() => handleWhatsApp(project.name, "254721175735")}
                           >
                             Alt
                           </Button>
@@ -252,7 +216,7 @@ export default function Designs() {
                             variant="outline" 
                             size="sm" 
                             className="flex-1 min-w-[100px] gap-1 text-[11px] px-1 border-primary/20 hover:bg-primary hover:text-white"
-                            onClick={() => handleCall("254721175735")}
+                            onClick={() => handleCall("254711441245")}
                           >
                             <Phone className="w-3.5 h-3.5" /> Call
                           </Button>

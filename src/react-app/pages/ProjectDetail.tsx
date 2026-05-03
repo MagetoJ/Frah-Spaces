@@ -124,8 +124,8 @@ export default function ProjectDetail() {
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
             {uniqueImages.map((img, idx) => (
               <div 
-                key={idx} 
-                className="relative group overflow-hidden rounded-3xl shadow-lg border border-border transition-all duration-500 hover:shadow-2xl hover:border-primary/30"
+                key={idx}
+                className="relative group overflow-hidden rounded-3xl shadow-lg border border-border transition-all duration-500 hover:shadow-2xl hover:border-primary/30 break-inside-avoid-column"
               >
                 <img 
                   src={img} 
@@ -133,9 +133,6 @@ export default function ProjectDetail() {
                   className="w-full object-cover transition-transform duration-700 group-hover:scale-110" 
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                  <p className="text-white text-sm font-medium">View Full Image</p>
-                </div>
               </div>
             ))}
           </div>

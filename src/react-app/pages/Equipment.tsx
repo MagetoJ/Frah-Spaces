@@ -111,10 +111,6 @@ export default function Equipment() {
     window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in renting/using the ${item}. Could you please provide more information?`, "_blank");
   };
 
-  const handleEmail = (item: string) => {
-    window.location.href = `mailto:admin@frahspaces.com?subject=Inquiry about ${item} equipment`;
-  };
-
   const handleCall = (phone = "254711441245") => {
     window.location.href = `tel:+${phone}`;
   };
@@ -221,18 +217,18 @@ export default function Equipment() {
                               </div>
                               <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row gap-4">
                                 <div className="flex flex-1 gap-2">
-                                  <Button className="flex-[2] h-14 text-lg font-bold" onClick={() => handleWhatsApp(item.name, "254721175735")}>
+                                  <Button className="flex-[2] h-14 text-lg font-bold" onClick={() => handleWhatsApp(item.name, "254711441245")}>
                                     Book this Unit
                                   </Button>
-                                  <Button variant="outline" className="flex-1 h-14 text-sm font-bold border-white/20 hover:bg-white/10 opacity-70" onClick={() => handleWhatsApp(item.name, "254711441245")}>
+                                  <Button variant="outline" className="flex-1 h-14 text-sm font-bold border-white/20 hover:bg-white/10 opacity-70" onClick={() => handleWhatsApp(item.name, "254721175735")}>
                                     Alt
                                   </Button>
                                 </div>
                                 <div className="flex flex-1 gap-2">
-                                  <Button variant="outline" className="flex-[2] h-14 text-lg font-bold border-white/20 hover:bg-white/10" onClick={() => handleCall("254721175735")}>
+                                  <Button variant="outline" className="flex-[2] h-14 text-lg font-bold border-white/20 hover:bg-white/10" onClick={() => handleCall("254711441245")}>
                                     Talk to Logistics
                                   </Button>
-                                  <Button variant="outline" className="flex-1 h-14 text-sm font-bold border-white/20 hover:bg-white/10 opacity-70" onClick={() => handleCall("254711441245")}>
+                                  <Button variant="outline" className="flex-1 h-14 text-sm font-bold border-white/20 hover:bg-white/10 opacity-70" onClick={() => handleCall("254721175735")}>
                                     Alt
                                   </Button>
                                 </div>
@@ -255,27 +251,20 @@ export default function Equipment() {
                         {item.details}
                       </p>
                       <div className="mt-auto pt-6 border-t border-border/50 flex flex-col gap-3">
-                        <div className="grid grid-cols-2 gap-2">
-                          <Button variant="ghost" size="sm" className="h-10 text-[11px] font-bold uppercase hover:bg-primary/5 hover:text-primary border border-border/50" onClick={() => handleEmail(item.name)}>
-                            Email
-                          </Button>
-                          <div className="flex gap-1">
-                            <Button variant="ghost" size="sm" className="flex-[2] h-10 text-[11px] font-bold uppercase hover:bg-primary/5 hover:text-primary border border-border/50" onClick={() => handleWhatsApp(item.name, "254721175735")}>
-                              WhatsApp
-                            </Button>
-                            <Button variant="ghost" size="sm" className="flex-1 h-10 text-[9px] font-bold uppercase hover:bg-primary/5 hover:text-primary border border-border/50 opacity-60" onClick={() => handleWhatsApp(item.name, "254711441245")}>
-                              Alt
-                            </Button>
-                          </div>
-                        </div>
-                        <div className="grid grid-cols-2 gap-2">
-                          <Button variant="ghost" size="sm" className="h-10 text-[11px] font-bold uppercase hover:bg-primary/5 hover:text-primary border border-border/50" onClick={() => handleCall("254721175735")}>
-                            Call Primary
-                          </Button>
-                          <Button variant="ghost" size="sm" className="h-10 text-[11px] font-bold uppercase hover:bg-primary/5 hover:text-primary border border-border/50 opacity-60" onClick={() => handleCall("254711441245")}>
-                            Call Alt
-                          </Button>
-                        </div>
+                        <Button 
+                          variant="default" 
+                          className="w-full font-bold" 
+                          onClick={() => handleWhatsApp(item.name, "254711441245")}
+                        >
+                          WhatsApp (+254 711 44 12 45)
+                        </Button>
+                        <Button 
+                          variant="outline" 
+                          className="w-full font-bold" 
+                          onClick={() => handleCall("254711441245")}
+                        >
+                          OR Call
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>

@@ -67,7 +67,7 @@ export default function Engage() {
             Choose from our comprehensive range of design and project management services
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" role="radiogroup" aria-label="Our Services">
             {services.map((service, idx) => (
               <Card 
                 key={idx} 
@@ -75,6 +75,16 @@ export default function Engage() {
                   selectedService === service.title ? 'border-primary bg-primary/5' : 'hover:border-primary/50'
                 }`}
                 onClick={() => setSelectedService(service.title)}
+                role="radio"
+                aria-checked={selectedService === service.title}
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedService(service.title);
+                  }
+                }}
+                aria-label={service.title}
               >
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4 mb-4">
@@ -111,54 +121,58 @@ export default function Engage() {
                 <CardTitle className="text-2xl">Send Us a Message</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <Label htmlFor="name">Full Name</Label>
-                  <Input id="name" placeholder="John Smith" />
-                </div>
-                
-                <div>
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="john@example.com" />
-                </div>
-                
-                <div>
-                  <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" placeholder="+1 (555) 123-4567" />
-                </div>
-                
-                <div>
-                  <Label htmlFor="service">Service Interested In</Label>
-                  <Select value={selectedService} onValueChange={setSelectedService}>
-                    <SelectTrigger id="service">
-                      <SelectValue placeholder="Select a service" />
-                    </SelectTrigger>
-                    <SelectContent className="max-h-60 overflow-y-auto">
-                      <SelectGroup>
-                        <SelectLabel>Our Core Services</SelectLabel>
-                        {services.map((service) => (
-                          <SelectItem key={service.title} value={service.title}>
-                          {service.title}
-                        </SelectItem>
-                      ))}
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
-                </div>
+                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                  <div>
+                    <Label htmlFor="name">Full Name</Label>
+                    <Input id="name" placeholder="John Smith" required aria-required="true" />
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" type="email" placeholder="john@example.com" required aria-required="true" />
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="phone">Phone</Label>
+                    <Input id="phone" type="tel" placeholder="+254 ..." />
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="service">Service Interested In</Label>
+                    <Select value={selectedService} onValueChange={setSelectedService}>
+                      <SelectTrigger id="service" aria-label="Select a service category">
+                        <SelectValue placeholder="Select a service" />
+                      </SelectTrigger>
+                      <SelectContent className="max-h-60 overflow-y-auto">
+                        <SelectGroup>
+                          <SelectLabel>Our Core Services</SelectLabel>
+                          {services.map((service) => (
+                            <SelectItem key={service.title} value={service.title}>
+                            {service.title}
+                          </SelectItem>
+                        ))}
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </div>
 
-                
-                <div>
-                  <Label htmlFor="message">Project Details</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell us about your project vision, timeline, and budget..."
-                    rows={5}
-                  />
-                </div>
-                
-                <Button className="w-full" size="lg">
-                  Submit Inquiry
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                  
+                  <div>
+                    <Label htmlFor="message">Project Details</Label>
+                    <Textarea 
+                      id="message" 
+                      placeholder="Tell us about your project vision, timeline, and budget..."
+                      rows={5}
+                      required
+                      aria-required="true"
+                    />
+                  </div>
+                  
+                  <Button type="submit" className="w-full" size="lg">
+                    Submit Inquiry
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </form>
               </CardContent>
             </Card>
 
@@ -214,11 +228,11 @@ export default function Engage() {
                     <div>
                       <div className="font-medium">Phone</div>
                       <div className="flex flex-col">
-                        <a href="tel:+254721175735" className="text-muted-foreground hover:text-primary transition-colors">
-                          +254 721 175735
+                        <a href="tel:+254711441245" className="text-muted-foreground hover:text-primary transition-colors">
+                          +254 711 441245
                         </a>
-                        <a href="tel:+254711441245" className="text-muted-foreground hover:text-primary transition-colors text-sm opacity-80">
-                          +254 711 441245 (Alt)
+                        <a href="tel:+254721175735" className="text-muted-foreground hover:text-primary transition-colors text-sm opacity-80">
+                          +254 721 175735 (Alt)
                         </a>
                       </div>
                     </div>

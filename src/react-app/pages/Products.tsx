@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/react-app/components/ui/card";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Button } from "@/react-app/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/react-app/components/ui/tabs";
-import { Package, Check, MessageCircle, Phone, Home, TreePine, Paintbrush, DoorOpen, Flower2, Layout } from "lucide-react";
+import { Package, Check, Home, TreePine, Paintbrush, DoorOpen, Flower2, Layout } from "lucide-react";
 
 export default function Products() {
   useEffect(() => {
@@ -29,21 +29,6 @@ export default function Products() {
               name: "River Sand / Quarry Sand", 
               specs: "Fine aggregates for masonry & plastering",
               image: "/Sand.jpg"
-            }
-          ]
-        },
-        {
-          title: "Timber & Wood",
-          items: [
-            { 
-              name: "Structural Timber", 
-              specs: "Cypress & Pine for roofing & framing",
-              image: "/cypress 1.jpeg"
-            },
-            { 
-              name: "Plywood & MDF", 
-              specs: "Interior finishing and cabinetry boards",
-              image: "/engineered 1.jpeg"
             }
           ]
         },
@@ -156,17 +141,17 @@ export default function Products() {
     }
   ];
 
-  const handleWhatsApp = (item: string, phone = "254721175735") => {
+  const handleWhatsApp = (item: string, phone = "254711441245") => {
     window.open(`https://wa.me/${phone}?text=Hello Frah Spaces, I'm interested in ${item}. Could you please provide more information?`, "_blank");
   };
 
-  const handleCall = (phone = "254721175735") => {
+  const handleCall = (phone = "254711441245") => {
     window.location.href = `tel:+${phone}`;
   };
 
   // Update default phone numbers for WhatsApp and Call
   const defaultWhatsAppNumber = "254711441245";
-  const defaultCallNumber = "254721175735";
+  const defaultCallNumber = "254711441245";
 
   return (
     <div className="pb-20">
@@ -250,47 +235,28 @@ export default function Products() {
                               </div>
                             </div>
                             {/* Glassmorphism Hover Overlay */}
-                            <div className="absolute inset-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-6 scale-95 group-hover:scale-100">
+                            <div className="absolute inset-4 bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-6 scale-95 group-hover:scale-100">
                               <div className="text-white space-y-3">
                                 <Badge variant="outline" className="text-white border-white/40">{sub.title}</Badge>
                                 <h3 className="font-black text-2xl uppercase tracking-tighter">{item.name}</h3>
-                                <Button size="sm" variant="secondary" className="rounded-full font-bold" onClick={() => handleWhatsApp(item.name, defaultWhatsAppNumber)}>
-                                  <MessageCircle className="w-4 h-4 mr-2" />
-                                  Inquire Now
-                                </Button>
+                                <div className="flex flex-col gap-2">
+                                  <Button size="sm" variant="secondary" className="rounded-full font-bold" onClick={() => handleWhatsApp(item.name, defaultWhatsAppNumber)}>
+                                    WhatsApp (+254 711 44 12 45)
+                                  </Button>
+                                  <Button size="sm" variant="outline" className="rounded-full font-bold text-white border-white/40" onClick={() => handleCall(defaultCallNumber)}>
+                                    OR Call
+                                  </Button>
+                                </div>
                               </div>
                             </div>
-                            <CardContent className="p-8 flex-1 flex flex-col hidden"> {/* Hide default content, show on hover via glassmorphism */}
-                              <div className="flex items-start justify-between mb-2"> {/* This content will be hidden */}
-                                <h3 className="text-2xl font-bold">{item.name}</h3> {/* This content will be hidden */}
-                                <Check className="w-6 h-6 text-primary" /> {/* This content will be hidden */}
+                            <CardContent className="hidden"> {/* Hide default content, show on hover via glassmorphism */}
+                              <div className="flex items-start justify-between mb-2">
+                                <h3 className="text-2xl font-bold">{item.name}</h3>
+                                <Check className="w-6 h-6 text-primary" />
                               </div>
                               <p className="text-muted-foreground mb-8 text-lg">
                                 {item.specs}
                               </p>
-                              
-                              <div className="mt-auto flex flex-col gap-3">
-                                <Button
-                                  variant="default"
-                                  className="h-auto py-2.5 gap-1 shadow-md"
-                                  onClick={() => handleWhatsApp(item.name, defaultWhatsAppNumber)}
-                                >
-                                  <MessageCircle className="w-3.5 h-3.5" />
-                                  <span className="text-[9px] uppercase font-bold">
-                                    WhatsApp (+254 711 44 12 45)
-                                  </span>
-                                </Button>
-                                <Button
-                                  variant="outline"
-                                  className="h-auto py-2.5 gap-1"
-                                  onClick={() => handleCall(defaultCallNumber)}
-                                >
-                                  <Phone className="w-3.5 h-3.5" />
-                                  <span className="text-[9px] uppercase font-bold">
-                                    Call (+254 721 17 57 35)
-                                  </span>
-                                </Button>
-                              </div>
                             </CardContent>
                           </Card>
                         ))}

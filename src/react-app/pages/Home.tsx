@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/react-app/components/ui/button";
 import { ArrowRight, CheckCircle2, Sparkles, Award, Building2, PencilRuler, ClipboardList, Calculator, Hammer } from "lucide-react";
 import { Link } from "react-router";
@@ -6,30 +6,55 @@ import { Badge } from "@/react-app/components/ui/badge";
 import { MaterialCalculator } from "@/react-app/components/MaterialCalculator";
 import { Card } from "@/react-app/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/react-app/components/ui/tabs";
-import { blogPosts } from "@/react-app/data/blog";
-import { BeforeAfterSlider } from "@/react-app/components/BeforeAfterSlider";
-import type { BlogPost } from "@/react-app/data/blog"; // Ensure this import is correct
+import { blogPosts, type BlogPost } from "@/react-app/data/blog";
 
 export default function Home() {
+  const [sliderPos, setSliderPos] = useState(50);
+  const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
+
+  const heroSlides = [
+    "/Syokimau%201.jpeg",
+    "/Experience%20(3).jpeg",
+    "/Liuwa%20Gardens%201.jpg",
+    "/Syokimau%202.jpg",
+    "/kapsaret%201.jpg"
+  ];
+
   useEffect(() => {
     document.title = "Frah Spaces | Leading Construction & Architecture Firm in East Africa";
+    
+    const timer = setInterval(() => {
+      setCurrentHeroSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
   }, []);
 
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-slate-950">
-        <div className="absolute inset-0 grid grid-cols-1 lg:grid-cols-2">
-          {/* Left: Finished Drone View */}
-          <div className="relative h-full overflow-hidden hidden lg:block">
-             <img src="/Syokimau%201.jpeg" className="w-full h-full object-cover opacity-60" alt="Finished Build" loading="eager" decoding="async" />
-             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent" />
-          </div>
-          {/* Right: Site Skeleton View */}
-          <div className="relative h-full overflow-hidden">
-             <img src="/Experience%20(3).jpeg" className="w-full h-full object-cover opacity-60" alt="Site Skeleton" loading="eager" decoding="async" />
-             <div className="absolute inset-0 bg-gradient-to-l from-slate-950 via-slate-950/70 to-transparent" />
-          </div>
+        <div className="absolute inset-0">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={slide}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === currentHeroSlide ? "opacity-60" : "opacity-0"
+              }`}
+            >
+              <img
+                src={slide}
+                className={`w-full h-full object-cover ${
+                  index === currentHeroSlide ? "animate-in fade-in zoom-in-110 duration-[10000ms] ease-out fill-mode-forwards" : ""
+                }`}
+                alt={`Frah Spaces Project Showcase ${index + 1}`}
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
+              />
+              <div className="absolute inset-0 bg-slate-950/40" />
+            </div>
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
@@ -67,13 +92,42 @@ export default function Home() {
               <Badge className="mb-4 bg-primary/10 text-primary border-none">The Transformation</Badge>
               <h2 className="text-5xl font-black uppercase tracking-tighter leading-none mb-6">Reality <br/>Validated.</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Drag the slider to see how we transform raw sites into architectural landmarks. Our "Zero Rework" policy ensures what you see in the design is exactly what we build.
+                See how we transform raw sites into architectural landmarks. Our "Zero Rework" policy ensures what you see in the design is exactly what we build.
               </p>
             </div>
-            <div className="lg:col-span-3">
-              <BeforeAfterSlider 
-                beforeImage="/Experience (3).jpeg" 
-                afterImage="/Syokimau 2.jpg" 
+            <div className="lg:col-span-3 relative h-[500px] rounded-3xl overflow-hidden shadow-2xl group cursor-ew-resize select-none">
+              {/* After Image */}
+              <div className="absolute inset-0">
+                <img src="/Syokimau%202.jpg" alt="After Transformation" className="w-full h-full object-cover" />
+              </div>
+              
+              {/* Before Image (Clipped) */}
+              <div 
+                className="absolute inset-0 border-r-2 border-white shadow-[10px_0_15px_-5px_rgba(0,0,0,0.5)] z-10" 
+                style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
+              >
+                <img src="/Experience%20(3).jpeg" alt="Before Transformation" className="w-full h-full object-cover" />
+              </div>
+
+              {/* Slider Control Button */}
+              <div 
+                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full shadow-2xl z-20 flex items-center justify-center pointer-events-none group-hover:scale-110 transition-transform"
+                style={{ left: `${sliderPos}%` }}
+              >
+                <div className="flex gap-0.5">
+                  <div className="w-1 h-4 bg-primary rounded-full" />
+                  <div className="w-1 h-4 bg-primary rounded-full" />
+                </div>
+              </div>
+
+              {/* Range Input for Sliding */}
+              <input 
+                type="range" 
+                min="0" 
+                max="100" 
+                value={sliderPos} 
+                onChange={(e) => setSliderPos(Number(e.target.value))}
+                className="absolute inset-0 opacity-0 cursor-ew-resize z-30 w-full h-full"
               />
             </div>
           </div>
@@ -253,7 +307,7 @@ export default function Home() {
           </div>
 
           <Tabs defaultValue="residential" className="w-full">
-            <div className="flex justify-start mb-8 overflow-x-auto pb-2">
+            <div className="flex mb-8 overflow-x-auto pb-2">
               <TabsList className="bg-white/50 dark:bg-slate-800/50 p-1 border border-border flex-wrap md:flex-nowrap">
                 <TabsTrigger value="residential" className="px-4 md:px-6 py-2.5">Residential</TabsTrigger>
                 <TabsTrigger value="commercial" className="px-4 md:px-6 py-2.5">Commercial</TabsTrigger>
@@ -263,7 +317,7 @@ export default function Home() {
               </TabsList>
             </div>
 
-            <TabsContent value="residential" className="mt-0">
+            <TabsContent value="residential" className="mt-0 animate-in fade-in slide-in-from-bottom-4 duration-500">
               {/* Masonry Grid for Residential Projects */}
               <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                 {[
@@ -276,18 +330,17 @@ export default function Home() {
                   { id: "eldoret-clubhouse", title: "Eldoret Clubhouse", loc: "Eldoret", img: "/Eldoret%20clubhouse%201.jpg" },
                   { id: "experience-1", title: "Project Experience", loc: "East Africa", img: "/Experience%20(1).jpeg" },
                   { id: "experience-2", title: "Quality Verification", loc: "East Africa", img: "/Experience%20(2).jpeg" },
-                  { id: "experience-3", title: "Structural Integrity", loc: "East Africa", img: "/Experience%20(3).jpeg" },
                   { id: "experience-4", title: "Site Mobilization", loc: "East Africa", img: "/Experience%20(4).jpeg" },
                   { id: "experience-5", title: "Material Excellence", loc: "East Africa", img: "/Experience%20(5).jpeg" },
                   { id: "experience-6", title: "Technical Precision", loc: "East Africa", img: "/Experience%20(6).jpeg" },
                   { id: "experience-7", title: "Architectural Vision", loc: "East Africa", img: "/Experience%20(7).jpeg" },
                   { id: "experience-8", title: "Project Milestones", loc: "East Africa", img: "/Experience%20(8).jpeg" },
-                  { id: "experience-9", title: "Finishing Quality", loc: "East Africa", img: "/Experience%20(9).jpeg" },
+                  
                   { id: "experience-10", title: "Client Delivery", loc: "East Africa", img: "/Experience%20(10).jpeg" }
                 ].map((p, i) => (
                   <div key={i}>
                     <Card className="group relative overflow-hidden border-none shadow-xl rounded-[40px] break-inside-avoid-column transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
-                      <div className="relative overflow-hidden aspect-auto">
+                      <div className="relative overflow-hidden">
                         {p.img.endsWith('.mp4') ? (
                           <video 
                             src={p.img} 
@@ -326,8 +379,7 @@ export default function Home() {
             <TabsContent value="commercial" className="mt-0">
               <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                 {[
-                  { id: "modern-apartment-complex", title: "Modern Apartment Complex", loc: "Nairobi", img: "/Apartment%204.jpg" },
-                  { id: "kitale-restaurant-renovation", title: "Kitale Restaurant Expansion", loc: "Kitale", img: "/Liuwa%20Gardens%201.jpg" }
+                  { id: "modern-apartment-complex", title: "Modern Apartment Complex", loc: "Nairobi", img: "/Apartment%204.jpg" }
                 ].map((p, i) => (
                   <div key={i}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full">
@@ -359,7 +411,7 @@ export default function Home() {
             <TabsContent value="hotels" className="mt-0">
               <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                 {[
-                  { id: "liuwa-gardens", title: "Liuwa Gardens", loc: "Kenya", img: "/Liuwa%20Gardens%201.jpg" }
+                  { id: "liuwa-gardens", title: "Liuwa Gardens", loc: "Kenya", img: "/Liuwa%20Gardens%203.jpg" }
                 ].map((p, i) => (
                   <div key={i}>
                     <Card className="group overflow-hidden border-none shadow-lg rounded-2xl h-full max-w-2xl">
@@ -524,7 +576,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1 relative group overflow-hidden rounded-2xl shadow-2xl">
             <img 
-              src="/Project Management 1.jpg" 
+              src="/Project%20Management%201.jpg" 
               alt="NCA Registered Technical Precision - Quality-verified building site management by Frah Spaces" 
               loading="lazy"
               decoding="async"
@@ -556,14 +608,14 @@ export default function Home() {
                   <Building2 className="w-5 h-5 text-primary" />
                 </div>
                 <h4 className="font-bold text-white">Structural Integrity</h4>
-                <p className="text-sm text-white/50">Meticulous engineering that exceeds safety standards and ensures longevity.</p>
+                <p className="text-sm text-white/75">Meticulous engineering that exceeds safety standards and ensures longevity.</p>
               </div>
               <div className="space-y-3">
                 <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
                   <Sparkles className="w-5 h-5 text-primary" />
                 </div>
                 <h4 className="font-bold text-white">Sustainable Ethics</h4>
-                <p className="text-sm text-white/50">Prioritizing eco-friendly materials and energy-efficient designs for future-ready spaces.</p>
+                <p className="text-sm text-white/75">Prioritizing eco-friendly materials and energy-efficient designs for future-ready spaces.</p>
               </div>
             </div>
           </div>

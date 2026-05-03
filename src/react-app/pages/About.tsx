@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Card, CardContent } from "@/react-app/components/ui/card";
+import { Button } from "@/react-app/components/ui/button";
 import { Badge } from "@/react-app/components/ui/badge";
 import { Building2, Award, Users, Target, ShieldCheck, FileText, CheckCircle } from "lucide-react";
 
@@ -36,8 +37,8 @@ export default function About() {
       title: "Technical Expertise",
       members: [
         { 
-          name: "Arch. Mutuku John Kaeke", 
-          role: "Lead Architect", 
+          name: "Arch. John", 
+          role: "Project Architect", 
           specialty: "Architectural Design & Planning (B.Arch, JKUAT)",
           image: "/Arch. John Kaeke.png"
         },
@@ -53,22 +54,16 @@ export default function About() {
       title: "Business & Operations",
       members: [
         { 
-          name: "Jim", 
+          name: "James", 
           role: "Business Development Manager", 
           specialty: "Strategic Growth & Client Relations",
           image: "/James - Business Development Manager .png"
         },
         { 
-          name: "Hellen", 
-          role: "Finance & Admin Manager", 
-          specialty: "Financial Management & Operations",
-          image: "/Hellen_-_Finance___Admin-removebg-preview (1).png"
-        },
-        { 
-          name: "Shallom", 
-          role: "Marketing and Client Relations Lead", 
+          name: "Shalom", 
+          role: "Marketing Lead", 
           specialty: "Marketing & Client Relations",
-          image: "/Shallom - Marketing Client Relations Lead.png"
+          image: "/Hellen_-_Finance___Admin-removebg-preview (1).png"
         },
         { 
           name: "Timothy", 
@@ -278,11 +273,11 @@ export default function About() {
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                         {/* Glassmorphism Hover Overlay */}
-                        <div className="absolute inset-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-6 scale-95 group-hover:scale-100">
+                        <div className="absolute inset-4 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-6 scale-95 group-hover:scale-100">
                           <div className="text-white space-y-3">
                             <Badge variant="outline" className="text-white border-white/40">{member.role}</Badge>
                             <h3 className="font-black text-2xl uppercase tracking-tighter">{member.name}</h3>
-                            <p className="text-sm text-white/80">
+                            <p className="text-sm text-white/90">
                               Expertise in <span className="font-semibold">{member.specialty}</span>.
                             </p>
                             <Button size="sm" variant="secondary" className="rounded-full font-bold">
