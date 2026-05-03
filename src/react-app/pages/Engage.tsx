@@ -6,7 +6,7 @@ import { Textarea } from "@/react-app/components/ui/textarea";
 import { Label } from "@/react-app/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SelectGroup, SelectLabel } from "@/react-app/components/ui/select";
 import { Badge } from "@/react-app/components/ui/badge";
-import { MessageCircle, Mail, Phone, MapPin, ArrowRight, PencilRuler, Hammer, ClipboardList } from "lucide-react";
+import { MessageCircle, Mail, Phone, MapPin, ArrowRight, PencilRuler, Hammer, ClipboardList, Instagram } from "lucide-react";
 
 export default function Engage() {
   const [selectedService, setSelectedService] = useState("");
@@ -245,6 +245,62 @@ export default function Engage() {
                       <p className="text-muted-foreground">
                         Fourways Business Park, Kiambu Road
                       </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-6 border-t border-border mt-6">
+                    <div className="font-bold text-sm uppercase tracking-widest text-primary mb-4">Follow Our Progress</div>
+                    <div className="flex gap-4">
+                      <a 
+                        href="https://www.instagram.com/frahcontractors" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="w-10 h-10 bg-muted rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all group"
+                        title="Instagram"
+                      >
+                        <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                      </a>
+                      <a 
+                        href="https://x.com/frahspaces"
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="w-10 h-10 bg-muted rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all group"
+                        title="X"
+                      >
+                        <svg 
+                          viewBox="0 0 24 24" 
+                          fill="currentColor" 
+                          className="w-4 h-4 group-hover:scale-110 transition-transform"
+                        >
+                          <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153ZM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644Z" />
+                        </svg>
+                      </a>
+                      <a 
+                        href="https://www.tiktok.com/@frahconstruction" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="w-10 h-10 bg-muted rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all group"
+                        title="TikTok"
+                      >
+                        <svg 
+                          viewBox="0 0 24 24" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          strokeWidth="2" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          className="w-5 h-5 group-hover:scale-110 transition-transform"
+                        >
+                          <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                        </svg>
+                      </a>
+                      <a 
+                        href="tel:+254711441245" 
+                        className="w-10 h-10 bg-muted rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all group"
+                        title="Call Us"
+                      >
+                        <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                      </a>
                     </div>
                   </div>
                 </CardContent>
