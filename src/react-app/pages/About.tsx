@@ -54,16 +54,22 @@ export default function About() {
       title: "Business & Operations",
       members: [
         { 
-          name: "James", 
+          name: "Jimmy", 
           role: "Business Development Manager", 
           specialty: "Strategic Growth & Client Relations",
           image: "/James - Business Development Manager .png"
         },
         { 
+          name: "Hellen", 
+          role: "Finance", 
+          specialty: "Financial Management",
+          image: "/Hellen_-_Finance___Admin-removebg-preview (1).png"
+        },
+         { 
           name: "Shalom", 
           role: "Marketing Lead", 
           specialty: "Marketing & Client Relations",
-          image: "/Hellen_-_Finance___Admin-removebg-preview (1).png"
+          image: "/Shallom - Marketing Client Relations Lead.png"
         },
         { 
           name: "Timothy", 

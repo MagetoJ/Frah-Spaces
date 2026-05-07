@@ -60,7 +60,14 @@ export const projects: Project[] = [
       "/Syokimau%206.jpeg",
       "/Syokimau%207.jpeg",
       "/Syokimau%208.jpeg",
-      "/Syokimau%209.jpeg"
+      "/Syokimau%209.jpeg",
+      "/FRAH%20CONSTRUCTORS%2017.jpg",
+      "/FRAH%20CONSTRUCTORS%2025.jpg",
+      "/FRAH%20CONSTRUCTORS%2027.jpg",
+      "/FRAH%20CONSTRUCTORS%2034.jpg",
+      "/FRAH%20CONSTRUCTORS%2035.jpg",
+      "/WhatsApp%20Image%202026-03-06%20at%2009.27.20%20(1).jpeg",
+      "/WhatsApp%20Image%202026-03-06%20at%2009.33.41_.jpeg"
     ]
   },
   {
