@@ -39,7 +39,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <a href="mailto:admin@frahspaces.com" className="hover:text-primary transition-colors">admin@frahspaces.com</a>
+                <a href="mailto:admin@frah.co.ke" className="hover:text-primary transition-colors">admin@frah.co.ke</a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />

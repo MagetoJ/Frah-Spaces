@@ -55,7 +55,7 @@ export default function Designs() {
   };
 
   const handleEmail = (item: string) => {
-    window.location.href = `mailto:admin@frahspaces.com?subject=Inquiry about ${item} design`;
+    window.location.href = `mailto:admin@frah.co.ke?subject=Inquiry about ${item} design`;
   };
 
   const handleCall = (phone = "254711441245") => {

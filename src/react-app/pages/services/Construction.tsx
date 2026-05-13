@@ -11,7 +11,7 @@ export default function Construction() {
   };
 
   const handleEmail = () => {
-    window.location.href = `mailto:admin@frahspaces.com?subject=Inquiry about Construction services`;
+    window.location.href = `mailto:admin@frah.co.ke?subject=Inquiry about Construction services`;
   };
 
   const handleCall = (phone = "254721175735") => {

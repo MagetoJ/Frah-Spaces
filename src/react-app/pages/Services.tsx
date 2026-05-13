@@ -89,7 +89,7 @@ export default function Services() {
   };
 
   const handleEmail = (service: string) => {
-    window.location.href = `mailto:admin@frahspaces.com?subject=Inquiry about ${service} services`;
+    window.location.href = `mailto:admin@frah.co.ke?subject=Inquiry about ${service} services`;
   };
 
   const handleCall = (phone = "254711441245") => {

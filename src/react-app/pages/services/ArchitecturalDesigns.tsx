@@ -11,7 +11,7 @@ export default function ArchitecturalDesigns() {
   };
 
   const handleEmail = () => {
-    window.location.href = `mailto:admin@frahspaces.com?subject=Inquiry about Architectural Designs services`;
+    window.location.href = `mailto:admin@frah.co.ke?subject=Inquiry about Architectural Designs services`;
   };
 
   const handleCall = (phone = "254721175735") => {

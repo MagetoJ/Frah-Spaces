@@ -69,7 +69,7 @@ export default function About() {
           name: "Shalom", 
           role: "Marketing Lead", 
           specialty: "Marketing & Client Relations",
-          image: "/Shallom - Marketing Client Relations Lead.png"
+          image: "/Shallom - Marketing Client Relations Lead .png"
         },
         { 
           name: "Timothy", 

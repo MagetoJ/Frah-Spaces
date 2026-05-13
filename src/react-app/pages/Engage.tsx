@@ -217,8 +217,8 @@ export default function Engage() {
                     <Mail className="w-5 h-5 text-primary mt-0.5" />
                     <div>
                       <div className="font-medium">Email</div>
-                      <a href="mailto:admin@frahspaces.com" className="text-muted-foreground hover:text-primary">
-                        admin@frahspaces.com
+                      <a href="mailto:admin@frah.co.ke" className="text-muted-foreground hover:text-primary">
+                        admin@frah.co.ke
                       </a>
                     </div>
                   </div>
